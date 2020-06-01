@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/facultyimage"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_weight="2"
+            android:scaleType="centerCrop"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            />
+
+        <TextView
+            android:id="@+id/txtfacultyname"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Dr. Amit Neogi"
+            android:textSize="25sp" />
+        <QuickContactBadge
+            android:id="@+id/btnaddtocontacts"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="2"
+            android:backgroundTint="#FFFFFF"
+            android:src="@drawable/contacts"/>
+
+    </LinearLayout>
+</LinearLayout>
