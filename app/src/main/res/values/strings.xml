@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">CounsellingApp</string>
+
+
+    <string name="open">open</string>
+
+    <string name="close">close</string>
+
+
+    -
+    <string-array name="query_suggestions">
+
+        <item>General</item>
+
+        <item>Football</item>
+
+        <item>Music Production</item>
+
+    </string-array>
 </resources>

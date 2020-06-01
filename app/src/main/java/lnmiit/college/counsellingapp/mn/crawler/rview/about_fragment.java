@@ -23,7 +23,7 @@ public class about_fragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.about_fragment,container,false);
         facultyrecyclerview = view.findViewById(R.id.facultyrecyclerview);
-        facultyrecyclerview.setAdapter(new mn.crawler.rview.faculty_recyclerview_adapter());
+        facultyrecyclerview.setAdapter(new faculty_recyclerview_adapter());
         facultyrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
         setHasOptionsMenu(true);
         return view;

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import lnmiit.college.counsellingapp.R;
 
-public class Answers_adapter extends RecyclerView.Adapter<mn.crawler.rview.Answers_ViewHolder> {
+public class Answers_adapter extends RecyclerView.Adapter<Answers_ViewHolder> {
 
     private int response_index;
 
@@ -39,15 +39,15 @@ public class Answers_adapter extends RecyclerView.Adapter<mn.crawler.rview.Answe
     }
     @NonNull
     @Override
-    public mn.crawler.rview.Answers_ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Answers_ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater lf = LayoutInflater.from(parent.getContext());
         View view = lf.inflate(R.layout.answers_recycler_view,parent,false);
 
-        return new mn.crawler.rview.Answers_ViewHolder(view);
+        return new Answers_ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull mn.crawler.rview.Answers_ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Answers_ViewHolder holder, int position) {
 
         holder.getTxtanswers().setText(answers.get(response_index).get(position));
         holder.getAnswers_facultyimage().setImageResource(responderimages[response_index]);

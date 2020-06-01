@@ -1,4 +1,4 @@
-package mn.crawler.rview;
+package lnmiit.college.counsellingapp.mn.crawler.rview;
 
 import android.view.View;
 import android.widget.TextView;
@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import lnmiit.college.counsellingapp.R;
 
 public class Answers_ViewHolder extends RecyclerView.ViewHolder {
     private TextView answers_facultyname , answers_date,txtanswers;

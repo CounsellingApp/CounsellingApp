@@ -17,14 +17,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/AppTheme" >
-        <activity android:name="lnmiit.college.counsellingapp.LoginActivity" >
+        android:theme="@style/AppTheme.NoActionBar" >
+        <activity android:name="lnmiit.college.counsellingapp.Introduction_Activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="lnmiit.college.counsellingapp.LoginActivity" />
+        <activity android:name="lnmiit.college.counsellingapp.mn.crawler.rview.activity_answer" />
+        <activity
+            android:name="lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"
