@@ -1,5 +1,6 @@
 package lnmiit.college.counsellingapp.mn.crawler.rview;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -18,10 +19,12 @@ public class Intro_Adapter extends PagerAdapter {
     private int[] layouts;
     private LayoutInflater inflater;
     private ImageButton lgn;
-    public Intro_Adapter(Context context, int[] layouts)
+    private Activity activity;
+    public Intro_Adapter(Context context, int[] layouts,Activity activity)
     {
         this.context = context;
         this.layouts = layouts;
+        this.activity = activity;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
     @Override
@@ -45,6 +48,7 @@ public class Intro_Adapter extends PagerAdapter {
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), LoginActivity.class);
                     context.startActivity(intent);
+                    activity.finish();
 
                 }
             });

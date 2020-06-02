@@ -11,7 +11,7 @@
 9-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:5:5-28:19
+11-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:5:5-30:19
 12        android:allowBackup="true"
 12-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -25,42 +25,42 @@
 17-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:9:9-54
 18        android:supportsRtl="true"
 18-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:10:9-35
-19        android:testOnly="true"
-20        android:theme="@style/AppTheme.NoActionBar" >
-20-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:11:9-52
-21        <activity android:name="lnmiit.college.counsellingapp.Introduction_Activity" >
-21-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:12:9-18:20
-21-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:12:19-56
-22            <intent-filter>
-22-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:13:13-17:29
-23                <action android:name="android.intent.action.MAIN" />
-23-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:14:17-69
-23-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:14:25-66
-24
-25                <category android:name="android.intent.category.LAUNCHER" />
-25-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:16:17-77
-25-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:16:27-74
-26            </intent-filter>
-27        </activity>
-28        <activity android:name="lnmiit.college.counsellingapp.LoginActivity" />
-28-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:19:9-60
-28-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:19:19-48
+19        android:theme="@style/AppTheme.NoActionBar" >
+19-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:11:9-52
+20        <activity android:name="lnmiit.college.counsellingapp.Introduction_Activity" >
+20-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:12:9-14:20
+20-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:12:19-56
+21        </activity>
+22        <activity android:name="lnmiit.college.counsellingapp.LoginActivity" >
+22-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:15:9-21:20
+22-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:15:19-48
+23            <intent-filter>
+23-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:16:13-20:29
+24                <action android:name="android.intent.action.MAIN" />
+24-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:17:17-69
+24-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:17:25-66
+25
+26                <category android:name="android.intent.category.LAUNCHER" />
+26-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:19:17-77
+26-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:19:27-74
+27            </intent-filter>
+28        </activity>
 29        <activity android:name="lnmiit.college.counsellingapp.mn.crawler.rview.activity_answer" />
-29-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:20:9-70
-29-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:20:19-67
+29-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:22:9-70
+29-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:22:19-67
 30        <activity
-30-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:21:9-23:68
+30-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:23:9-25:68
 31            android:name="lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity"
-31-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:22:13-58
+31-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:24:13-58
 32            android:theme="@style/AppTheme.NoActionBar" />
-32-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:23:13-56
+32-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:25:13-56
 33
 34        <meta-data
-34-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:25:9-27:57
+34-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:27:9-29:57
 35            android:name="preloaded_fonts"
-35-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:26:13-43
+35-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:28:13-43
 36            android:resource="@array/preloaded_fonts" />
-36-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:27:13-54
+36-->G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:29:13-54
 37
 38        <activity
 38-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:24:9-31:50

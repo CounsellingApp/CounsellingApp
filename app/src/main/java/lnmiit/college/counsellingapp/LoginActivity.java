@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText password;
     private FirebaseAuth mauth;
     private ImageButton login;
-
+    private SharedPreferences prefs = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         username=findViewById(R.id.Username);
         password=findViewById(R.id.Password);
         login=findViewById(R.id.Login);
+        prefs = getSharedPreferences("lnmiit.college.counsellingapp",MODE_PRIVATE);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,5 +64,16 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(prefs.getBoolean("firstrun",true)){
+            Intent intent = new Intent(LoginActivity.this, Introduction_Activity.class);
+            startActivity(intent);
+            finish();
+            prefs.edit().putBoolean("firstrun",false).commit();
+        }
     }
 }

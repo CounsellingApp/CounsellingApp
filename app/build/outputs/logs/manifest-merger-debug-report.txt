@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-30:12
+ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-32:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\eea79921d0082cd3162f25540a57b311\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-auth:19.3.1] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:17:1-42:12
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\6af06f9d40a95d9b96f51ad530b77046\jetified-materialsearchview-1.4.0\AndroidManifest.xml:2:1-13:12
@@ -42,25 +42,25 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\LAKSHAY\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\744e890fd9c2229fd55f0f204e895827\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\72cbc39fa25a246d7e646058ccbab8e7\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\a19056003d7a5f2bc9cc665fd561b346\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-32:12
 	package
 		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:3:5-44
 		INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml
 		INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml
-		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-30:12
+		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-32:12
 		INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml
-		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-30:12
+		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-32:12
 		INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:5:5-28:19
+ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:5:5-30:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\eea79921d0082cd3162f25540a57b311\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\eea79921d0082cd3162f25540a57b311\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-auth:19.3.1] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:23:5-40:19
@@ -102,39 +102,39 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\LA
 	android:theme
 		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:11:9-52
 activity#lnmiit.college.counsellingapp.Introduction_Activity
-ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:12:9-18:20
+ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:12:9-14:20
 	android:name
 		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:12:19-56
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:13:13-17:29
-action#android.intent.action.MAIN
-ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:14:17-69
-	android:name
-		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:14:25-66
-category#android.intent.category.LAUNCHER
-ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:16:17-77
-	android:name
-		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:16:27-74
 activity#lnmiit.college.counsellingapp.LoginActivity
-ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:19:9-60
+ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:15:9-21:20
 	android:name
-		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:19:19-48
+		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:15:19-48
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:16:13-20:29
+action#android.intent.action.MAIN
+ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:19:27-74
 activity#lnmiit.college.counsellingapp.mn.crawler.rview.activity_answer
-ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:20:9-70
+ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:22:9-70
 	android:name
-		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:20:19-67
+		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:22:19-67
 activity#lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity
-ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:21:9-23:68
+ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:23:9-25:68
 	android:theme
-		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:23:13-56
+		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:25:13-56
 	android:name
-		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:22:13-58
+		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:24:13-58
 meta-data#preloaded_fonts
-ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:25:9-27:57
+ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:27:9-29:57
 	android:resource
-		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:27:13-54
+		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:29:13-54
 	android:name
-		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:26:13-43
+		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:28:13-43
 uses-sdk
 INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml
