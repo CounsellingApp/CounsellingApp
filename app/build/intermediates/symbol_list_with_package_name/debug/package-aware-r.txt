@@ -878,6 +878,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color introslidertext
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1464,7 +1465,6 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_remove_circle_outline_black_24dp
 drawable ic_settings_black_24dp
 drawable ic_suggestion
-drawable identityanonymous
 drawable imageswitchernavidot1
 drawable loginbutton
 drawable logout
@@ -1478,7 +1478,6 @@ drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
-drawable needsomeone
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1502,11 +1501,11 @@ drawable slide2dots
 drawable slide2image
 drawable tag
 drawable test_custom_background
-drawable thereforyou
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable usestudentaccount
 font abel
+font work_sans_medium
 id ALT
 id BOTTOM_END
 id BOTTOM_START
