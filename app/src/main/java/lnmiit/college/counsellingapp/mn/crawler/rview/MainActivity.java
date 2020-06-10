@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +26,7 @@ import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.util.ArrayList;
 
+import lnmiit.college.counsellingapp.AskQuestion;
 import lnmiit.college.counsellingapp.R;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -79,9 +81,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 customdialogfragment cdg = new customdialogfragment();
                 cdg.show(getSupportFragmentManager(),"Dialog");
                 break;
-            case R.id.askquestion:
-                ask_a_question_dialog ask = new ask_a_question_dialog();
-                ask.show(getSupportFragmentManager(),"ask");
+            case R.id.askquestion:startActivity(new Intent(MainActivity.this, AskQuestion.class));
+//                ask_a_question_dialog ask = new ask_a_question_dialog();
+//                ask.show(getSupportFragmentManager(),"ask");
 
         }
         return super.onOptionsItemSelected(item);

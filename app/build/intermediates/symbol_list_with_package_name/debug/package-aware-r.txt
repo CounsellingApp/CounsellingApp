@@ -876,6 +876,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color introslidertext
@@ -1596,6 +1597,7 @@ id btn_anonymous
 id btn_reveal_identinty
 id btnaddtocontacts
 id btnview
+id button
 id buttonPanel
 id cancel_button
 id cbfootball
@@ -1673,6 +1675,7 @@ id icon_only
 id ifRoom
 id image
 id imageButton
+id imageButton2
 id info
 id invisible
 id italic
@@ -1743,6 +1746,7 @@ id pin
 id profile_image
 id progress_circular
 id progress_horizontal
+id question
 id radio
 id recview
 id right
@@ -1796,6 +1800,7 @@ id standard
 id start
 id stretch
 id submenuarrow
+id submit
 id submit_area
 id suggestion_icon
 id suggestion_list
@@ -1919,6 +1924,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout about_fragment
 layout activity_answer
+layout activity_ask_question
 layout activity_introduction_
 layout activity_login
 layout activity_main

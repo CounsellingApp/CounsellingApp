@@ -41,12 +41,12 @@ public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellin
         holder.getTxtquestion().setText(questions[position]);
         holder.getTxtauthor().setText("By- "+authors[position]);
         holder.getTxttags().setText(""+tags[position]);
-        answers.add("I am doing just fine");
-        answers.add("I am building an application at the momment");
-        answers.add("I am having trouble deciding the layout of applications");
-        answers.add("Serum, there's no doubt about that");
-        answers.add("No, Ronaldo is my personal favorite");
-        answers.add("Well, let's hope, fingers crossed");
+//        answers.add("I am doing just fine");
+////        answers.add("I am building an application at the momment");
+////        answers.add("I am having trouble deciding the layout of applications");
+////        answers.add("Serum, there's no doubt about that");
+////        answers.add("No, Ronaldo is my personal favorite");
+////        answers.add("Well, let's hope, fingers crossed");
         holder.getAnswers_rec_view().setAdapter(new Answers_adapter(position));
         holder.getAnswers_rec_view().setLayoutManager(new LinearLayoutManager(context));
         holder.getBtnview().setOnClickListener(new View.OnClickListener() {
