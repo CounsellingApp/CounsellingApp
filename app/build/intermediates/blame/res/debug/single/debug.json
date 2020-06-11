@@ -1,246 +1,250 @@
 [
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profile.jpg.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\profile.jpg"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_drawer_toolbar.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\drawer_toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_introslide1.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\introslide1.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_download.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\download.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rahulbanerjee.jpg.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\rahulbanerjee.jpg"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_home_black_24dp.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_home_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_searchicon.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\searchicon.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_healing_black_24dp.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_healing_black_24dp.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_settings_black_24dp.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_settings_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_settings_black_24dp.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_settings_black_24dp.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_search.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\search.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profile.jpg.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\profile.jpg"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_filter.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\dialog_filter.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\font_work_sans_medium.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\font\\work_sans_medium.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_filter.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\dialog_filter.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\menu_navigationmenu.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\menu\\navigationmenu.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_ask_a_question_dialog.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\ask_a_question_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_slide2image.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\slide2image.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\font_abel.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\font\\abel.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_ask_a_question_dialog.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\ask_a_question_dialog.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_drawer_header.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\drawer_header.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_drawer_header.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\drawer_header.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_introslide3.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\introslide3.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_amitneogi.jpg.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\amitneogi.jpg"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_remove_circle_outline_black_24dp.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_remove_circle_outline_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_developers.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\developers.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_answers_recycler_view.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\answers_recycler_view.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_mainfragment.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\mainfragment.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_frame_27.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_frame_27.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_slide2dots.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\slide2dots.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_healing_black_24dp.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_healing_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_reclayout.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\reclayout.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\menu_my_menu.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\menu\\my_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ruchirsodhani.jpg.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\ruchirsodhani.jpg"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_mainfragment.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\mainfragment.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_developers.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\developers.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_filters.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\filters.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_about_fragment.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\about_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_answers_recycler_view.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\answers_recycler_view.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_slide2image.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\slide2image.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\activity_login.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\menu_navigationmenu.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\menu\\navigationmenu.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_loginbutton.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\loginbutton.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_frame_27.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_frame_27.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_usestudentaccount.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\usestudentaccount.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_introduction_.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\activity_introduction_.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_right.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\right.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_about_fragment.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\about_fragment.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_introslide2.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\introslide2.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tag.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\tag.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_right.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\right.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tag.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\tag.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\font_abel.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\font\\abel.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logout.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\logout.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_searchicon.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\searchicon.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_ask_question.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\activity_ask_question.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_introslide2.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\introslide2.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_add.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\add.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_slide2dots.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\slide2dots.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_answer.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\activity_answer.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imageswitchernavidot1.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\imageswitchernavidot1.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_usestudentaccount.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\usestudentaccount.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_add.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\add.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_loginbutton.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\loginbutton.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_facultyrecview.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\facultyrecview.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ruchirsodhani.jpg.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ruchirsodhani.jpg"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_home_black_24dp.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_home_black_24dp.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rahulbanerjee.jpg.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\rahulbanerjee.jpg"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contacts.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\contacts.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_back.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\back.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_reclayout.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\reclayout.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\menu_my_menu.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\menu\\my_menu.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contacts.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\contacts.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logout.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\logout.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_main_screen_view_pager.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\fragment_main_screen_view_pager.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_ask_question.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\activity_ask_question.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_introslide1.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\introslide1.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_drawer_toolbar.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\drawer_toolbar.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\font_work_sans_medium.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\font\\work_sans_medium.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_slide1image.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\slide1image.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_filters.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\filters.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_remove_circle_outline_black_24dp.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_remove_circle_outline_black_24dp.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_search.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\search.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_answer.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\activity_answer.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_slide1image.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\slide1image.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_introslide3.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\layout\\introslide3.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_facultyrecview.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\facultyrecview.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_back.xml.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\back.xml"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_introduction_.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\activity_introduction_.xml"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_download.png.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\download.png"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_amitneogi.jpg.flat",
-        "source": "C:\\Users\\Anubhav goyal\\AndroidStudioProjects\\CounsellingApp\\app\\src\\main\\res\\drawable\\amitneogi.jpg"
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imageswitchernavidot1.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\imageswitchernavidot1.xml"
+    },
+    {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     }
 ]
