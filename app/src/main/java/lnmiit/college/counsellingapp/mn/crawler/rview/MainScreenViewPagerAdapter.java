@@ -18,7 +18,7 @@ public class MainScreenViewPagerAdapter extends FragmentPagerAdapter {
         switch (position)
         {
             case 0: return new mainFragment();
-            case 1 : return new about_fragment();
+            case 1 : return new RespondFragment();
             default: return null;
         }
 

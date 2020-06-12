@@ -16,7 +16,7 @@
         fancy:fb_borderColor="#FFFFFF"
 
         fancy:fb_borderWidth="1dp"
-        fancy:fb_defaultColor="#0000FF"
+        fancy:fb_defaultColor="#ed715d"
         fancy:fb_focusColor="#0000FF"
 
         fancy:fb_iconPosition="left"
@@ -34,7 +34,7 @@
 
         fancy:fb_borderColor="#FFFFFF"
         fancy:fb_borderWidth="1dp"
-        fancy:fb_defaultColor="#0000FF"
+        fancy:fb_defaultColor="#ed715d"
         fancy:fb_focusColor="#0000FF"
 
         fancy:fb_iconPosition="left"

@@ -7,8 +7,9 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark"
+        android:background="#ed715d"
         android:id="@+id/toolbar"
+
         android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
 
 </LinearLayout>

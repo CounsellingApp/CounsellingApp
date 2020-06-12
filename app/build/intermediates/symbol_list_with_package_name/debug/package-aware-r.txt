@@ -1434,6 +1434,7 @@ drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable contacts
+drawable deleteresponse
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1474,6 +1475,7 @@ drawable ic_suggestion
 drawable imageswitchernavidot1
 drawable loginbutton
 drawable logout
+drawable mic
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1511,6 +1513,8 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable usestudentaccount
 font abel
+font open_sans
+font open_sans_semibold
 font work_sans_medium
 id ALT
 id BOTTOM_END
@@ -1597,6 +1601,11 @@ id beginning
 id blocking
 id bottom
 id btn_anonymous
+id btn_delete_response_icon
+id btn_delete_response_no
+id btn_delete_response_yes
+id btn_post_answer
+id btn_record_message
 id btn_reveal_identinty
 id btnaddtocontacts
 id btnview
@@ -1618,6 +1627,7 @@ id chip_group
 id choiceLinearLayout
 id chronometer
 id clear_text
+id clickablelinearlayout
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -1640,6 +1650,7 @@ id design_menu_item_text
 id design_navigation_view
 id developers
 id dialog_button
+id dialogtext
 id dimensions
 id direct
 id disableHome
@@ -1757,6 +1768,8 @@ id password_toggle
 id peekHeight
 id percent
 id pin
+id privacy_private
+id privacy_public
 id profile_image
 id progress_circular
 id progress_horizontal
@@ -1868,12 +1881,20 @@ id transition_scene_layoutid_cache
 id transition_transform
 id transparent_view
 id txt_answers
+id txt_reply_answer
+id txt_reply_author
+id txt_reply_question
+id txt_reply_tags
 id txtauthor
 id txtfacultyname
 id txtproblem
 id txtsolution
 id txttags
+id txtunansweredauthor
+id txtunansweredquestion
+id txtunansweredtags
 id type
+id unansweredrecview
 id unchecked
 id uniform
 id unlabeled
@@ -1954,9 +1975,11 @@ layout activity_ask_question
 layout activity_introduction_
 layout activity_login
 layout activity_main
+layout activity_respond__to__a__question
 layout answers_recycler_view
 layout ask_a_question_dialog
 layout custom_dialog
+layout delete_response_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1977,6 +2000,7 @@ layout drawer_header
 layout drawer_toolbar
 layout facultyrecview
 layout fragment_main_screen_view_pager
+layout fragment_respond
 layout introslide1
 layout introslide2
 layout introslide3
@@ -2024,6 +2048,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout privacy_of_response_dialog
 layout reclayout
 layout search_view
 layout select_dialog_item_material
@@ -2043,6 +2068,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout unanswered_recyclerview_item
 menu my_menu
 menu navigationmenu
 mipmap ic_launcher

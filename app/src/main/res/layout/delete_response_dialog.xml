@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialogtext"
+        android:text="Are you sure you want to delete this question?"
+        android:background="@color/white"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/btn_delete_response_yes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:padding="10dp"
+            fancy:fb_borderColor="#FFFFFF"
+
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#ed715d"
+            fancy:fb_focusColor="#0000FF"
+
+            fancy:fb_iconPosition="left"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="Yes"
+            fancy:fb_textColor="#FFFFFF" />
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/btn_delete_response_no"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:padding="10dp"
+            fancy:fb_borderColor="#FFFFFF"
+
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#ed715d"
+            fancy:fb_focusColor="#0000FF"
+
+            fancy:fb_iconPosition="left"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="No"
+            fancy:fb_textColor="#FFFFFF" />
+    </LinearLayout>
+</LinearLayout>

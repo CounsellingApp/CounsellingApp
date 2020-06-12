@@ -9,23 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".AskQuestion"></activity>
+        <activity android:name=".mn.crawler.rview.Respond_To_A_Question"
+            android:parentActivityName=".mn.crawler.rview.MainActivity">
 
-        <activity android:name=".Introduction_Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".mn.crawler.rview.MainActivity"/>
 
         </activity>
-        <activity android:name=".LoginActivity" >
+        <activity android:name=".AskQuestion" />
+        <activity android:name=".Introduction_Activity"></activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".mn.crawler.rview.activity_answer" />
+        <activity
+            android:name=".mn.crawler.rview.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".mn.crawler.rview.activity_answer" />
-        <activity
-            android:name=".mn.crawler.rview.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-
         </activity>
 
         <meta-data
