@@ -108,6 +108,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "signin successful", LENGTH_LONG).show();
+                            Useremail.email = username.getText().toString();
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             progressDialog.dismiss();

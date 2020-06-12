@@ -22,7 +22,7 @@ import lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity;
 
 public class AskQuestion extends AppCompatActivity {
     private EditText quesion;
-    String userid=null;
+    //String userid=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,19 +32,19 @@ public class AskQuestion extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 FirebaseFirestore ff= FirebaseFirestore.getInstance();
                 Date date=new Date();
                 Map<String,Object> map=new HashMap<>();
                 map.put("question",quesion.getText().toString());
                 map.put("date",date);
-                map.put("userid",userid);
+                map.put("userid",Useremail.email);
                 ff.collection("FacultyBag").document().set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(AskQuestion.this, "done", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(AskQuestion.this, MainActivity.class));
+                            AskQuestion.this.finish();
                         }
                     }
                 });

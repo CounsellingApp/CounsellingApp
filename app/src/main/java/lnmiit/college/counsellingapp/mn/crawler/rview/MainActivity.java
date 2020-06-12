@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.mainframehandler, new mainFragment());
+        fragmentTransaction.add(R.id.mainframehandler, new MainScreenViewPager());
 
         fragmentTransaction.commit();
 
@@ -81,9 +81,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 customdialogfragment cdg = new customdialogfragment();
                 cdg.show(getSupportFragmentManager(),"Dialog");
                 break;
-            case R.id.askquestion:startActivity(new Intent(MainActivity.this, AskQuestion.class));
-//                ask_a_question_dialog ask = new ask_a_question_dialog();
-//                ask.show(getSupportFragmentManager(),"ask");
+            case R.id.askquestion:
+                ask_a_question_dialog ask = new ask_a_question_dialog();
+                ask.show(getSupportFragmentManager(),"ask");
 
         }
         return super.onOptionsItemSelected(item);
@@ -128,7 +128,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.home:
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.mainframehandler,new mainFragment());
+
+                fragmentTransaction.replace(R.id.mainframehandler,new MainScreenViewPager());
                 fragmentTransaction.commit();
                 setTitle("Home");
                 break;
