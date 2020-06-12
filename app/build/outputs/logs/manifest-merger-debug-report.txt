@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-34:12
+ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-36:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\df7dd1f1723aca614bb5bb7724d5e01d\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\eea79921d0082cd3162f25540a57b311\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:17:1-42:12
@@ -46,25 +46,25 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Anubhav goyal
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\72cbc39fa25a246d7e646058ccbab8e7\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a19056003d7a5f2bc9cc665fd561b346\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:protolite-well-known-types:16.0.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\bef0a79a352e680fee48c54c80897222\jetified-protolite-well-known-types-16.0.0\AndroidManifest.xml:2:1-11:12
-INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-36:12
 	package
 		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:3:5-44
 		INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-34:12
+		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-36:12
 		INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-34:12
+		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:1-36:12
 		INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:5:5-32:19
+ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:5:5-34:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\eea79921d0082cd3162f25540a57b311\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\eea79921d0082cd3162f25540a57b311\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:23:5-40:19
@@ -116,35 +116,35 @@ ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\m
 	android:name
 		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:14:19-56
 activity#lnmiit.college.counsellingapp.LoginActivity
-ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:17:9-51
+ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:17:9-23:20
 	android:name
 		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:17:19-48
-activity#lnmiit.college.counsellingapp.mn.crawler.rview.activity_answer
-ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:18:9-70
-	android:name
-		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:18:19-67
-activity#lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity
-ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:19:9-27:20
-	android:theme
-		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:21:13-56
-	android:name
-		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:20:13-58
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:22:9-26:25
+ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:23:13-65
+ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:19:17-69
 	android:name
-		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:23:21-62
+		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:19:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:25:13-73
+ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:25:23-70
+		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:21:27-74
+activity#lnmiit.college.counsellingapp.mn.crawler.rview.activity_answer
+ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:24:9-70
+	android:name
+		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:24:19-67
+activity#lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity
+ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:25:9-29:20
+	android:theme
+		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:27:13-56
+	android:name
+		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:26:13-58
 meta-data#preloaded_fonts
-ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:29:9-31:57
+ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:31:9-33:57
 	android:resource
-		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:31:13-54
+		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:33:13-54
 	android:name
-		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:30:13-43
+		ADDED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:32:13-43
 uses-sdk
 INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml

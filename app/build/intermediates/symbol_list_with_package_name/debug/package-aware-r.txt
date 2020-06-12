@@ -1512,14 +1512,11 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
-id Login
 id META
-id Password
 id SHIFT
 id SYM
 id TOP_END
 id TOP_START
-id Username
 id about
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -1597,7 +1594,6 @@ id btn_anonymous
 id btn_reveal_identinty
 id btnaddtocontacts
 id btnview
-id button
 id buttonPanel
 id cancel_button
 id cbfootball
@@ -1612,6 +1608,7 @@ id checkbox
 id checked
 id chip
 id chip_group
+id choiceLinearLayout
 id chronometer
 id clear_text
 id clip_horizontal
@@ -1648,6 +1645,10 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id facultyLinearLayout
+id facultyLogin
+id facultyPassword
+id facultyUsername
 id facultyimage
 id facultyrecyclerview
 id fade
@@ -1675,7 +1676,6 @@ id icon_only
 id ifRoom
 id image
 id imageButton
-id imageButton2
 id info
 id invisible
 id italic
@@ -1689,6 +1689,8 @@ id line1
 id line3
 id listMode
 id list_item
+id loginAsFaculty
+id loginAsStudent
 id logout
 id mainframehandler
 id masked
@@ -1739,6 +1741,7 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
+id password
 id password_toggle
 id peekHeight
 id percent
@@ -1782,6 +1785,9 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id signin
+id signup
+id signupLayout
 id skipCollapsed
 id slide
 id smallLabel
@@ -1799,6 +1805,10 @@ id src_over
 id standard
 id start
 id stretch
+id studentLinearLayout
+id studentLogin
+id studentPassword
+id studentUsername
 id submenuarrow
 id submit
 id submit_area
@@ -1849,11 +1859,13 @@ id txtfacultyname
 id txtproblem
 id txtsolution
 id txttags
+id type
 id unchecked
 id uniform
 id unlabeled
 id up
 id useLogo
+id username
 id view_offset_helper
 id viewpager
 id visible

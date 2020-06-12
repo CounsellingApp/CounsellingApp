@@ -18,7 +18,7 @@
 12-->[com.google.firebase:firebase-firestore:17.1.2] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\83b2503e20455193f586e576b9414523\jetified-firebase-firestore-17.1.2\AndroidManifest.xml:11:22-64
 13
 14    <application
-14-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:5:5-32:19
+14-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:5:5-34:19
 15        android:name="androidx.multidex.MultiDexApplication"
 16        android:allowBackup="true"
 16-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:6:9-35
@@ -43,100 +43,101 @@
 26-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:14:9-16:20
 26-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:14:19-56
 27        </activity>
-28        <activity android:name="lnmiit.college.counsellingapp.LoginActivity" />
-28-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:17:9-51
+28        <activity android:name="lnmiit.college.counsellingapp.LoginActivity" >
+28-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:17:9-23:20
 28-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:17:19-48
-29        <activity android:name="lnmiit.college.counsellingapp.mn.crawler.rview.activity_answer" />
-29-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:18:9-70
-29-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:18:19-67
-30        <activity
-30-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:19:9-27:20
-31            android:name="lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity"
-31-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:20:13-58
-32            android:theme="@style/AppTheme.NoActionBar" >
-32-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:21:13-56
-33            <intent-filter>
-33-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:22:9-26:25
-34                <action android:name="android.intent.action.MAIN" />
-34-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:23:13-65
-34-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:23:21-62
-35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:25:13-73
-36-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:25:23-70
-37            </intent-filter>
-38        </activity>
-39
-40        <meta-data
-40-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:29:9-31:57
-41            android:name="preloaded_fonts"
-41-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:30:13-43
-42            android:resource="@array/preloaded_fonts" />
-42-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:31:13-54
-43
-44        <activity
-44-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:24:9-31:50
-45            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-45-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:25:13-85
-46            android:excludeFromRecents="true"
-46-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:26:13-46
-47            android:exported="true"
-47-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:27:13-36
-48            android:launchMode="singleTask"
-48-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:28:13-44
-49            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-49-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:29:13-102
-50            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-50-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:30:13-72
-51
-52        <service
-52-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:33:9-39:19
-53            android:name="com.google.firebase.components.ComponentDiscoveryService"
-53-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:34:13-84
-54            android:directBootAware="true"
-54-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
-55            android:exported="false" >
-55-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:35:13-37
-56            <meta-data
-56-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:36:13-38:85
-57                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-57-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:37:17-109
-58                android:value="com.google.firebase.components.ComponentRegistrar" />
-58-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:38:17-82
-59            <meta-data
-59-->[com.google.firebase:firebase-firestore:17.1.2] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\83b2503e20455193f586e576b9414523\jetified-firebase-firestore-17.1.2\AndroidManifest.xml:15:13-17:85
-60                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-60-->[com.google.firebase:firebase-firestore:17.1.2] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\83b2503e20455193f586e576b9414523\jetified-firebase-firestore-17.1.2\AndroidManifest.xml:16:17-111
-61                android:value="com.google.firebase.components.ComponentRegistrar" />
-61-->[com.google.firebase:firebase-firestore:17.1.2] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\83b2503e20455193f586e576b9414523\jetified-firebase-firestore-17.1.2\AndroidManifest.xml:17:17-82
-62        </service>
-63
-64        <activity
-64-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
-65            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-65-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
-66            android:exported="false"
-66-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
-67            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-67-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
-68
-69        <provider
-69-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
-70            android:name="com.google.firebase.provider.FirebaseInitProvider"
-70-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
-71            android:authorities="lnmiit.college.counsellingapp.firebaseinitprovider"
-71-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
-72            android:exported="false"
-72-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
-73            android:initOrder="100" />
-73-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
-74
-75        <meta-data
-75-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\164bb505b81f338baa0db13edd04c1d1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-76            android:name="com.google.android.gms.version"
-76-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\164bb505b81f338baa0db13edd04c1d1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-77            android:value="@integer/google_play_services_version" />
-77-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\164bb505b81f338baa0db13edd04c1d1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-78    </application>
-79
-80</manifest>
+29            <intent-filter>
+29-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:18:13-22:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:19:17-69
+30-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:19:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:21:17-77
+32-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:21:27-74
+33            </intent-filter>
+34        </activity>
+35        <activity android:name="lnmiit.college.counsellingapp.mn.crawler.rview.activity_answer" />
+35-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:24:9-70
+35-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:24:19-67
+36        <activity
+36-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:25:9-29:20
+37            android:name="lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity"
+37-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:26:13-58
+38            android:theme="@style/AppTheme.NoActionBar" >
+38-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:27:13-56
+39        </activity>
+40
+41        <meta-data
+41-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:31:9-33:57
+42            android:name="preloaded_fonts"
+42-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:32:13-43
+43            android:resource="@array/preloaded_fonts" />
+43-->C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\src\main\AndroidManifest.xml:33:13-54
+44
+45        <activity
+45-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:24:9-31:50
+46            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+46-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:25:13-85
+47            android:excludeFromRecents="true"
+47-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:26:13-46
+48            android:exported="true"
+48-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:27:13-36
+49            android:launchMode="singleTask"
+49-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:28:13-44
+50            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+50-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:29:13-102
+51            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+51-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:30:13-72
+52
+53        <service
+53-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:33:9-39:19
+54            android:name="com.google.firebase.components.ComponentDiscoveryService"
+54-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:34:13-84
+55            android:directBootAware="true"
+55-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+56            android:exported="false" >
+56-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:35:13-37
+57            <meta-data
+57-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:36:13-38:85
+58                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+58-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:37:17-109
+59                android:value="com.google.firebase.components.ComponentRegistrar" />
+59-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\firebase-auth-19.3.1\AndroidManifest.xml:38:17-82
+60            <meta-data
+60-->[com.google.firebase:firebase-firestore:17.1.2] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\83b2503e20455193f586e576b9414523\jetified-firebase-firestore-17.1.2\AndroidManifest.xml:15:13-17:85
+61                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+61-->[com.google.firebase:firebase-firestore:17.1.2] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\83b2503e20455193f586e576b9414523\jetified-firebase-firestore-17.1.2\AndroidManifest.xml:16:17-111
+62                android:value="com.google.firebase.components.ComponentRegistrar" />
+62-->[com.google.firebase:firebase-firestore:17.1.2] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\83b2503e20455193f586e576b9414523\jetified-firebase-firestore-17.1.2\AndroidManifest.xml:17:17-82
+63        </service>
+64
+65        <activity
+65-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+66            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+66-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+67            android:exported="false"
+67-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+68            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+68-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+69
+70        <provider
+70-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+71            android:name="com.google.firebase.provider.FirebaseInitProvider"
+71-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+72            android:authorities="lnmiit.college.counsellingapp.firebaseinitprovider"
+72-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+73            android:exported="false"
+73-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+74            android:initOrder="100" />
+74-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+75
+76        <meta-data
+76-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\164bb505b81f338baa0db13edd04c1d1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+77            android:name="com.google.android.gms.version"
+77-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\164bb505b81f338baa0db13edd04c1d1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+78            android:value="@integer/google_play_services_version" />
+78-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Anubhav goyal\.gradle\caches\transforms-2\files-2.1\164bb505b81f338baa0db13edd04c1d1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+79    </application>
+80
+81</manifest>
