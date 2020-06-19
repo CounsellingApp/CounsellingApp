@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/white"
     tools:context=".LoginActivity"
     android:layout_gravity="center">
+    <ImageView
+        android:id="@+id/welcomeimage"
 
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/amitneogi" />
+
+    <TextView
+        android:id="@+id/welcometext"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/work_sans_semibold"
+        android:text="Welcome to the Community"
+        android:textColor="#1e1c61"
+        android:textSize="24sp" />
     <LinearLayout
         android:visibility="gone"
         android:id="@+id/studentLinearLayout"
@@ -15,10 +40,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_gravity="center_horizontal|center_vertical">
 
         <EditText
             android:id="@+id/studentUsername"
@@ -34,9 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="password"
-
-            />
+            android:hint="password" />
 
         <ImageButton
             android:id="@+id/studentLogin"
@@ -53,10 +73,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_gravity="center_vertical|center_horizontal">
 
         <EditText
             android:id="@+id/facultyUsername"
@@ -72,9 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="password"
-
-            />
+            android:hint="password" />
 
         <ImageButton
             android:id="@+id/facultyLogin"
@@ -84,39 +99,49 @@
             android:backgroundTint="@color/white"
             app:srcCompat="@drawable/loginbutton" />
     </LinearLayout>
+
     <LinearLayout
 
         android:id="@+id/choiceLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <ImageButton
-            android:id="@+id/signup"
-            android:layout_marginTop="50dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/loginbutton" />
+        >
+
         <ImageButton
             android:id="@+id/loginAsStudent"
-            android:layout_marginTop="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/loginbutton" />
+            app:srcCompat="@drawable/loginasstudent" />
+
         <ImageButton
             android:id="@+id/loginAsFaculty"
-            android:layout_marginTop="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
             app:srcCompat="@drawable/loginbutton" />
+
+        <TextView
+            android:id="@+id/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/work_sans_medium"
+            android:text="New here? Sign Up"
+            android:textColor="#1e1c61"
+            android:textSize="16sp" />
     </LinearLayout>
+
     <LinearLayout
         android:visibility="gone"
         android:id="@+id/signupLayout"
@@ -167,4 +192,6 @@
     </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

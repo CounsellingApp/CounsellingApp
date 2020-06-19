@@ -38,6 +38,7 @@ import lnmiit.college.counsellingapp.AnsweredQuestion;
 import lnmiit.college.counsellingapp.AskQuestion;
 import lnmiit.college.counsellingapp.R;
 import lnmiit.college.counsellingapp.UnansweredQuestion;
+import lnmiit.college.counsellingapp.Useremail;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     private FirebaseFirestore ff;
-    private double type;
+    private Double type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,29 +85,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.mainframehandler, new MainScreenViewPager());
+        if(Useremail.isfaculty) {
+            fragmentTransaction.add(R.id.mainframehandler, new MainScreenViewPager());
+        }
+        else{
+            fragmentTransaction.add(R.id.mainframehandler, new mainFragment());
+        }
         fragmentTransaction.commit();
-        bottomNavigationView=findViewById(R.id.bottomnavview);
-        bottomNavigationView.setOnNavigationItemSelectedListener(navListner);
-        if(type==1){
-            bottomNavigationView.setVisibility(View.VISIBLE);
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainframehandler,new UnansweredQuestion()).commit();
-        }
-
+//        bottomNavigationView=findViewById(R.id.bottomnavview);
+//        bottomNavigationView.setOnNavigationItemSelectedListener(navListner);
+//        if(type==1){
+//            bottomNavigationView.setVisibility(View.VISIBLE);
+//            getSupportFragmentManager().beginTransaction().replace(R.id.mainframehandler,new UnansweredQuestion()).commit();
+//        }
+//
+//    }
+//    private BottomNavigationView.OnNavigationItemSelectedListener navListner=  new BottomNavigationView.OnNavigationItemSelectedListener() {
+//        @Override
+//        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+//            Fragment selectedFragment=null;
+//            switch(menuItem.getItemId()){
+//                case R.id.unansweredQuestion:selectedFragment=new UnansweredQuestion();break;
+//                case R.id.answeredQuestion:selectedFragment=new AnsweredQuestion();break;
+//            }
+//            getSupportFragmentManager().beginTransaction().replace(R.id.mainframehandler,selectedFragment).commit();
+//            return true;
+//        }
+//
     }
-    private BottomNavigationView.OnNavigationItemSelectedListener navListner=  new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-            Fragment selectedFragment=null;
-            switch(menuItem.getItemId()){
-                case R.id.unansweredQuestion:selectedFragment=new UnansweredQuestion();break;
-                case R.id.answeredQuestion:selectedFragment=new AnsweredQuestion();break;
-            }
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainframehandler,selectedFragment).commit();
-            return true;
-        }
-
-    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -180,3 +186,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return  true;
     }
 }
+

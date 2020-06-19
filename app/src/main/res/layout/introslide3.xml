@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center_horizontal"
             android:id="@+id/lgn"
-            app:srcCompat="@drawable/loginbutton"
+            app:srcCompat="@drawable/getstarted"
             android:backgroundTint="@color/white"
             android:layout_height="0dp"
             android:layout_weight="1"/>

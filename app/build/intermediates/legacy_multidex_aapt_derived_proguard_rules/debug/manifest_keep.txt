@@ -1,4 +1,4 @@
-# Referenced at C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:14
+# Referenced at G:\CWPHAPP_REPO\CounsellingApp\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:14
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
-# Referenced at C:\Users\Anubhav goyal\AndroidStudioProjects\CounsellingApp\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:14
+# Referenced at G:\CWPHAPP_REPO\CounsellingApp\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:14
 -keep class androidx.multidex.MultiDexApplication { <init>(); }

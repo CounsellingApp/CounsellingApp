@@ -28,17 +28,16 @@ import lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity;
 public class AskQuestion extends AppCompatActivity {
     private EditText quesion;
     //String userid=null;
-    RadioGroup radioGroup;
-    RadioButton radioButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ask_question);
         quesion=findViewById(R.id.question);
         Button button=findViewById(R.id.submit);
-        radioGroup = findViewById(R.id.radio1);
-        final int radioid = radioGroup.getCheckedRadioButtonId();
-        radioButton = findViewById(radioid);
+
+
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,9 +47,9 @@ public class AskQuestion extends AppCompatActivity {
                 Map<String,String>faculty_answer=new HashMap<>();
                 UUID r= UUID.randomUUID();
                 Map<String,Object> map=new HashMap<>();
-                map.put("question_id",r);
+                map.put("question_id",r.toString());
                 map.put("question",quesion.getText().toString());
-                map.put("asked_by",radioButton.getText().toString());
+                map.put("asked_by",getIntent().getStringExtra("privacy"));
                 map.put("faculty_answers",faculty_answer);
                 map.put("tag","tag");
                 map.put("date",date);

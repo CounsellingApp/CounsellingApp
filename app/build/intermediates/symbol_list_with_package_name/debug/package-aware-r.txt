@@ -1444,6 +1444,7 @@ drawable design_snackbar_background
 drawable developers
 drawable download
 drawable filters
+drawable getstarted
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_action_action_search
@@ -1473,6 +1474,7 @@ drawable ic_remove_circle_outline_black_24dp
 drawable ic_settings_black_24dp
 drawable ic_suggestion
 drawable imageswitchernavidot1
+drawable loginasstudent
 drawable loginbutton
 drawable logout
 drawable mic
@@ -1516,6 +1518,7 @@ font abel
 font open_sans
 font open_sans_semibold
 font work_sans_medium
+font work_sans_semibold
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1612,8 +1615,6 @@ id btn_reveal_identinty
 id btnaddtocontacts
 id btnview
 id buttonPanel
-id c1
-id c2
 id cancel_action
 id cancel_button
 id cbfootball
@@ -1717,6 +1718,7 @@ id loginAsFaculty
 id loginAsStudent
 id logout
 id mainframehandler
+id mainlayout
 id mainviewpager
 id masked
 id media_actions
@@ -1779,7 +1781,6 @@ id progress_circular
 id progress_horizontal
 id question
 id radio
-id radio1
 id recview
 id respond
 id right
@@ -1911,6 +1912,8 @@ id username
 id view_offset_helper
 id viewpager
 id visible
+id welcomeimage
+id welcometext
 id wide
 id withText
 id wrap

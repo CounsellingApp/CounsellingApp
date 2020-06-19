@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 import lnmiit.college.counsellingapp.AskQuestion;
 import lnmiit.college.counsellingapp.R;
+import lnmiit.college.counsellingapp.Useremail;
 import mehdi.sakout.fancybuttons.FancyButton;
 
 public class ask_a_question_dialog extends AppCompatDialogFragment {
@@ -38,7 +39,10 @@ public class ask_a_question_dialog extends AppCompatDialogFragment {
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),"Identity will be hidden",Toast.LENGTH_LONG).show();
                 getDialog().dismiss();
-                startActivity(new Intent(v.getContext(), AskQuestion.class));
+                String uname = "Anonymous";
+                Intent intent = new Intent(v.getContext(), AskQuestion.class);
+                intent.putExtra("privacy",uname);
+                startActivity(intent);
             }
         });
         reveal_identity.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +50,10 @@ public class ask_a_question_dialog extends AppCompatDialogFragment {
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),"Identity will be revealed",Toast.LENGTH_LONG).show();
                 getDialog().dismiss();
-                startActivity(new Intent(v.getContext(), AskQuestion.class));
+                String uname = Useremail.email;
+                Intent intent = new Intent(v.getContext(), AskQuestion.class);
+                intent.putExtra("privacy",uname);
+                startActivity(intent);
             }
         });
         return builder.create();

@@ -9,11 +9,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -38,12 +42,14 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mauth;
     private SharedPreferences prefs = null;
-    private ImageButton login_as_student,login_as_faculty,signup,student_login,faculty_login,signin;
+    private ImageButton login_as_student,login_as_faculty,student_login,faculty_login,signin;
+    private TextView signup;
     private LinearLayout student_layout,faculty_layout,signup_layout,choice_layout;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     private FirebaseFirestore ff;
-
+    private ImageView welcomeimage;
+    private TextView welcometext;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +59,9 @@ public class LoginActivity extends AppCompatActivity {
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
         mauth=FirebaseAuth.getInstance();
+
+        welcomeimage = findViewById(R.id.welcomeimage);
+        welcometext = findViewById(R.id.welcometext);
 
         choice_layout=findViewById(R.id.choiceLinearLayout);
         signup_layout=findViewById(R.id.signupLayout);
@@ -80,7 +89,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 student_layout.setVisibility(View.VISIBLE);
+//                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//                params.gravity = Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL;
+//                params.topMargin = 500;
+//                params.bottomMargin=200;
+                //student_layout.setLayoutParams(params);
                 choice_layout.setVisibility(View.GONE);
+                welcomeimage.setVisibility(View.GONE);
+                welcometext.setVisibility(View.GONE);
+
             }
         });
         login_as_faculty.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +105,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 faculty_layout.setVisibility(View.VISIBLE);
                 choice_layout.setVisibility(View.GONE);
+                welcomeimage.setVisibility(View.GONE);
+                welcometext.setVisibility(View.GONE);
             }
         });
         signup.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +114,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 signup_layout.setVisibility(View.VISIBLE);
                 choice_layout.setVisibility(View.GONE);
+                welcomeimage.setVisibility(View.GONE);
+                welcometext.setVisibility(View.GONE);
             }
         });
         prefs = getSharedPreferences("lnmiit.college.counsellingapp",MODE_PRIVATE);
@@ -108,7 +129,8 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "signin successful", LENGTH_LONG).show();
-                            Useremail.email = username.getText().toString();
+                            Useremail.email = student_username.getText().toString();
+                            Useremail.isfaculty=false;
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             progressDialog.dismiss();
@@ -138,6 +160,8 @@ public class LoginActivity extends AppCompatActivity {
                                     Double type= queryDocumentSnapshot.getDouble("type");
                                     if(type==1){
                                         Toast.makeText(LoginActivity.this, "signin successful", LENGTH_LONG).show();
+                                        Useremail.email= faculty_username.getText().toString();
+                                        Useremail.isfaculty=true;
                                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                         startActivity(intent);
                                         progressDialog.dismiss();
@@ -198,6 +222,24 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
             prefs.edit().putBoolean("firstrun",false).commit();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(choice_layout.getVisibility()==View.GONE)
+
+        {
+            choice_layout.setVisibility(View.VISIBLE);
+            welcomeimage.setVisibility(View.VISIBLE);
+            welcometext.setVisibility(View.VISIBLE);
+            student_layout.setVisibility(View.GONE);
+            faculty_layout.setVisibility(View.GONE);
+            signup_layout.setVisibility(View.GONE);
+        }
+        else
+        {
+            super.onBackPressed();
         }
     }
 }
