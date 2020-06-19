@@ -29,17 +29,19 @@
                 android:value=".mn.crawler.rview.MainActivity" />
         </activity>
         <activity android:name="lnmiit.college.counsellingapp.AskQuestion" />
-        <activity android:name="lnmiit.college.counsellingapp.Introduction_Activity" />
-        <activity android:name="lnmiit.college.counsellingapp.LoginActivity" />
-        <activity android:name="lnmiit.college.counsellingapp.mn.crawler.rview.activity_answer" />
-        <activity
-            android:name="lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+        <activity android:name="lnmiit.college.counsellingapp.Introduction_Activity" >
+        </activity>
+        <activity android:name="lnmiit.college.counsellingapp.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="lnmiit.college.counsellingapp.mn.crawler.rview.activity_answer" />
+        <activity
+            android:name="lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
 
         <meta-data

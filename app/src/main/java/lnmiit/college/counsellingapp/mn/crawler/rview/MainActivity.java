@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,13 +22,22 @@ import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.util.ArrayList;
 
+import lnmiit.college.counsellingapp.AnsweredQuestion;
 import lnmiit.college.counsellingapp.AskQuestion;
 import lnmiit.college.counsellingapp.R;
+import lnmiit.college.counsellingapp.UnansweredQuestion;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -37,10 +47,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+    private BottomNavigationView bottomNavigationView;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
+    private FirebaseFirestore ff;
+    private double type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ff=FirebaseFirestore.getInstance();
+        firebaseAuth=FirebaseAuth.getInstance();
+        firebaseUser=firebaseAuth.getCurrentUser();
+        ff.collection("users").document(firebaseUser.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                DocumentSnapshot queryDocumentSnapshot=task.getResult();
+                 type= queryDocumentSnapshot.getDouble("type");
+            }
+        });
         setTitle("Home");
         toolbar = findViewById(R.id.toolbar);
         drawerLayout = findViewById(R.id.drawer);
@@ -60,11 +85,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.mainframehandler, new MainScreenViewPager());
-
         fragmentTransaction.commit();
-
+        bottomNavigationView=findViewById(R.id.bottomnavview);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navListner);
+        if(type==1){
+            bottomNavigationView.setVisibility(View.VISIBLE);
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainframehandler,new UnansweredQuestion()).commit();
+        }
 
     }
+    private BottomNavigationView.OnNavigationItemSelectedListener navListner=  new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            Fragment selectedFragment=null;
+            switch(menuItem.getItemId()){
+                case R.id.unansweredQuestion:selectedFragment=new UnansweredQuestion();break;
+                case R.id.answeredQuestion:selectedFragment=new AnsweredQuestion();break;
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainframehandler,selectedFragment).commit();
+            return true;
+        }
+
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

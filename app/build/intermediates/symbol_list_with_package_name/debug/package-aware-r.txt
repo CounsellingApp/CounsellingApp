@@ -1589,6 +1589,7 @@ id adjust_width
 id alertTitle
 id all
 id always
+id answeredQuestion
 id answers_date
 id answers_facultyimage
 id answers_facultyname
@@ -1600,6 +1601,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id bottomnavview
 id btn_anonymous
 id btn_delete_response_icon
 id btn_delete_response_no
@@ -1610,6 +1612,8 @@ id btn_reveal_identinty
 id btnaddtocontacts
 id btnview
 id buttonPanel
+id c1
+id c2
 id cancel_action
 id cancel_button
 id cbfootball
@@ -1775,6 +1779,7 @@ id progress_circular
 id progress_horizontal
 id question
 id radio
+id radio1
 id recview
 id respond
 id right
@@ -1894,6 +1899,8 @@ id txtunansweredauthor
 id txtunansweredquestion
 id txtunansweredtags
 id type
+id unansweredQuestion
+id unansweredQuestionrecycler
 id unansweredrecview
 id unchecked
 id uniform
@@ -1999,8 +2006,10 @@ layout dialog_filter
 layout drawer_header
 layout drawer_toolbar
 layout facultyrecview
+layout fragment_answered_question
 layout fragment_main_screen_view_pager
 layout fragment_respond
+layout fragment_unanswered_question
 layout introslide1
 layout introslide2
 layout introslide3
@@ -2069,6 +2078,7 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 layout unanswered_recyclerview_item
+menu bottommenu
 menu my_menu
 menu navigationmenu
 mipmap ic_launcher

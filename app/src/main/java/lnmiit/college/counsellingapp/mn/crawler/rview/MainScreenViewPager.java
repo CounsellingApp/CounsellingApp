@@ -29,6 +29,7 @@ public class MainScreenViewPager extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main_screen_view_pager, container, false);
         tabLayout = view.findViewById(R.id.tablayout);
+
         mainviewpager = view.findViewById(R.id.mainviewpager);
         feed = view.findViewById(R.id.feed);
         respond = view.findViewById(R.id.respond);

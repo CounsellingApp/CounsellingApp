@@ -6,6 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".AskQuestion">
 
+
+    <LinearLayout
+        android:layout_width="266dp"
+        android:layout_height="130dp"
+        app:layout_constraintBottom_toTopOf="@+id/question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268">
+
+        <RadioGroup
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintBottom_toTopOf="@+id/question"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/c1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Ask Anonymous"
+                android:textSize="25sp" />
+
+            <RadioButton
+                android:id="@+id/c2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Ask publicaly"
+                android:textSize="25sp" />
+        </RadioGroup>
+    </LinearLayout>
+
     <EditText
         android:id="@+id/question"
         android:layout_width="match_parent"
@@ -19,7 +58,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.62" />
 
     <Button

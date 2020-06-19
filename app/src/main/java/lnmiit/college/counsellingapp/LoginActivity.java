@@ -135,8 +135,8 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                     DocumentSnapshot queryDocumentSnapshot=task.getResult();
-                                    String type= queryDocumentSnapshot.getString("type");
-                                    if(type=="faculty"){
+                                    Double type= queryDocumentSnapshot.getDouble("type");
+                                    if(type==1){
                                         Toast.makeText(LoginActivity.this, "signin successful", LENGTH_LONG).show();
                                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                         startActivity(intent);
@@ -168,7 +168,13 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Map<String,Object>map=new HashMap<>();
-                            map.put("type",type.getText().toString());
+                            if(type.getText().toString().equals("faculty")){
+                                map.put("type",1);
+                            }
+                            else{
+                                map.put("type",2);
+                            }
+
                             ff.collection("users").document(firebaseUser.getUid()).set(map);
                             Toast.makeText(LoginActivity.this,"done", LENGTH_SHORT).show();
                         }
