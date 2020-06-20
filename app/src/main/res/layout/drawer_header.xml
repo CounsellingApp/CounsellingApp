@@ -19,7 +19,7 @@
         android:textSize="23sp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/navigationdrawername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

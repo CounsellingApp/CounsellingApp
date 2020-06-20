@@ -1502,6 +1502,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable personimage
 drawable profile
 drawable rahulbanerjee
 drawable right
@@ -1755,6 +1756,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
 id navigation_header_container
+id navigationdrawername
 id navigationview
 id never
 id noScroll
@@ -1868,7 +1870,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
-id textView2
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter

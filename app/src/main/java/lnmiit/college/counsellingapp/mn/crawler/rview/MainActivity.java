@@ -20,9 +20,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -34,8 +36,10 @@ import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import lnmiit.college.counsellingapp.AnsweredQuestion;
 import lnmiit.college.counsellingapp.AskQuestion;
+import lnmiit.college.counsellingapp.LoginActivity;
 import lnmiit.college.counsellingapp.R;
 import lnmiit.college.counsellingapp.UnansweredQuestion;
 import lnmiit.college.counsellingapp.Useremail;
@@ -53,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FirebaseUser firebaseUser;
     private FirebaseFirestore ff;
     private Double type;
+    private TextView navigationheadertitle;
+    private CircleImageView profileimage;
+    private MenuItem askmenuitem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,9 +69,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         firebaseUser=firebaseAuth.getCurrentUser();
         ff.collection("users").document(firebaseUser.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                DocumentSnapshot queryDocumentSnapshot=task.getResult();
-                 type= queryDocumentSnapshot.getDouble("type");
+            public void onComplete(@NonNull final Task<DocumentSnapshot> task) {
+                task.addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        DocumentSnapshot queryDocumentSnapshot=task.getResult();
+                        type= queryDocumentSnapshot.getDouble("type");
+                    }
+                });
+
             }
         });
         setTitle("Home");
@@ -92,31 +105,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.add(R.id.mainframehandler, new mainFragment());
         }
         fragmentTransaction.commit();
-//        bottomNavigationView=findViewById(R.id.bottomnavview);
-//        bottomNavigationView.setOnNavigationItemSelectedListener(navListner);
-//        if(type==1){
-//            bottomNavigationView.setVisibility(View.VISIBLE);
-//            getSupportFragmentManager().beginTransaction().replace(R.id.mainframehandler,new UnansweredQuestion()).commit();
-//        }
-//
-//    }
-//    private BottomNavigationView.OnNavigationItemSelectedListener navListner=  new BottomNavigationView.OnNavigationItemSelectedListener() {
-//        @Override
-//        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-//            Fragment selectedFragment=null;
-//            switch(menuItem.getItemId()){
-//                case R.id.unansweredQuestion:selectedFragment=new UnansweredQuestion();break;
-//                case R.id.answeredQuestion:selectedFragment=new AnsweredQuestion();break;
-//            }
-//            getSupportFragmentManager().beginTransaction().replace(R.id.mainframehandler,selectedFragment).commit();
-//            return true;
-//        }
-//
+        View heaferview = navigationView.getHeaderView(0);
+        navigationheadertitle = heaferview.findViewById(R.id.navigationdrawername);
+        navigationheadertitle.setText(Useremail.email+"");
+        profileimage = heaferview.findViewById(R.id.profile_image);
+        profileimage.setImageResource(R.drawable.personimage);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
+        askmenuitem = menu.findItem(R.id.askquestion);
+        if(Useremail.isfaculty)
+        {
+            askmenuitem.setVisible(false);
+        }
         return true;
     }
 
@@ -168,6 +172,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
                         finish();
                     }
                 });

@@ -2,6 +2,7 @@ package lnmiit.college.counsellingapp.mn.crawler.rview;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,17 +31,13 @@ public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<Unanswer
 
     private Activity context;
     private FragmentManager fragmentManager;
-    private String[] unanswerequestions = {"When will the coronavirus vaccine be developed and commercialized?"
-                                            ,"Do you think Zidane should sign Haaland instead of Mbappe?","How to increase CGPA without studying at all?"};
-    private String[] unansweredauthors = {"Anonymouys","Lakshay","Ishaan"};
-    private String[] unansweredtags = {"Health","Football","Academix"};
     List<UnansweredQuestionModel> list = new ArrayList<>();
-    public static boolean waselementdeleted = false;
-
+    private FirebaseFirestore ff;
 
     public UnansweredRecyclerViewAdapter(Activity context, FragmentManager fragmentManager) {
         this.context = context;
         this.fragmentManager = fragmentManager;
+        ff = FirebaseFirestore.getInstance();
     }
 
     @NonNull
@@ -47,8 +45,6 @@ public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<Unanswer
     public UnansweredRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflator = LayoutInflater.from(parent.getContext());
         View view = inflator.inflate(R.layout.unanswered_recyclerview_item,parent,false);
-
-
         return new UnansweredRecyclerViewHolder(view);
     }
 
@@ -59,9 +55,6 @@ public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<Unanswer
             holder.getMainlayout().setVisibility(View.GONE);
         }
         else {
-
-
-            Log.i("AdapterSearch", list.get(position).getAsked_by());
             holder.getTxtunansweredatgs().setText("Tags : ");
             holder.getTxtunansweredquestion().setText(list.get(position).getQuestion());
             holder.getTxtunansweredauthor().setText(list.get(position).getAsked_by());
@@ -79,13 +72,13 @@ public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<Unanswer
             holder.getBtn_delete_response_icon().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Delete_Response_Dialog delete_response_dialog = new Delete_Response_Dialog();
-                    Bundle bundle = new Bundle();
-                    bundle.putString("questionid",list.get(position).getQuestion_id());
-                    bundle.putInt("position",position);
-                    delete_response_dialog.setArguments(bundle);
-                    delete_response_dialog.setOnInputSelected(UnansweredRecyclerViewAdapter.this);
-                    delete_response_dialog.show(fragmentManager, "del");
+                Delete_Response_Dialog delete_response_dialog = new Delete_Response_Dialog();
+                delete_response_dialog.setOnInputSelected(UnansweredRecyclerViewAdapter.this);
+                Bundle bundle = new Bundle();
+                bundle.putString("did",list.get(holder.getAdapterPosition()).getQuestion_id());
+                bundle.putInt("position",holder.getAdapterPosition());
+                delete_response_dialog.setArguments(bundle);
+                delete_response_dialog.show(fragmentManager,"tag");
                 }
             });
         }
@@ -107,12 +100,14 @@ public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<Unanswer
     public void sendInput(boolean wasquestiondeleted, int position) {
         if(wasquestiondeleted)
         {
-            if(list.size()!=0) {
+            if(list.size()>-1) {
                 list.remove(position);
-//                notifyItemRemoved(position);
-//                notifyItemRangeChanged(position, getItemCount());
-                notifyDataSetChanged();
+                notifyItemRemoved(position);
+                notifyItemRangeChanged(position, getItemCount());
+                list.remove(list.size()-1);
+                notifyItemRemoved(list.size()-1);
             }
         }
     }
+
 }

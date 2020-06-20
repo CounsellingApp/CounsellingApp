@@ -33,6 +33,11 @@ public class Delete_Response_Dialog extends AppCompatDialogFragment {
     private FancyButton delete_response_yes, delete_response_no;
     private TextView dialogtext;
     private FirebaseFirestore ff;
+    private UnansweredRecyclerViewAdapter adapter;
+    public Delete_Response_Dialog() {
+        ff = FirebaseFirestore.getInstance();
+    }
+
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -48,15 +53,15 @@ public class Delete_Response_Dialog extends AppCompatDialogFragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),"Question will be deleted permanently",Toast.LENGTH_LONG).show();
-                ff = FirebaseFirestore.getInstance();
-                ff.collection("Questions").document(bundle.getString("questionid")).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                ff.collection("Questions").document(bundle.getString("did")).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        //Toast.makeText(getContext(),"The question has been succesfully deleted",Toast.LENGTH_LONG).show();
+                        minputselected.sendInput(true,bundle.getInt("position"));
+
+                        getDialog().dismiss();
                     }
                 });
-                minputselected.sendInput(true,bundle.getInt("position"));
-                getDialog().dismiss();
+
             }
         });
         delete_response_no.setOnClickListener(new View.OnClickListener() {
