@@ -28,12 +28,12 @@
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_settings_black_24dp.xml.flat",
-        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_settings_black_24dp.xml"
-    },
-    {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_settings_black_24dp.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_settings_black_24dp.xml"
     },
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_unanswered_question.xml.flat",
@@ -44,12 +44,12 @@
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\profile.jpg"
     },
     {
-        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
-    },
-    {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_filter.xml.flat",
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\dialog_filter.xml"
+    },
+    {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_ask_a_question_dialog.xml.flat",
@@ -126,6 +126,10 @@
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imagelogin.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\imagelogin.xml"
     },
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_about_fragment.xml.flat",
@@ -218,6 +222,10 @@
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ruchirsodhani.jpg.flat",
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ruchirsodhani.jpg"
+    },
+    {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_facultylogin.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\facultylogin.xml"
     },
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rahulbanerjee.jpg.flat",
