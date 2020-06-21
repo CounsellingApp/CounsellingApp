@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ff=FirebaseFirestore.getInstance();
         firebaseAuth=FirebaseAuth.getInstance();
-        firebaseUser=firebaseAuth.getCurrentUser();
+
         mauth=FirebaseAuth.getInstance();
 
         welcomeimage = findViewById(R.id.welcomeimage);
@@ -153,6 +153,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            firebaseUser=firebaseAuth.getCurrentUser();
                             ff.collection("users").document(firebaseUser.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -198,7 +199,7 @@ public class LoginActivity extends AppCompatActivity {
                             else{
                                 map.put("type",2);
                             }
-
+                            firebaseUser=firebaseAuth.getCurrentUser();
                             ff.collection("users").document(firebaseUser.getUid()).set(map);
                             Toast.makeText(LoginActivity.this,"done", LENGTH_SHORT).show();
                         }

@@ -48,7 +48,7 @@ public class RespondFragment extends Fragment {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                 if (e == null) {
-                    int count=0;
+
                     for (DocumentChange documentChange : queryDocumentSnapshots.getDocumentChanges()) {
                         UnansweredQuestionModel ourWorkModel = documentChange.getDocument().toObject(UnansweredQuestionModel.class);
                         list.add(ourWorkModel);

@@ -10,8 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import lnmiit.college.counsellingapp.R;
+import lnmiit.college.counsellingapp.UnansweredQuestionModel;
 
 public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellingapp.mn.crawler.rview.viewholder> {
 
@@ -20,7 +23,7 @@ public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellin
     String [] tags = {"General","General","General","Music Production","Football","Football"};
     ArrayList<String> answers = new ArrayList<String>();
     private boolean answers_visible = false;
-
+    List<UnansweredQuestionModel> mainlist = new ArrayList<>();
     private Context context;
     public rviewadapter(Context context)
     {
@@ -38,24 +41,23 @@ public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellin
 
     @Override
     public void onBindViewHolder(@NonNull final lnmiit.college.counsellingapp.mn.crawler.rview.viewholder holder, final int position) {
-        holder.getTxtquestion().setText(questions[position]);
-        holder.getTxtauthor().setText("By- "+authors[position]);
-        holder.getTxttags().setText(""+tags[position]);
-//        answers.add("I am doing just fine");
-////        answers.add("I am building an application at the momment");
-////        answers.add("I am having trouble deciding the layout of applications");
-////        answers.add("Serum, there's no doubt about that");
-////        answers.add("No, Ronaldo is my personal favorite");
-////        answers.add("Well, let's hope, fingers crossed");
-        holder.getAnswers_rec_view().setAdapter(new Answers_adapter(position));
+        holder.getTxtquestion().setText(mainlist.get(position).getQuestion());
+        holder.getTxtauthor().setText("By- "+mainlist.get(position).getAsked_by());
+        holder.getTxttags().setText(""+mainlist.get(position).getTag());
+        Answers_adapter adapter = new Answers_adapter(position);
+        Map<String,String> mymap = mainlist.get(position).getFaculty_answers();
+        List<AnswerModel> answerslist = new ArrayList<>();
+        for(Map.Entry<String,String> entry : mymap.entrySet() )
+        {
+            answerslist.add(new AnswerModel(entry.getKey(),entry.getValue(),entry.getKey()+".png"));
+        }
+        adapter.Setmainlist(answerslist);
+        holder.getAnswers_rec_view().setAdapter(adapter);
         holder.getAnswers_rec_view().setLayoutManager(new LinearLayoutManager(context));
         holder.getBtnview().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(v.getContext(),activity_answer.class);
-//                intent.putExtra("solution",answers.get(position));
-//                intent.putExtra("problem",questions[position]);
-//                v.getContext().startActivity(intent);
+
                 if(answers_visible) {
                     holder.getAnswers_rec_view().setVisibility(View.GONE);
                     answers_visible=false;
@@ -73,6 +75,12 @@ public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellin
 
     @Override
     public int getItemCount() {
-        return questions.length;
+        return mainlist.size();
+    }
+
+    public void Setmainlist(List<UnansweredQuestionModel> mainlist)
+    {
+        this.mainlist = mainlist;
+        notifyDataSetChanged();
     }
 }

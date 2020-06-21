@@ -1,10 +1,12 @@
 package lnmiit.college.counsellingapp.mn.crawler.rview;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -13,9 +15,15 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,6 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -32,9 +41,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.UploadTask;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
+import com.squareup.picasso.Picasso;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+import java.util.UUID;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import lnmiit.college.counsellingapp.AnsweredQuestion;
@@ -60,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView navigationheadertitle;
     private CircleImageView profileimage;
     private MenuItem askmenuitem;
+    private Bitmap bitmap;
+    private String imageIdentifier;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,7 +125,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationheadertitle = heaferview.findViewById(R.id.navigationdrawername);
         navigationheadertitle.setText(Useremail.email+"");
         profileimage = heaferview.findViewById(R.id.profile_image);
-        profileimage.setImageResource(R.drawable.personimage);
+        FirebaseStorage.getInstance().getReference().child("faculty_images").child(Useremail.email+".png").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(profileimage);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                profileimage.setImageResource(R.drawable.personimage);
+            }
+        });
+
+        profileimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chooseImagefromdevice();
+            }
+        });
 
     }
 
@@ -190,6 +223,84 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         return  true;
+    }
+    private void chooseImagefromdevice()
+    {
+        if(Build.VERSION.SDK_INT <23)
+        {
+            Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(intent,1000);
+        }
+        else if ( Build.VERSION.SDK_INT>=23)
+        {
+            if(ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED)
+            {
+                requestPermissions(new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, 1000);
+            }
+            else{
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent,1000);
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode==1000 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+            chooseImagefromdevice();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1000 && resultCode == RESULT_OK && data != null) {
+            Uri chosenImageData = data.getData();
+
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(MainActivity.this.getContentResolver(), chosenImageData);
+                profileimage.setImageBitmap(bitmap);
+                uploadimage();
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
+    private void uploadimage() {
+        if (bitmap != null) {
+            // Get the data from an ImageView as bytes
+            imageIdentifier = Useremail.email + ".png";
+            profileimage.setDrawingCacheEnabled(true);
+            profileimage.buildDrawingCache();
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+            byte[] data = baos.toByteArray();
+
+            UploadTask uploadTask = FirebaseStorage.getInstance().getReference().child("faculty_images").child(imageIdentifier).putBytes(data);
+            uploadTask.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    Toast.makeText(MainActivity.this, exception.getMessage(), Toast.LENGTH_LONG).show();// Handle unsuccessful uploads
+                }
+            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+                    // ...
+                    Toast.makeText(MainActivity.this, "Uploading process was successful", Toast.LENGTH_LONG).show();
+                    taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Uri> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(MainActivity.this,"Upload Succesful",Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+                }
+            });
+        }
     }
 }
 
