@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,11 +23,13 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import lnmiit.college.counsellingapp.R;
 import lnmiit.college.counsellingapp.UnansweredQuestionModel;
+import lnmiit.college.counsellingapp.Useremail;
 
 public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<UnansweredRecyclerViewHolder> implements Delete_Response_Dialog.OnInputSelected {
 
@@ -51,10 +55,9 @@ public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<Unanswer
     @Override
     public void onBindViewHolder(@NonNull final UnansweredRecyclerViewHolder holder, final int position) {
         holder.setMap(list.get(position).getFaculty_answers());
-        if(holder.getMap().containsKey(holder.getFirebaseUser().getUid())){
-            holder.getMainlayout().setVisibility(View.GONE);
+        if(holder.getMap().containsKey(Useremail.email)){
+            holder.getMainlayout().setBackgroundColor(Color.parseColor("#00FF00"));
         }
-        else {
             holder.getTxtunansweredatgs().setText("Tags : ");
             holder.getTxtunansweredquestion().setText(list.get(position).getQuestion());
             holder.getTxtunansweredauthor().setText(list.get(position).getAsked_by());
@@ -66,6 +69,9 @@ public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<Unanswer
                     intent.putExtra("question", holder.getTxtunansweredquestion().getText().toString() + "");
                     intent.putExtra("author", holder.getTxtunansweredauthor().getText().toString() + "");
                     intent.putExtra("tags", holder.getTxtunansweredatgs().getText().toString() + "");
+                    intent.putExtra("questionid",list.get(position).getQuestion_id());
+                    intent.putExtra("faculty_answers", (Serializable) holder.getMap());
+
                     context.startActivity(intent);
                 }
             });
@@ -81,7 +87,7 @@ public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<Unanswer
                 delete_response_dialog.show(fragmentManager,"tag");
                 }
             });
-        }
+
 
     }
 
