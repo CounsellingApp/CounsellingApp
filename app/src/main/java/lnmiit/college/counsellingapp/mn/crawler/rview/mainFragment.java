@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -25,11 +26,13 @@ import java.util.List;
 
 import lnmiit.college.counsellingapp.R;
 import lnmiit.college.counsellingapp.UnansweredQuestionModel;
+import lnmiit.college.counsellingapp.Useremail;
 
 public class mainFragment extends Fragment {
     RecyclerView recview;
     private List<UnansweredQuestionModel> mainlist;
     private FirebaseFirestore ff;
+    private FloatingActionButton fab;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -57,6 +60,12 @@ public class mainFragment extends Fragment {
         });
         recview = v.findViewById(R.id.recview);
         recview.setAdapter(adapter);
+        fab = v.findViewById(R.id.fab);
+        if(Useremail.isfaculty)
+        {
+            fab.setVisibility(View.GONE);
+
+        }
         recview.setLayoutManager(new LinearLayoutManager(getActivity()));
         return v;
     }

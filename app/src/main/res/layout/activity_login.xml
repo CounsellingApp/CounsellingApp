@@ -41,8 +41,9 @@
         android:text="Welcome to the Community"
         android:gravity="center_horizontal"
         android:textColor="#1e1c61"
-        android:textSize="28sp"
-        android:layout_marginLeft="5dp"/>
+        android:textSize="38sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -138,6 +139,10 @@
             app:srcCompat="@drawable/loginasstudent"
             android:visibility="gone"/>
 
+        <com.google.android.gms.common.SignInButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/googlesignin"/>
         <ImageButton
             android:id="@+id/loginAsFaculty"
             android:layout_width="wrap_content"
@@ -157,10 +162,6 @@
             android:text="New here? Sign Up"
             android:textColor="#1e1c61"
             android:textSize="16sp" />
-        <com.google.android.gms.common.SignInButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/googlesignin"/>
     </LinearLayout>
 
     <LinearLayout

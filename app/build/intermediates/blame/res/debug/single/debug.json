@@ -64,6 +64,10 @@
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\font\\abel.xml"
     },
     {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_developersicon.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\developersicon.xml"
+    },
+    {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_drawer_header.xml.flat",
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\drawer_header.xml"
     },
@@ -156,6 +160,10 @@
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_user_1.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\user_1.xml"
+    },
+    {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
@@ -170,6 +178,14 @@
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_introslide2.xml.flat",
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\introslide2.xml"
+    },
+    {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_leftarrow.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\leftarrow.xml"
+    },
+    {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_plus_1.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\plus_1.xml"
     },
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_privacy_of_response_dialog.xml.flat",
@@ -250,6 +266,10 @@
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contacts.xml.flat",
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\contacts.xml"
+    },
+    {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logout_1.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\logout_1.xml"
     },
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_main_screen_view_pager.xml.flat",

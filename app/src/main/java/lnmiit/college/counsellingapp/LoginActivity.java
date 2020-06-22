@@ -259,6 +259,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Useremail.email = account.getEmail();
                                 Useremail.isfaculty = false;
                                 Useremail.photouri = account.getPhotoUrl();
+                                Useremail.username = account.getDisplayName();
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(intent);
                             }

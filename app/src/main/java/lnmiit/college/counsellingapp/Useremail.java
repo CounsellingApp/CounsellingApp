@@ -6,4 +6,5 @@ public class Useremail {
     public static String email = "";
     public static boolean isfaculty;
     public static Uri photouri;
+    public static String username="";
 }

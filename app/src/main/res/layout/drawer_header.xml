@@ -1,42 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="220dp"
-    android:gravity="center_horizontal">
-
-    <TextView
-        android:id="@+id/textView"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="1dp"
-        android:gravity="center_horizontal"
-        android:text="CWPH"
-        android:textSize="23sp" />
+        android:orientation="horizontal">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_marginTop="54dp"
+            android:layout_width="54.7dp"
+            android:layout_height="54.7dp"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/user_1"
 
+            android:layout_marginBottom="54dp"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginTop="44dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp">
+        <TextView
+            android:id="@+id/navigationdrawername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lakshay Bhagtani"
+            android:textSize="20sp"
+            android:fontFamily="@font/open_sans"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/navigationdraweremail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lakshay.bhagtani@gmail.com"
+            android:textSize="18sp"
+            android:fontFamily="@font/open_sans"
+            android:layout_marginTop="5dp"/>
+        </LinearLayout>
+    </LinearLayout> 
     <TextView
-        android:id="@+id/navigationdrawername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="36dp"
-        android:text="Lakshay Bhagtani"
-        android:textSize="20sp" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="70dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/profile"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp" />
-</RelativeLayout>
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="#b36f8ba4"/>
+</LinearLayout>

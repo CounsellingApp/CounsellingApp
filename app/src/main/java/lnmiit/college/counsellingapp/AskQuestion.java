@@ -42,29 +42,33 @@ public class AskQuestion extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                FirebaseFirestore ff= FirebaseFirestore.getInstance();
-                Date date=new Date();
-                Map<String,String>faculty_answer=new HashMap<>();
-                UUID r= UUID.randomUUID();
-                Map<String,Object> map=new HashMap<>();
-                map.put("question_id",r.toString());
-                map.put("question",quesion.getText().toString());
-                map.put("asked_by",getIntent().getStringExtra("privacy"));
-                map.put("faculty_answers",faculty_answer);
-                map.put("tag","tag");
-                map.put("date",date);
-                map.put("userid",Useremail.email);
-                map.put("isanswered",false);
-                ff.collection("Questions").document(String.valueOf(r)).set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(AskQuestion.this, "done", Toast.LENGTH_SHORT).show();
-                            AskQuestion.this.finish();
+                if(!(quesion.getText()+"").equals("")) {
+                    FirebaseFirestore ff = FirebaseFirestore.getInstance();
+                    Date date = new Date();
+                    Map<String, String> faculty_answer = new HashMap<>();
+                    UUID r = UUID.randomUUID();
+                    Map<String, Object> map = new HashMap<>();
+                    map.put("question_id", r.toString());
+                    map.put("question", quesion.getText().toString());
+                    map.put("asked_by", getIntent().getStringExtra("privacy"));
+                    map.put("faculty_answers", faculty_answer);
+                    map.put("tag", "tag");
+                    map.put("date", date);
+                    map.put("userid", Useremail.email);
+                    map.put("isanswered", false);
+                    ff.collection("Questions").document(String.valueOf(r)).set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(AskQuestion.this, "done", Toast.LENGTH_SHORT).show();
+                                AskQuestion.this.finish();
+                            }
                         }
-                    }
-                });
-
+                    });
+                }
+                else {
+                    Toast.makeText(AskQuestion.this,"Please enter a question first",Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

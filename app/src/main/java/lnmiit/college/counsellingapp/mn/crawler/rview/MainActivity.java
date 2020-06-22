@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FirebaseUser firebaseUser;
     private FirebaseFirestore ff;
     private Double type;
-    private TextView navigationheadertitle;
+    private TextView navigationheadertitle, navigationheaderemail;
     private CircleImageView profileimage;
     private MenuItem askmenuitem;
     private Bitmap bitmap;
@@ -124,7 +124,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
         View heaferview = navigationView.getHeaderView(0);
         navigationheadertitle = heaferview.findViewById(R.id.navigationdrawername);
-        navigationheadertitle.setText(Useremail.email+"");
+        navigationheaderemail = heaferview.findViewById(R.id.navigationdraweremail);
+        navigationheadertitle.setText(Useremail.username+"");
+        navigationheaderemail.setText(Useremail.email+"");
         profileimage = heaferview.findViewById(R.id.profile_image);
         if(Useremail.isfaculty) {
             FirebaseStorage.getInstance().getReference().child("faculty_images").child(Useremail.email + ".png").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {

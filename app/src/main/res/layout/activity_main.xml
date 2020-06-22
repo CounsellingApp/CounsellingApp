@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:id="@+id/navigationview"
         app:menu="@menu/navigationmenu"
+        app:itemTextAppearance="@font/open_sans"
         app:headerLayout="@layout/drawer_header"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"/>
@@ -31,13 +32,16 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/mainframehandler">
             </FrameLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="bottom">
+                android:gravity="bottom"
+                android:id="@+id/bottomlinearlayout"
+                android:visibility="gone"
+                >
                 <com.google.android.material.bottomnavigation.BottomNavigationView
                     android:id="@+id/bottomnavview"
                     android:layout_width="match_parent"

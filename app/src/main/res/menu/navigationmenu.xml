@@ -5,18 +5,19 @@
     <group >
         <item android:id="@+id/home"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="Home"/>
+            android:title="HOME"
+            />
         <item android:id="@+id/settings"
             android:icon="@drawable/ic_settings_black_24dp"
-            android:title="Settings"/>
+            android:title="SETTINGS"/>
         <item android:id="@+id/about"
             android:icon="@drawable/ic_healing_black_24dp"
-            android:title="About CWPH"/>
+            android:title="ABOUT CWPH"/>
         <item android:id="@+id/developers"
-            android:icon="@drawable/developers"
-            android:title="Developers"/>
+            android:icon="@drawable/developersicon"
+            android:title="DEVELOPERS"/>
         <item android:id="@+id/logout"
-            android:icon="@drawable/logout"
-            android:title="Logout"/>
+            android:icon="@drawable/logout_1"
+            android:title="LOGOUT"/>
     </group>
 </menu>

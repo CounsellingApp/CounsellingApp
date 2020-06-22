@@ -7,16 +7,21 @@ import androidx.core.app.NavUtils;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -24,9 +29,13 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.gson.Gson;
+import com.varunjohn1990.audio_record_view.AudioRecordView;
+import com.varunjohn1990.audio_record_view.AudioRecordView;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Nullable;
 
@@ -39,6 +48,11 @@ public class Respond_To_A_Question extends AppCompatActivity {
     private Button btn_post_answer;
     private ImageButton btn_record_message;
     private Toolbar toolbar;
+    private LinearLayout postlinearlayout;
+    private LinearLayout mainlinearlayout;
+    private String mypath;
+    private MediaRecorder recorder;
+    private AudioRecordView audioRecordView;
     FirebaseFirestore ff;
     Map<String,String> answersmap;
 
@@ -52,8 +66,12 @@ public class Respond_To_A_Question extends AppCompatActivity {
         txt_reply_tags = findViewById(R.id.txt_reply_tags);
         btn_post_answer = findViewById(R.id.btn_post_answer);
         toolbar = findViewById(R.id.toolbar);
-        ff = FirebaseFirestore.getInstance();
+        mainlinearlayout = findViewById(R.id.mainlinearlayout);
+        postlinearlayout = findViewById(R.id.postlinearlayout);
 
+        ff = FirebaseFirestore.getInstance();
+        mypath = Environment.getExternalStorageDirectory().getAbsolutePath();
+        mypath.concat("/lavi.3gp");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("REPLY");
@@ -105,6 +123,39 @@ public class Respond_To_A_Question extends AppCompatActivity {
                 }
             }
         });
+        audioRecordView = new AudioRecordView();
+        audioRecordView.initView(postlinearlayout);
+        audioRecordView.setAudioRecordButtonImage(R.drawable.mic);
+        audioRecordView.hideAttachmentOptionView();
+        audioRecordView.removeAttachmentOptionAnimation(false);
+        audioRecordView.showAttachmentIcon(false);
+        audioRecordView.showCameraIcon(false);
+        audioRecordView.showEmojiIcon(false);
+        audioRecordView.getMessageView().setVisibility(View.GONE);
+        audioRecordView.getSendView().setVisibility(View.GONE);
+        audioRecordView.setRecordingListener(new AudioRecordView.RecordingListener() {
+            @Override
+            public void onRecordingStarted() {
+                startRecording();
+            }
+
+            @Override
+            public void onRecordingLocked() {
+
+            }
+
+            @Override
+            public void onRecordingCompleted() {
+                audioRecordView.getMessageView().setVisibility(View.GONE);
+                stopRecording();
+            }
+
+            @Override
+            public void onRecordingCanceled() {
+                stopRecording();
+                audioRecordView.getMessageView().setVisibility(View.GONE);
+            }
+        });
 
     }
 
@@ -118,6 +169,34 @@ public class Respond_To_A_Question extends AppCompatActivity {
             default: super.onOptionsItemSelected(item);
         }
         return true;
+    }
+    private void startRecording() {
+        recorder = new MediaRecorder();
+        recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        recorder.setOutputFile(mypath);
+        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+
+        try {
+            recorder.prepare();
+            recorder.start();
+        } catch (IOException e) {
+            Log.i("RecordView", "prepare() failed");
+        }
+
+
+    }
+
+    private void stopRecording() {
+        try {
+            recorder.stop();
+            recorder.release();
+            recorder = null;
+        }
+        catch (Exception e)
+        {
+            Log.i("RecordView", "stop failed");
+        }
     }
 
 }
