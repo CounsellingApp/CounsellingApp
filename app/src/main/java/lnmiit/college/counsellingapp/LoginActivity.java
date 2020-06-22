@@ -1,6 +1,7 @@
 package lnmiit.college.counsellingapp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -9,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +22,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -50,7 +60,8 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseFirestore ff;
     private ImageView welcomeimage;
     private TextView welcometext;
-
+    private SignInButton googlesignInButton;
+    public static GoogleSignInClient googleSignInClient;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
         firebaseAuth=FirebaseAuth.getInstance();
 
         mauth=FirebaseAuth.getInstance();
-
+        googlesignInButton = findViewById(R.id.googlesignin);
         welcomeimage = findViewById(R.id.welcomeimage);
         welcometext = findViewById(R.id.welcometext);
 
@@ -89,11 +100,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 student_layout.setVisibility(View.VISIBLE);
-//                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//                params.gravity = Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL;
-//                params.topMargin = 500;
-//                params.bottomMargin=200;
-                //student_layout.setLayoutParams(params);
+//
                 choice_layout.setVisibility(View.GONE);
                 welcomeimage.setVisibility(View.GONE);
                 welcometext.setVisibility(View.GONE);
@@ -211,8 +218,70 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
+        googleSignInClient = GoogleSignIn.getClient(LoginActivity.this,gso);
+        googlesignInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                googlesinin();
+            }
+        });
+
+    }
 
 
+    public void googlesinin(){
+        Intent googleintent = googleSignInClient.getSignInIntent();
+        startActivityForResult(googleintent,500);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==500)
+        {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                final GoogleSignInAccount googleSignInAccount = task.getResult(ApiException.class);
+                //Toast.makeText(LoginActivity.this,"Signed in succesfully",LENGTH_LONG).show();
+                AuthCredential authCredential = GoogleAuthProvider.getCredential(googleSignInAccount.getIdToken(),null);
+                mauth.signInWithCredential(authCredential).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful())
+                        {
+                            //Toast.makeText(LoginActivity.this,"Firebase Signin success",LENGTH_LONG).show();
+                            firebaseUser = mauth.getCurrentUser();
+                            GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+                            String checkablemail = account.getEmail();
+                            String[] parts = checkablemail.split("@");
+                            if(parts[1].equals("lnmiit.ac.in")) {
+                                Useremail.email = account.getEmail();
+                                Useremail.isfaculty = false;
+                                Useremail.photouri = account.getPhotoUrl();
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(intent);
+                            }
+                            else
+                            {
+                                googleSignInClient.signOut();
+                                Toast.makeText(LoginActivity.this,"Please use your college email address", LENGTH_LONG).show();
+                            }
+
+                        }
+                        else
+                        {
+                            //Toast.makeText(LoginActivity.this,"Firebase Signin failure",LENGTH_LONG).show();
+                        }
+                    }
+                });
+            }
+            catch (ApiException e)
+            {
+                Toast.makeText(LoginActivity.this,e.getMessage(),LENGTH_LONG).show();
+                Log.i("Excaption",e.getMessage());
+            }
+        }
     }
 
     @Override

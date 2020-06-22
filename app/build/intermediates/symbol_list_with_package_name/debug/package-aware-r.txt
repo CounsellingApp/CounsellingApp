@@ -1694,6 +1694,7 @@ id framecontainer
 id ghost_view
 id ghost_view_holder
 id gone
+id googlesignin
 id group_divider
 id groups
 id hideable

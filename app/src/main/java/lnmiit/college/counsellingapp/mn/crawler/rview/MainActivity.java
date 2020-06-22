@@ -31,6 +31,7 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -125,25 +126,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationheadertitle = heaferview.findViewById(R.id.navigationdrawername);
         navigationheadertitle.setText(Useremail.email+"");
         profileimage = heaferview.findViewById(R.id.profile_image);
-        FirebaseStorage.getInstance().getReference().child("faculty_images").child(Useremail.email+".png").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).into(profileimage);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                profileimage.setImageResource(R.drawable.personimage);
-            }
-        });
+        if(Useremail.isfaculty) {
+            FirebaseStorage.getInstance().getReference().child("faculty_images").child(Useremail.email + ".png").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    Picasso.get().load(uri).into(profileimage);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    profileimage.setImageResource(R.drawable.personimage);
+                }
+            });
 
-        profileimage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                chooseImagefromdevice();
-            }
-        });
-
+            profileimage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    chooseImagefromdevice();
+                }
+            });
+        }
+        else{
+            Picasso.get().load(Useremail.photouri).into(profileimage);
+        }
     }
 
     @Override
@@ -206,6 +211,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         FirebaseAuth.getInstance().signOut();
+                        if(LoginActivity.googleSignInClient!=null)
+                        {
+                            LoginActivity.googleSignInClient.signOut();
+                        }
                         startActivity(new Intent(MainActivity.this, LoginActivity.class));
                         finish();
                     }
@@ -215,8 +224,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.home:
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-
-                fragmentTransaction.replace(R.id.mainframehandler,new MainScreenViewPager());
+                if(Useremail.isfaculty) {
+                    fragmentTransaction.replace(R.id.mainframehandler, new MainScreenViewPager());
+                }
+                else
+                {
+                    fragmentTransaction.replace(R.id.mainframehandler, new mainFragment());
+                }
                 fragmentTransaction.commit();
                 setTitle("Home");
                 break;

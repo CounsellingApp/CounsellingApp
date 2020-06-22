@@ -44,6 +44,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1061515754560-io09qstvdua9c40ra4urjea2bp8b6q7c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lnmiit.college.counsellingapp",
+            "certificate_hash": "835d6ba116ef41ae40df6d2e89124c0f4845f8f7"
+          }
+        },
+        {
           "client_id": "1061515754560-ef0m6nmnkamtfm10pol2ls60asvuin6v.apps.googleusercontent.com",
           "client_type": 3
         }

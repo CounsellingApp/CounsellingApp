@@ -29,6 +29,7 @@ import javax.annotation.Nullable;
 
 import lnmiit.college.counsellingapp.R;
 import lnmiit.college.counsellingapp.UnansweredQuestionModel;
+import lnmiit.college.counsellingapp.Useremail;
 
 
 public class RespondFragment extends Fragment {
@@ -51,7 +52,9 @@ public class RespondFragment extends Fragment {
 
                     for (DocumentChange documentChange : queryDocumentSnapshots.getDocumentChanges()) {
                         UnansweredQuestionModel ourWorkModel = documentChange.getDocument().toObject(UnansweredQuestionModel.class);
-                        list.add(ourWorkModel);
+                        if(!ourWorkModel.getFaculty_answers().containsKey(Useremail.email)) {
+                            list.add(ourWorkModel);
+                        }
                         //myadapter.notifyDataSetChanged();
                         //Log.i("LISTSIZE",list.get(count).getQuestion()+"");
                         //count++;
