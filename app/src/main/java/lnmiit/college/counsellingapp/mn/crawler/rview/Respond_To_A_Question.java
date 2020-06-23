@@ -6,7 +6,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaRecorder;
 import android.os.Bundle;
@@ -39,6 +41,8 @@ import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Nullable;
 
+import lnmiit.college.counsellingapp.AskQuestion;
+import lnmiit.college.counsellingapp.LoginActivity;
 import lnmiit.college.counsellingapp.R;
 import lnmiit.college.counsellingapp.Useremail;
 
@@ -95,10 +99,11 @@ public class Respond_To_A_Question extends AppCompatActivity {
                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(final DialogInterface dialog, int which) {
+                                 final ProgressDialog progressDialog = ProgressDialog.show(Respond_To_A_Question.this,"","Please Wait");
                                  ff.collection("Questions").document(getIntent().getStringExtra("questionid")).update("isanswered",true).addOnSuccessListener(new OnSuccessListener<Void>() {
                                      @Override
                                      public void onSuccess(Void aVoid) {
-                                         Toast.makeText(Respond_To_A_Question.this,"Boolean updated succesfully",Toast.LENGTH_LONG).show();
+
                                      }
                                  });
 
@@ -107,8 +112,11 @@ public class Respond_To_A_Question extends AppCompatActivity {
                             ff.collection("Questions").document(getIntent().getStringExtra("questionid")).update("faculty_answers",answersmap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Toast.makeText(Respond_To_A_Question.this,"Map updated succesfully",Toast.LENGTH_LONG).show();
+                                    Toast.makeText(Respond_To_A_Question.this,"Your response has been submitted succesfully",Toast.LENGTH_LONG).show();
                                     dialog.dismiss();
+                                    progressDialog.dismiss();
+                                    startActivity(new Intent(Respond_To_A_Question.this,MainActivity.class));
+                                    finish();
                                 }
                             });
 
@@ -164,6 +172,7 @@ public class Respond_To_A_Question extends AppCompatActivity {
         switch (item.getItemId())
         {
             case android.R.id.home:
+                startActivity(new Intent(Respond_To_A_Question.this,MainActivity.class));
                 finish();
                 return true;
             default: super.onOptionsItemSelected(item);

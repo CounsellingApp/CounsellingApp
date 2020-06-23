@@ -33,6 +33,7 @@ public class mainFragment extends Fragment {
     private List<UnansweredQuestionModel> mainlist;
     private FirebaseFirestore ff;
     private FloatingActionButton fab;
+    public static Fragment mainfrag;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -66,7 +67,15 @@ public class mainFragment extends Fragment {
             fab.setVisibility(View.GONE);
 
         }
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ask_a_question_dialog ask = new ask_a_question_dialog();
+                ask.show(getChildFragmentManager(),"ask");
+            }
+        });
         recview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mainfrag = mainFragment.this;
         return v;
     }
 }

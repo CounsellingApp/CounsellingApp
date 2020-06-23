@@ -3,6 +3,7 @@ package lnmiit.college.counsellingapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -43,6 +44,7 @@ public class AskQuestion extends AppCompatActivity {
             @Override
             public void onClick(final View v) {
                 if(!(quesion.getText()+"").equals("")) {
+                    final ProgressDialog progressDialog = ProgressDialog.show(AskQuestion.this,"","Please Wait");
                     FirebaseFirestore ff = FirebaseFirestore.getInstance();
                     Date date = new Date();
                     Map<String, String> faculty_answer = new HashMap<>();
@@ -60,8 +62,13 @@ public class AskQuestion extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(AskQuestion.this, "done", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AskQuestion.this, "Your question was submitted succesfully.", Toast.LENGTH_SHORT).show();
                                 AskQuestion.this.finish();
+                                progressDialog.dismiss();
+                            }
+                            else {
+                                Toast.makeText(AskQuestion.this, "Some error occured, please try again.", Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
                             }
                         }
                     });

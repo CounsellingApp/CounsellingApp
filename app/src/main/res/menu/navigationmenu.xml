@@ -4,12 +4,10 @@
     >
     <group >
         <item android:id="@+id/home"
-            android:icon="@drawable/ic_home_black_24dp"
-            android:title="HOME"
+            android:icon="@drawable/navigation_feed"
+            android:title="FEED"
             />
-        <item android:id="@+id/settings"
-            android:icon="@drawable/ic_settings_black_24dp"
-            android:title="SETTINGS"/>
+
         <item android:id="@+id/about"
             android:icon="@drawable/ic_healing_black_24dp"
             android:title="ABOUT CWPH"/>

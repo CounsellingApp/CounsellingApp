@@ -11,44 +11,38 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/answers_facultyimage"
-            android:layout_width="0dp"
-            android:layout_height="65dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
-            android:layout_weight="2"
+
             android:scaleType="centerCrop"
             app:civ_border_color="#FF000000"
             app:civ_border_width="2dp"
             />
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_weight="8"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                >
             <TextView
                 android:layout_width="match_parent"
+
                 android:layout_height="wrap_content"
                 android:id="@+id/answers_facultyname"
                 android:padding="5dp"
-                android:layout_weight="8"
                 android:text="Dr. Amit Neogi"
-                android:textSize="20sp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/answers_date"
-                android:layout_weight="8"
-                android:padding="5dp"
-                android:text="29th May 2020"
-                android:textSize="15sp"/>
-            </LinearLayout>
+                android:textSize="16sp"/>
+            </RelativeLayout>
         </LinearLayout>
     <TextView
         android:id="@+id/txt_answers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="25sp"
+        android:layout_marginLeft="45dp"
+        android:textColor="#000000"
+        android:textSize="15sp"
         android:paddingTop="10dp"
         android:text="This is the Answer"/>
 </LinearLayout>

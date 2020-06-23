@@ -57,6 +57,7 @@ public class Answers_adapter extends RecyclerView.Adapter<Answers_ViewHolder> {
         });
 
         holder.getAnswers_facultyname().setText(mainlist.get(position).getFaculty_name());
+
     }
 
 

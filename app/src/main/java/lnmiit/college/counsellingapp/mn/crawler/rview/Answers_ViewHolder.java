@@ -15,7 +15,7 @@ public class Answers_ViewHolder extends RecyclerView.ViewHolder {
     public Answers_ViewHolder(@NonNull View View) {
 
         super(View);
-        answers_date = View.findViewById(R.id.answers_date);
+
         answers_facultyname = View.findViewById(R.id.answers_facultyname);
         answers_facultyimage = View.findViewById(R.id.answers_facultyimage);
         txtanswers = View.findViewById(R.id.txt_answers);

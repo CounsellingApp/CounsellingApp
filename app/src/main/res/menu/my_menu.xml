@@ -8,11 +8,13 @@
         android:orderInCategory="200"
         app:showAsAction="always"
         android:title="Filter"
+        android:visible="false"
         />
     <item
         android:id="@+id/askquestion"
         android:orderInCategory="100"
         app:showAsAction="always"
         android:title="Ask"
+        android:visible="false"
         />
 </menu>

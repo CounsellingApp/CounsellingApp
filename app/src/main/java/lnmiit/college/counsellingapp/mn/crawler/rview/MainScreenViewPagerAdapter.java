@@ -7,9 +7,11 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 public class MainScreenViewPagerAdapter extends FragmentPagerAdapter {
     private int numberoftabs;
+    public static FragmentManager fm;
     public MainScreenViewPagerAdapter(@NonNull FragmentManager fm, int behavior,int numberoftabs) {
         super(fm,behavior);
         this.numberoftabs = numberoftabs;
+        this.fm = fm;
     }
 
     @NonNull

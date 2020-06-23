@@ -15,7 +15,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,14 +35,23 @@ import lnmiit.college.counsellingapp.Useremail;
 
 public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<UnansweredRecyclerViewHolder> implements Delete_Response_Dialog.OnInputSelected {
 
+    public interface Onrefreshfragment{
+        void refreshfragment();
+    }
+    Onrefreshfragment onrefreshfragment;
+    public void setOnrefreshfragment(Onrefreshfragment onrefreshfragment){
+        this.onrefreshfragment = onrefreshfragment;
+    }
     private Activity context;
     private FragmentManager fragmentManager;
+    private Fragment currentfragment;
     List<UnansweredQuestionModel> list = new ArrayList<>();
     private FirebaseFirestore ff;
 
-    public UnansweredRecyclerViewAdapter(Activity context, FragmentManager fragmentManager) {
+    public UnansweredRecyclerViewAdapter(Activity context, FragmentManager fragmentManager, Fragment currentfragment) {
         this.context = context;
         this.fragmentManager = fragmentManager;
+        this.currentfragment = currentfragment;
         ff = FirebaseFirestore.getInstance();
     }
 
@@ -73,6 +84,7 @@ public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<Unanswer
                     intent.putExtra("faculty_answers", (Serializable) holder.getMap());
 
                     context.startActivity(intent);
+                    context.finish();
                 }
             });
             holder.getBtn_delete_response_icon().setOnClickListener(new View.OnClickListener() {
@@ -112,6 +124,7 @@ public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<Unanswer
                 notifyItemRangeChanged(position, getItemCount());
                 list.remove(list.size()-1);
                 notifyItemRemoved(list.size()-1);
+                onrefreshfragment.refreshfragment();
             }
         }
     }

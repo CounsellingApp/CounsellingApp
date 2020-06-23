@@ -242,6 +242,7 @@ public class LoginActivity extends AppCompatActivity {
         {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
+                final ProgressDialog progressDialog = ProgressDialog.show(LoginActivity.this,"","Please Wait");
                 final GoogleSignInAccount googleSignInAccount = task.getResult(ApiException.class);
                 //Toast.makeText(LoginActivity.this,"Signed in succesfully",LENGTH_LONG).show();
                 AuthCredential authCredential = GoogleAuthProvider.getCredential(googleSignInAccount.getIdToken(),null);
@@ -261,18 +262,21 @@ public class LoginActivity extends AppCompatActivity {
                                 Useremail.photouri = account.getPhotoUrl();
                                 Useremail.username = account.getDisplayName();
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                progressDialog.dismiss();
                                 startActivity(intent);
                             }
                             else
                             {
                                 googleSignInClient.signOut();
                                 Toast.makeText(LoginActivity.this,"Please use your college email address", LENGTH_LONG).show();
+                                progressDialog.dismiss();
                             }
 
                         }
                         else
                         {
-                            //Toast.makeText(LoginActivity.this,"Firebase Signin failure",LENGTH_LONG).show();
+                            progressDialog.dismiss();
+                            Toast.makeText(LoginActivity.this,"Firebase Signin failure",LENGTH_LONG).show();
                         }
                     }
                 });

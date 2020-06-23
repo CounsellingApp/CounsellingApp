@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,7 +33,7 @@ import lnmiit.college.counsellingapp.UnansweredQuestionModel;
 import lnmiit.college.counsellingapp.Useremail;
 
 
-public class RespondFragment extends Fragment {
+public class RespondFragment extends Fragment implements UnansweredRecyclerViewAdapter.Onrefreshfragment {
     private RecyclerView unansweredrecyclerview;
     private ArrayList<UnansweredQuestionModel> list;
     private FirebaseFirestore ff;
@@ -67,9 +68,21 @@ public class RespondFragment extends Fragment {
                 }
             }
         });
-        myadapter = new UnansweredRecyclerViewAdapter(getActivity(),getChildFragmentManager());
+        myadapter = new UnansweredRecyclerViewAdapter(getActivity(),getChildFragmentManager(),RespondFragment.this);
+        myadapter.setOnrefreshfragment(this);
         unansweredrecyclerview.setAdapter(myadapter);
         unansweredrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         return view;
+    }
+
+    @Override
+    public void refreshfragment() {
+        FragmentTransaction ft = MainScreenViewPagerAdapter.fm.beginTransaction();
+        ft.detach(RespondFragment.this);
+        ft.attach(RespondFragment.this);
+        ft.detach(mainFragment.mainfrag);
+        ft.attach(mainFragment.mainfrag);
+        ft.commit();
     }
 }

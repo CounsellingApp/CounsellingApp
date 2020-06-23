@@ -982,6 +982,7 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color tab_background_selected
 color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
@@ -1412,6 +1413,8 @@ drawable attachment_ic
 drawable avd_hide_password
 drawable avd_show_password
 drawable back
+drawable bottom_home
+drawable bottom_requests
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1500,6 +1503,7 @@ drawable loginasstudent
 drawable loginbutton
 drawable logout
 drawable logout_1
+drawable message
 drawable mic
 drawable mic_ic
 drawable mic_small
@@ -1513,6 +1517,7 @@ drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable navigation_feed
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1542,6 +1547,7 @@ drawable slide2dots
 drawable slide2image
 drawable stop_record_ic
 drawable stop_record_red_ic
+drawable tabcolorselector
 drawable tag
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -1627,7 +1633,6 @@ id alertTitle
 id all
 id always
 id answeredQuestion
-id answers_date
 id answers_facultyimage
 id answers_facultyname
 id answers_rec_view
@@ -1877,7 +1882,6 @@ id search_top_bar
 id search_voice_btn
 id select_dialog_listview
 id selected
-id settings
 id shortcut
 id showCustom
 id showHome

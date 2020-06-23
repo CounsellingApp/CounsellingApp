@@ -196,9 +196,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 setTitle("About CWPH");
                 break;
 
-            case R.id.settings:
-                Toast.makeText(MainActivity.this,"Implement the Settings Activity",Toast.LENGTH_LONG).show();
-                break;
                 case R.id.developers:
                     Toast.makeText(MainActivity.this,"Implement the Developers Activity",Toast.LENGTH_LONG).show();
                     break;
@@ -227,7 +224,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 if(Useremail.isfaculty) {
-                    fragmentTransaction.replace(R.id.mainframehandler, new MainScreenViewPager());
+                    fragmentTransaction.replace(R.id.mainframehandler, new MainScreenViewPager(),"mainscreenviewpager");
                 }
                 else
                 {

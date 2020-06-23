@@ -9,7 +9,6 @@
         android:layout_height="?attr/actionBarSize"
         android:background="#ed715d"
         android:id="@+id/toolbar"
-
         android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
 
 </LinearLayout>
