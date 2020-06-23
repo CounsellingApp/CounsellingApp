@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialogtext"
+        android:text="HERE IS WHAT YOU RECORDED"
+        android:background="@color/white"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"/>
+    <me.jagar.chatvoiceplayerlibrary.VoicePlayerView
+        android:id="@+id/audio_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:enableVisualizer="true"
+        android:layout_gravity="center_horizontal"
+        app:visualizationPlayedColor="#ff7700"
+        app:visualizationNotPlayedColor="#727171"
+        app:playPauseBackgroundColor="#ed715d"
+        app:timingBackgroundColor="@color/white"
+        app:seekBarProgressColor="#000"
+        app:showShareButton="true"
+        app:shareCornerRadius="100"
+        app:playPauseCornerRadius="100"
+        app:showTiming="true"
+        app:viewCornerRadius="100"
+        app:viewBackground="@color/white"
+        app:progressTimeColor="#000"
+        app:seekBarThumbColor="#FFC107"
+        app:shareBackgroundColor="@color/white"
+        app:playProgressbarColor="#ed715d"
+        app:shareText="SHARE ME"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/btn_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:padding="10dp"
+            fancy:fb_borderColor="#FFFFFF"
+
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#ed715d"
+            fancy:fb_focusColor="#0000FF"
+
+            fancy:fb_iconPosition="left"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="SUBMIT"
+            fancy:fb_textColor="#FFFFFF" />
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:padding="10dp"
+            fancy:fb_borderColor="#FFFFFF"
+
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#ed715d"
+            fancy:fb_focusColor="#0000FF"
+
+            fancy:fb_iconPosition="left"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="CANCEL"
+            fancy:fb_textColor="#FFFFFF" />
+    </LinearLayout>
+</LinearLayout>

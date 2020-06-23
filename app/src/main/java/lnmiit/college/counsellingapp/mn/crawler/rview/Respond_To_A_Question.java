@@ -13,10 +13,15 @@ import android.graphics.Color;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -26,14 +31,15 @@ import android.widget.Toast;
 
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.common.base.Stopwatch;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.gson.Gson;
-import com.varunjohn1990.audio_record_view.AudioRecordView;
-import com.varunjohn1990.audio_record_view.AudioRecordView;
 
+
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -50,13 +56,18 @@ public class Respond_To_A_Question extends AppCompatActivity {
     private TextView txt_reply_question, txt_reply_author, txt_reply_tags;
     private EditText txt_reply_answer;
     private Button btn_post_answer;
-    private ImageButton btn_record_message;
+
     private Toolbar toolbar;
-    private LinearLayout postlinearlayout;
+    private ImageButton btnrecord;
     private LinearLayout mainlinearlayout;
-    private String mypath;
+    private String mypath=null;
     private MediaRecorder recorder;
-    private AudioRecordView audioRecordView;
+    private LinearLayout sildetocancel;
+    private Chronometer txt_timer;
+    final int MSG_START_TIMER = 0;
+    final int MSG_STOP_TIMER = 1;
+    final int MSG_UPDATE_TIMER = 2;
+    final int REFRESH_RATE = 100;
     FirebaseFirestore ff;
     Map<String,String> answersmap;
 
@@ -69,13 +80,14 @@ public class Respond_To_A_Question extends AppCompatActivity {
         txt_reply_question = findViewById(R.id.txt_reply_question);
         txt_reply_tags = findViewById(R.id.txt_reply_tags);
         btn_post_answer = findViewById(R.id.btn_post_answer);
+        txt_timer = findViewById(R.id.txt_timer);
         toolbar = findViewById(R.id.toolbar);
         mainlinearlayout = findViewById(R.id.mainlinearlayout);
-        postlinearlayout = findViewById(R.id.postlinearlayout);
-
+        btnrecord = findViewById(R.id.btnrecord);
+        sildetocancel = findViewById(R.id.slidetocancel);
         ff = FirebaseFirestore.getInstance();
         mypath = Environment.getExternalStorageDirectory().getAbsolutePath();
-        mypath.concat("/lavi.3gp");
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("REPLY");
@@ -131,39 +143,47 @@ public class Respond_To_A_Question extends AppCompatActivity {
                 }
             }
         });
-        audioRecordView = new AudioRecordView();
-        audioRecordView.initView(postlinearlayout);
-        audioRecordView.setAudioRecordButtonImage(R.drawable.mic);
-        audioRecordView.hideAttachmentOptionView();
-        audioRecordView.removeAttachmentOptionAnimation(false);
-        audioRecordView.showAttachmentIcon(false);
-        audioRecordView.showCameraIcon(false);
-        audioRecordView.showEmojiIcon(false);
-        audioRecordView.getMessageView().setVisibility(View.GONE);
-        audioRecordView.getSendView().setVisibility(View.GONE);
-        audioRecordView.setRecordingListener(new AudioRecordView.RecordingListener() {
-            @Override
-            public void onRecordingStarted() {
-                startRecording();
-            }
 
+        btnrecord.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onRecordingLocked() {
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction()==MotionEvent.ACTION_DOWN)
+                {
+                    btnrecord.setImageResource(R.drawable.whitemic);
+                    btnrecord.setBackgroundColor(getResources().getColor(R.color.tab_background_selected));
+                    sildetocancel.setVisibility(View.VISIBLE);
+                    btn_post_answer.setVisibility(View.GONE);
+                    String folfer_main = "CWPH_LNMIIT";
+                    File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),folfer_main);
 
-            }
+                    if(!file.exists())
+                    {
+                        file.mkdirs();
+                    }
+                    mypath+=("/CWPH_LNMIIT/"+Useremail.email+getIntent().getStringExtra("questionid")+".mp4");
+                    startchronometer();
+                    startRecording();
+                }
+                else if(event.getAction()==MotionEvent.ACTION_UP)
+                {
+                    btnrecord.setImageResource(R.drawable.mic);
+                    btnrecord.setBackgroundColor(getResources().getColor(R.color.white));
+                    sildetocancel.setVisibility(View.GONE);
+                    btn_post_answer.setVisibility(View.VISIBLE);
+                    stopchronometer();
+                    stopRecording();
+                    Bundle bundle= new Bundle();
+                    bundle.putString("Audio",mypath);
+                    Dialog_Audio_Player dialog_audio_player = new Dialog_Audio_Player(Respond_To_A_Question.this);
+                    dialog_audio_player.setArguments(bundle);
+                    dialog_audio_player.show(getSupportFragmentManager(),"dialog_audio_player");
+                }
 
-            @Override
-            public void onRecordingCompleted() {
-                audioRecordView.getMessageView().setVisibility(View.GONE);
-                stopRecording();
-            }
-
-            @Override
-            public void onRecordingCanceled() {
-                stopRecording();
-                audioRecordView.getMessageView().setVisibility(View.GONE);
+                return false;
             }
         });
+
+
 
     }
 
@@ -182,7 +202,7 @@ public class Respond_To_A_Question extends AppCompatActivity {
     private void startRecording() {
         recorder = new MediaRecorder();
         recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
         recorder.setOutputFile(mypath);
         recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
 
@@ -190,22 +210,34 @@ public class Respond_To_A_Question extends AppCompatActivity {
             recorder.prepare();
             recorder.start();
         } catch (IOException e) {
-            Log.i("RecordView", "prepare() failed");
+            Log.i("lakshay", e.getMessage());
         }
 
 
     }
 
     private void stopRecording() {
-        try {
-            recorder.stop();
-            recorder.release();
-            recorder = null;
-        }
-        catch (Exception e)
-        {
-            Log.i("RecordView", "stop failed");
-        }
+
+            try {
+                recorder.stop();
+                recorder.release();
+                recorder = null;
+            }
+            catch (IllegalStateException e)
+            {
+                Toast.makeText(Respond_To_A_Question.this,e.getMessage(),Toast.LENGTH_LONG).show();
+            }
+
+
+    }
+    public void startchronometer()
+    {
+        txt_timer.setBase(SystemClock.elapsedRealtime());
+        txt_timer.start();
+    }
+    public void stopchronometer()
+    {
+        txt_timer.stop();
     }
 
 }

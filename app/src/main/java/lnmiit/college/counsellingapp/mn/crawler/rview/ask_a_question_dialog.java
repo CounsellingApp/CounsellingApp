@@ -19,21 +19,17 @@ import lnmiit.college.counsellingapp.Useremail;
 import mehdi.sakout.fancybuttons.FancyButton;
 
 public class ask_a_question_dialog extends AppCompatDialogFragment {
-    FancyButton anonymous, reveal_identity;
+    FancyButton anonymous, reveal_identity, btn_cancel_asking;
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.ask_a_question_dialog,null);
-        builder.setView(view).setTitle("Choose an Option").setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
+        builder.setView(view);
         anonymous = view.findViewById(R.id.btn_anonymous);
         reveal_identity = view.findViewById(R.id.btn_reveal_identinty);
+        btn_cancel_asking = view.findViewById(R.id.btn_cancel_asking);
         anonymous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +50,12 @@ public class ask_a_question_dialog extends AppCompatDialogFragment {
                 Intent intent = new Intent(v.getContext(), AskQuestion.class);
                 intent.putExtra("privacy",uname);
                 startActivity(intent);
+            }
+        });
+        btn_cancel_asking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getDialog().dismiss();
             }
         });
         return builder.create();

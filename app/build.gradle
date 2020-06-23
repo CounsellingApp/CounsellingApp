@@ -51,8 +51,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.firebase:firebase-core:17.0.0'
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
-    implementation 'com.varunjohn1990.libraries:WhatsappMessengerView:2.1.0'
-    
+    implementation 'com.github.JagarYousef:ChatVoicePlayer:1.0.7'
 
 
 
