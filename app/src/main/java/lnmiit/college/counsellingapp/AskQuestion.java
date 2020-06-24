@@ -2,15 +2,18 @@ package lnmiit.college.counsellingapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,26 +31,48 @@ import lnmiit.college.counsellingapp.mn.crawler.rview.Dialog_Tags;
 import lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity;
 import mehdi.sakout.fancybuttons.FancyButton;
 
-public class AskQuestion extends AppCompatActivity {
-    private EditText question;
+public class AskQuestion extends AppCompatActivity implements View.OnClickListener {
+    private EditText question, txt_question_title;
+    private TextView toolbartext;
     private FancyButton submit;
-
-    //String userid=null;
+    private Toolbar toolbar;
+    private FancyButton tagmentalhealth, tagphysicalhealth, tagharassment, tagcareer, tagacademic,  tagothers;
+    private FancyButton currentbutton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ask_question);
         question=findViewById(R.id.question);
+        txt_question_title = findViewById(R.id.txtquestion_title);
         submit = findViewById(R.id.submit);
-
-
-
+        tagacademic = findViewById(R.id.tagacademic);
+        tagharassment = findViewById(R.id.tagharassment);
+        tagcareer = findViewById(R.id.tagcareer);
+        tagphysicalhealth = findViewById(R.id.tagphysicalhealth);
+        tagmentalhealth = findViewById(R.id.tagmentalhealth);
+        tagothers = findViewById(R.id.tagothers);
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbartext = toolbar.findViewById(R.id.toolbartitle);
+        toolbartext.setText("ASK");
+        setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        tagothers.setOnClickListener(this);
+        tagmentalhealth.setOnClickListener(this);
+        tagphysicalhealth.setOnClickListener(this);
+        tagcareer.setOnClickListener(this);
+        tagharassment.setOnClickListener(this);
+        tagacademic.setOnClickListener(this);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                if(!(question.getText()+"").equals("")) {
+                if(currentbutton==null)
+                {
+                    Toast.makeText(AskQuestion.this,"PLEASE SELECT A TAG FIRST",Toast.LENGTH_LONG).show();
+                }
+                else if(!(question.getText()+"").equals("") && !(txt_question_title.getText()+"").equals("") ) {
                     final ProgressDialog progressDialog = ProgressDialog.show(AskQuestion.this,"","Please Wait");
                     FirebaseFirestore ff = FirebaseFirestore.getInstance();
                     Date date = new Date();
@@ -58,7 +83,7 @@ public class AskQuestion extends AppCompatActivity {
                     map.put("question", question.getText().toString());
                     map.put("asked_by", getIntent().getStringExtra("privacy"));
                     map.put("faculty_answers", faculty_answer);
-                    map.put("tag", "tag");
+                    map.put("tag", currentbutton.getText().toString()+"");
                     map.put("date", date);
                     map.put("userid", Useremail.email);
                     map.put("isanswered", false);
@@ -78,11 +103,47 @@ public class AskQuestion extends AppCompatActivity {
                     });
                 }
                 else {
-                    Toast.makeText(AskQuestion.this,"Please enter a question first",Toast.LENGTH_LONG).show();
+                    Toast.makeText(AskQuestion.this,"Please enter a TITLE and a QUESTION before submitting",Toast.LENGTH_LONG).show();
                 }
 //                Dialog_Tags dialog_tags = new Dialog_Tags();
 //                dialog_tags.show(getSupportFragmentManager(),"Dialog_Tag");
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return true;
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        clickbutton((FancyButton)v);
+    }
+    private void clickbutton(FancyButton afb)
+    {
+        if(currentbutton==afb)
+        {
+            afb.setBackgroundColor(getResources().getColor(R.color.white));
+            afb.setTextColor(getResources().getColor(R.color.tab_background_selected));
+            currentbutton=null;
+        }
+        else
+        {
+            if(currentbutton!=null) {
+                currentbutton.setBackgroundColor(getResources().getColor(R.color.white));
+                currentbutton.setTextColor(getResources().getColor(R.color.tab_background_selected));
+            }
+            afb.setBackgroundColor(getResources().getColor(R.color.tab_background_selected));
+            afb.setTextColor(getResources().getColor(R.color.white));
+            currentbutton=afb;
+        }
     }
 }

@@ -77,10 +77,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private MenuItem askmenuitem;
     private Bitmap bitmap;
     private String imageIdentifier;
+    private TextView toolbartext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        checkforpermissions();
         ff=FirebaseFirestore.getInstance();
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
@@ -97,8 +99,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
-        setTitle("Home");
+
         toolbar = findViewById(R.id.toolbar);
+        toolbartext = toolbar.findViewById(R.id.toolbartitle);
+        toolbartext.setText("FEED");
+        setTitle("");
         drawerLayout = findViewById(R.id.drawer);
         setSupportActionBar(toolbar);
         navigationView = findViewById(R.id.navigationview);
@@ -193,7 +198,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.mainframehandler,new about_fragment());
                 fragmentTransaction.commit();
-                setTitle("About CWPH");
+                toolbartext.setText("ABOUT CWPH");
                 break;
 
                 case R.id.developers:
@@ -231,7 +236,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     fragmentTransaction.replace(R.id.mainframehandler, new mainFragment());
                 }
                 fragmentTransaction.commit();
-                setTitle("Home");
+                toolbartext.setText("FEED");
                 break;
         }
 
@@ -261,7 +266,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(requestCode==1000 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+        {
             chooseImagefromdevice();
+        }
+        else if(requestCode==69 && (grantResults[0]!=PackageManager.PERMISSION_GRANTED)||(grantResults[1]!=PackageManager.PERMISSION_GRANTED))
+        {
+            FirebaseAuth.getInstance().signOut();
+            if(LoginActivity.googleSignInClient!=null)
+            {
+                LoginActivity.googleSignInClient.signOut();
+            }
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            Toast.makeText(MainActivity.this,"You can't use this application without granting all the permissions :)",Toast.LENGTH_LONG).show();
+            finish();
+        }
+        else if((requestCode==690 && grantResults[0]!=PackageManager.PERMISSION_GRANTED)||(requestCode==6900 && grantResults[0]!=PackageManager.PERMISSION_GRANTED))
+        {
+            FirebaseAuth.getInstance().signOut();
+            if(LoginActivity.googleSignInClient!=null)
+            {
+                LoginActivity.googleSignInClient.signOut();
+            }
+            Toast.makeText(MainActivity.this,"You can't use this application without granting all the permissions :)",Toast.LENGTH_LONG).show();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
+        }
+
+
     }
 
     @Override
@@ -315,5 +346,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             });
         }
     }
+    private void checkforpermissions()
+    {
+        int recordpermission; int writepermission;
+        if(Build.VERSION.SDK_INT>=23) {
+            recordpermission = checkSelfPermission(Manifest.permission.RECORD_AUDIO);
+            writepermission = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            if(recordpermission!=PackageManager.PERMISSION_GRANTED && writepermission!=PackageManager.PERMISSION_GRANTED)
+            {
+                requestPermissions(new String[] {Manifest.permission.RECORD_AUDIO,Manifest.permission.WRITE_EXTERNAL_STORAGE},69);
+                return;
+            }
+            else if(recordpermission!=PackageManager.PERMISSION_GRANTED)
+            {
+                requestPermissions(new String[] {Manifest.permission.RECORD_AUDIO},690);
+                return;
+            }
+            else if(writepermission!=PackageManager.PERMISSION_GRANTED)
+            {
+                requestPermissions(new String[] {Manifest.permission.RECORD_AUDIO},690);
+                return;
+            }
+        }
+    }
+
 }
 

@@ -43,7 +43,7 @@ public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellin
     public void onBindViewHolder(@NonNull final lnmiit.college.counsellingapp.mn.crawler.rview.viewholder holder, final int position) {
         holder.getTxtquestion().setText(mainlist.get(position).getQuestion());
         holder.getTxtauthor().setText("By- "+mainlist.get(position).getAsked_by());
-        holder.getTxttags().setText(""+mainlist.get(position).getTag());
+        holder.getTxttags().setText("Tags: "+mainlist.get(position).getTag());
         Answers_adapter adapter = new Answers_adapter(position,context);
         Map<String,String> mymap = mainlist.get(position).getFaculty_answers();
         List<AnswerModel> answerslist = new ArrayList<>();

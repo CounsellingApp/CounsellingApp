@@ -30,24 +30,34 @@
         android:theme="@style/AppTheme.NoActionBar" >
         <activity
             android:name="lnmiit.college.counsellingapp.mn.crawler.rview.Respond_To_A_Question"
-            android:parentActivityName="lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity" >
+            android:parentActivityName="lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".mn.crawler.rview.MainActivity" />
         </activity>
-        <activity android:name="lnmiit.college.counsellingapp.AskQuestion" />
-        <activity android:name="lnmiit.college.counsellingapp.Introduction_Activity" >
+        <activity
+            android:name="lnmiit.college.counsellingapp.AskQuestion"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lnmiit.college.counsellingapp.Introduction_Activity"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="lnmiit.college.counsellingapp.LoginActivity" >
+        <activity
+            android:name="lnmiit.college.counsellingapp.LoginActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="lnmiit.college.counsellingapp.mn.crawler.rview.activity_answer" />
+        <activity
+            android:name="lnmiit.college.counsellingapp.mn.crawler.rview.activity_answer"
+            android:screenOrientation="portrait" />
         <activity
             android:name="lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
 

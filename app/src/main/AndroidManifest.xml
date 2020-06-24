@@ -15,28 +15,30 @@
         android:theme="@style/AppTheme.NoActionBar"
         tools:replace="android:theme">
         <activity android:name=".mn.crawler.rview.Respond_To_A_Question"
-            android:parentActivityName=".mn.crawler.rview.MainActivity">
+            android:parentActivityName=".mn.crawler.rview.MainActivity"
+            android:screenOrientation="portrait">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".mn.crawler.rview.MainActivity"/>
 
         </activity>
-        <activity android:name=".AskQuestion" />
-        <activity android:name=".Introduction_Activity">
+        <activity android:name=".AskQuestion" android:screenOrientation="portrait" />
+        <activity android:name=".Introduction_Activity" android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mn.crawler.rview.activity_answer" />
+        <activity android:name=".mn.crawler.rview.activity_answer" android:screenOrientation="portrait" />
         <activity
             android:name=".mn.crawler.rview.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
 
         </activity>
 

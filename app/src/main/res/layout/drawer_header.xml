@@ -33,17 +33,24 @@
             android:layout_height="wrap_content"
             android:text="Lakshay Bhagtani"
             android:textSize="20sp"
+            android:textColor="#3b566e"
             android:fontFamily="@font/open_sans"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:lines="1"
+            app:autoSizeTextType="uniform"
+            android:layout_marginBottom="3.3dp"/>
         <TextView
             android:id="@+id/navigationdraweremail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="lakshay.bhagtani@gmail.com"
+            android:textColor="#3b566e"
             android:textSize="18sp"
+            android:lines="1"
+            app:autoSizeTextType="uniform"
+            android:layout_marginRight="5dp"
             android:fontFamily="@font/open_sans"
-            android:layout_marginTop="5dp"/>
+            />
         </LinearLayout>
     </LinearLayout> 
     <TextView

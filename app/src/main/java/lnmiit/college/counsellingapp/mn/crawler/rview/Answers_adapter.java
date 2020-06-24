@@ -1,12 +1,16 @@
 package lnmiit.college.counsellingapp.mn.crawler.rview;
 
 import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,13 +29,15 @@ import lnmiit.college.counsellingapp.R;
 
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
-public class Answers_adapter extends RecyclerView.Adapter<Answers_ViewHolder> {
+public class Answers_adapter extends RecyclerView.Adapter<Answers_ViewHolder>  {
 
     private int response_index;
     private Context context;
     List<AnswerModel> mainlist = new ArrayList<>();
+    private long downloadID=0;
 
     ArrayList<ArrayList<String>> answers = new ArrayList<ArrayList<String>>();
+
 
     public Answers_adapter(int response_index, Context context)
     {
@@ -43,6 +49,7 @@ public class Answers_adapter extends RecyclerView.Adapter<Answers_ViewHolder> {
     @Override
     public Answers_ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater lf = LayoutInflater.from(parent.getContext());
+
         View view = lf.inflate(R.layout.answers_recycler_view,parent,false);
 
         return new Answers_ViewHolder(view);
@@ -57,6 +64,7 @@ public class Answers_adapter extends RecyclerView.Adapter<Answers_ViewHolder> {
             public void onSuccess(Uri uri) {
                 holder.getAnswers_audio_player().setVisibility(View.VISIBLE);
                 holder.getTxtanswers().setVisibility(View.GONE);
+                context.registerReceiver(downloadcomplete,new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
                 String filepath = "CWPH_LNMIIT/Answers";
                 File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),filepath);
                 if(!file.exists())
@@ -70,8 +78,8 @@ public class Answers_adapter extends RecyclerView.Adapter<Answers_ViewHolder> {
                     DownloadManager downloadManager = (DownloadManager) context.getSystemService(context.DOWNLOAD_SERVICE);
                     DownloadManager.Request request = new DownloadManager.Request(uri);
                     request.setDestinationInExternalPublicDir("CWPH_LNMIIT/Answers",answerfromdatabase);
-                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                    downloadManager.enqueue(request);
+                    //request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                    downloadID = downloadManager.enqueue(request);
                 }
                 holder.getAnswers_audio_player().setAudio(Environment.getExternalStorageDirectory().getAbsolutePath()+"/"+filepath);
             }
@@ -109,4 +117,15 @@ public class Answers_adapter extends RecyclerView.Adapter<Answers_ViewHolder> {
         this.mainlist = mainlist;
         notifyDataSetChanged();
     }
+    private BroadcastReceiver downloadcomplete = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            long id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID,-1);
+            if(downloadID==id)
+            {
+                //Toast.makeText(context,"Download has been completed",Toast.LENGTH_LONG).show();
+                notifyDataSetChanged();
+            }
+        }
+    };
 }

@@ -47,6 +47,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Nullable;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import lnmiit.college.counsellingapp.AskQuestion;
 import lnmiit.college.counsellingapp.LoginActivity;
 import lnmiit.college.counsellingapp.R;
@@ -56,7 +57,7 @@ public class Respond_To_A_Question extends AppCompatActivity implements Dialog_A
     private TextView txt_reply_question, txt_reply_author, txt_reply_tags;
     private EditText txt_reply_answer;
     private Button btn_post_answer;
-
+    private TextView toolbartext;
     private Toolbar toolbar;
     private ImageButton btnrecord;
     private LinearLayout mainlinearlayout;
@@ -90,7 +91,9 @@ public class Respond_To_A_Question extends AppCompatActivity implements Dialog_A
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("REPLY");
+        toolbartext = toolbar.findViewById(R.id.toolbartitle);
+        toolbartext.setText("REPLY");
+        setTitle("");
         txt_reply_question.setText(getIntent().getStringExtra("question"));
         txt_reply_tags.setText(getIntent().getStringExtra("tags"));
         txt_reply_author.setText(getIntent().getStringExtra("author"));
@@ -149,8 +152,8 @@ public class Respond_To_A_Question extends AppCompatActivity implements Dialog_A
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction()==MotionEvent.ACTION_DOWN)
                 {
-                    btnrecord.setImageResource(R.drawable.whitemic);
-                    btnrecord.setBackgroundColor(getResources().getColor(R.color.tab_background_selected));
+                    btnrecord.setImageResource(R.drawable.mic_clicked);
+                    //btnrecord.setBackgroundColor(getResources().getColor(R.color.tab_background_selected));
                     sildetocancel.setVisibility(View.VISIBLE);
                     btn_post_answer.setVisibility(View.GONE);
                     String folfer_main = "CWPH_LNMIIT";
@@ -167,7 +170,7 @@ public class Respond_To_A_Question extends AppCompatActivity implements Dialog_A
                 else if(event.getAction()==MotionEvent.ACTION_UP)
                 {
                     btnrecord.setImageResource(R.drawable.mic);
-                    btnrecord.setBackgroundColor(getResources().getColor(R.color.white));
+                    //btnrecord.setBackgroundColor(getResources().getColor(R.color.white));
                     sildetocancel.setVisibility(View.GONE);
                     btn_post_answer.setVisibility(View.VISIBLE);
                     stopchronometer();

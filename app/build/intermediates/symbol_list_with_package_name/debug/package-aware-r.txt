@@ -1511,6 +1511,7 @@ drawable logout_1
 drawable main_layout_bg
 drawable message
 drawable mic
+drawable mic_clicked
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1753,7 +1754,6 @@ id icon_group
 id icon_only
 id ifRoom
 id image
-id imageButton
 id imgPause
 id imgPlay
 id imgShare
@@ -1945,6 +1945,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toolbar
+id toolbartitle
 id top
 id topPanel
 id touch_outside
@@ -1964,6 +1965,7 @@ id txt_timer
 id txtauthor
 id txtfacultyname
 id txtproblem
+id txtquestion_title
 id txtsolution
 id txttags
 id txtunansweredauthor
