@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     tools:context=".AskQuestion"
     android:orientation="vertical">
 
@@ -12,22 +13,25 @@
         android:id="@+id/question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="372dp"
-        android:ems="10"
-        android:gravity="start|top"
+
+
+
         android:hint="Type your question here"
 
         android:inputType="textMultiLine"
          />
 
-    <Button
+    <mehdi.sakout.fancybuttons.FancyButton
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="232dp"
-        android:text="ASK"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="50.7dp"
+        fancy:fb_defaultColor="#ed715d"
+        fancy:fb_focusColor="#0000FF"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+
+        fancy:fb_iconPosition="left"
+        fancy:fb_radius="5dp"
+        fancy:fb_text="POST"
+        fancy:fb_textColor="#FFFFFF" />
 </LinearLayout>

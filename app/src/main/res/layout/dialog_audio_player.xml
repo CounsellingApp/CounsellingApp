@@ -11,10 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/dialogtext"
-        android:text="HERE IS WHAT YOU RECORDED"
+        android:text="PREVIEW"
         android:background="@color/white"
         android:textSize="18sp"
         android:gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"/>
     <me.jagar.chatvoiceplayerlibrary.VoicePlayerView
@@ -23,7 +24,7 @@
         android:layout_height="wrap_content"
         app:enableVisualizer="true"
         android:layout_gravity="center_horizontal"
-        app:visualizationPlayedColor="#ff7700"
+        app:visualizationPlayedColor="#ed715d"
         app:visualizationNotPlayedColor="#727171"
         app:playPauseBackgroundColor="#ed715d"
         app:timingBackgroundColor="@color/white"
@@ -44,7 +45,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingBottom="10dp"
-        android:paddingTop="10dp">
+        android:paddingTop="10dp"
+        android:layout_marginTop="5dp"
+        >
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/btn_submit"
             android:layout_width="0dp"
@@ -52,16 +55,15 @@
             android:layout_weight="1"
 
             android:padding="10dp"
-            fancy:fb_borderColor="#FFFFFF"
 
-            fancy:fb_borderWidth="1dp"
             fancy:fb_defaultColor="#ed715d"
             fancy:fb_focusColor="#0000FF"
 
             fancy:fb_iconPosition="left"
-            fancy:fb_radius="30dp"
+            fancy:fb_radius="0dp"
             fancy:fb_text="SUBMIT"
-            fancy:fb_textColor="#FFFFFF" />
+            fancy:fb_textColor="#FFFFFF"
+            android:layout_marginRight="1dp"/>
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/btn_cancel"
             android:layout_width="0dp"
@@ -69,14 +71,12 @@
             android:layout_weight="1"
 
             android:padding="10dp"
-            fancy:fb_borderColor="#FFFFFF"
 
-            fancy:fb_borderWidth="1dp"
             fancy:fb_defaultColor="#ed715d"
             fancy:fb_focusColor="#0000FF"
 
             fancy:fb_iconPosition="left"
-            fancy:fb_radius="30dp"
+            fancy:fb_radius="0dp"
             fancy:fb_text="CANCEL"
             fancy:fb_textColor="#FFFFFF" />
     </LinearLayout>

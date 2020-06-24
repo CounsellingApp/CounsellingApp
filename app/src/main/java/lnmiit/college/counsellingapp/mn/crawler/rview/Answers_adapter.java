@@ -1,6 +1,9 @@
 package lnmiit.college.counsellingapp.mn.crawler.rview;
 
+import android.app.DownloadManager;
+import android.content.Context;
 import android.net.Uri;
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,21 +17,26 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import lnmiit.college.counsellingapp.R;
 
+import static android.os.Environment.DIRECTORY_DOWNLOADS;
+
 public class Answers_adapter extends RecyclerView.Adapter<Answers_ViewHolder> {
 
     private int response_index;
+    private Context context;
     List<AnswerModel> mainlist = new ArrayList<>();
 
     ArrayList<ArrayList<String>> answers = new ArrayList<ArrayList<String>>();
 
-    public Answers_adapter(int response_index)
+    public Answers_adapter(int response_index, Context context)
     {
         this.response_index = response_index;
+        this.context = context;
     }
 
     @NonNull
@@ -41,9 +49,40 @@ public class Answers_adapter extends RecyclerView.Adapter<Answers_ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final Answers_ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final Answers_ViewHolder holder, final int position) {
 
-        holder.getTxtanswers().setText(mainlist.get(position).getAnswer_text());
+        final String answerfromdatabase = mainlist.get(position).getAnswer_text();
+        FirebaseStorage.getInstance().getReference().child("Audio_Answers").child(answerfromdatabase).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                holder.getAnswers_audio_player().setVisibility(View.VISIBLE);
+                holder.getTxtanswers().setVisibility(View.GONE);
+                String filepath = "CWPH_LNMIIT/Answers";
+                File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),filepath);
+                if(!file.exists())
+                {
+                    file.mkdirs();
+                }
+                filepath= "CWPH_LNMIIT/Answers/"+answerfromdatabase;
+                File audiofile = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),filepath);
+              if(!audiofile.exists())
+                {
+                    DownloadManager downloadManager = (DownloadManager) context.getSystemService(context.DOWNLOAD_SERVICE);
+                    DownloadManager.Request request = new DownloadManager.Request(uri);
+                    request.setDestinationInExternalPublicDir("CWPH_LNMIIT/Answers",answerfromdatabase);
+                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                    downloadManager.enqueue(request);
+                }
+                holder.getAnswers_audio_player().setAudio(Environment.getExternalStorageDirectory().getAbsolutePath()+"/"+filepath);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+                holder.getTxtanswers().setText(mainlist.get(position).getAnswer_text());
+            }
+        });
+
         FirebaseStorage.getInstance().getReference().child("faculty_images").child(mainlist.get(position).getFaculty_image_url()).getDownloadUrl().addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {

@@ -3,11 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/white">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/white">
 
             <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/answers_facultyimage"
@@ -36,13 +38,44 @@
                 android:textSize="16sp"/>
             </RelativeLayout>
         </LinearLayout>
-    <TextView
-        android:id="@+id/txt_answers"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="45dp"
-        android:textColor="#000000"
-        android:textSize="15sp"
-        android:paddingTop="10dp"
-        android:text="This is the Answer"/>
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txt_answers"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:paddingTop="10dp"
+            android:visibility="visible"
+            android:text="This is the Answer"/>
+        <me.jagar.chatvoiceplayerlibrary.VoicePlayerView
+            android:id="@+id/answer_audio_player"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:enableVisualizer="true"
+            android:layout_gravity="center_horizontal"
+            app:visualizationPlayedColor="#ed715d"
+            app:visualizationNotPlayedColor="#727171"
+            app:playPauseBackgroundColor="#ed715d"
+            app:timingBackgroundColor="@color/white"
+            app:seekBarProgressColor="#000"
+            app:showShareButton="true"
+            app:shareCornerRadius="100"
+            app:playPauseCornerRadius="100"
+            app:showTiming="true"
+            android:visibility="gone"
+            app:viewCornerRadius="100"
+            app:viewBackground="@color/white"
+            app:progressTimeColor="#000"
+            app:seekBarThumbColor="#FFC107"
+            app:shareBackgroundColor="@color/white"
+            app:playProgressbarColor="#ed715d"
+            app:shareText="SHARE ME"/>
+    </LinearLayout>
 </LinearLayout>

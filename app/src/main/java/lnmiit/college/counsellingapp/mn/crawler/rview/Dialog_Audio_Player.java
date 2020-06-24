@@ -30,6 +30,14 @@ import me.jagar.chatvoiceplayerlibrary.VoicePlayerView;
 import mehdi.sakout.fancybuttons.FancyButton;
 
 public class Dialog_Audio_Player extends DialogFragment {
+    public interface Audiosubmitted{
+        public void trueaudiosubmitted(String answer);
+    }
+    private Audiosubmitted maudiosubmitted;
+    public void setAudiosubmitted(Audiosubmitted maudiosubmitted)
+    {
+        this.maudiosubmitted = maudiosubmitted;
+    }
     private FancyButton btnsubmit, btncancel;
     private VoicePlayerView audio_player;
     private Activity curactivity;
@@ -66,14 +74,13 @@ public class Dialog_Audio_Player extends DialogFragment {
 
                 File file = new File(getArguments().getString("Audio"));
                 UploadTask uploadTask = FirebaseStorage.getInstance().getReference().child("Audio_Answers")
-                        .child(getArguments().getString("Audio")).putFile(Uri.fromFile(file));
+                        .child(getArguments().getString("filename")).putFile(Uri.fromFile(file));
                 uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         Toast.makeText(v.getContext(),"Audio uploaded succesfully",Toast.LENGTH_LONG).show();
                         progressDialog.dismiss();
-                        startActivity(new Intent(curactivity,MainActivity.class));
-                        curactivity.finish();
+                        maudiosubmitted.trueaudiosubmitted(getArguments().getString("filename"));
                         dismiss();
                     }
                 });

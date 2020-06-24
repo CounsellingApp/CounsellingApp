@@ -1634,6 +1634,7 @@ id adjust_width
 id alertTitle
 id all
 id always
+id answer_audio_player
 id answeredQuestion
 id answers_facultyimage
 id answers_facultyname
@@ -1651,12 +1652,14 @@ id bottomnavview
 id btn_anonymous
 id btn_cancel
 id btn_cancel_asking
+id btn_cancelquestion
 id btn_delete_response_icon
 id btn_delete_response_no
 id btn_delete_response_yes
 id btn_post_answer
 id btn_reveal_identinty
 id btn_submit
+id btn_submitquestion
 id btnaddtocontacts
 id btnrecord
 id btnview
@@ -1918,6 +1921,12 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id tagacademic
+id tagcareer
+id tagharassment
+id tagmentalhealth
+id tagothers
+id tagphysicalhealth
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id text
@@ -2068,6 +2077,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_audio_player
 layout dialog_filter
+layout dialogtags
 layout drawer_header
 layout drawer_toolbar
 layout facultyrecview

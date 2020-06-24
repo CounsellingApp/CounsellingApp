@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tags:"
+            android:gravity="center_horizontal"
+            android:textSize="20sp"
+            android:layout_marginBottom="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/tagmentalhealth"
+                android:layout_width="0dp"
+                android:layout_height="50.7dp"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                fancy:fb_defaultColor="@color/white"
+                fancy:fb_focusColor="#ed715d"
+                fancy:fb_borderColor="#ed715d"
+                fancy:fb_iconPosition="left"
+                fancy:fb_borderWidth="2dp"
+                fancy:fb_radius="18dp"
+                fancy:fb_text="Mental Health"
+                fancy:fb_textColor="#ed715d" />
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/tagphysicalhealth"
+                android:layout_width="0dp"
+                android:layout_height="50.7dp"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                fancy:fb_defaultColor="@color/white"
+                fancy:fb_focusColor="#ed715d"
+                fancy:fb_borderColor="#ed715d"
+                fancy:fb_iconPosition="left"
+                fancy:fb_borderWidth="2dp"
+                fancy:fb_radius="18dp"
+                fancy:fb_text="Physical Fitness"
+                fancy:fb_textColor="#ed715d" />
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/tagharassment"
+                android:layout_width="0dp"
+                android:layout_height="50.7dp"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                fancy:fb_defaultColor="@color/white"
+                fancy:fb_focusColor="#ed715d"
+                fancy:fb_borderColor="#ed715d"
+                fancy:fb_iconPosition="left"
+                fancy:fb_borderWidth="2dp"
+                fancy:fb_radius="18dp"
+                fancy:fb_textSize="11sp"
+                fancy:fb_text="Harassment"
+                fancy:fb_textColor="#ed715d" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/tagcareer"
+                android:layout_width="0dp"
+                android:layout_height="50.7dp"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                fancy:fb_defaultColor="@color/white"
+                fancy:fb_focusColor="#ed715d"
+                fancy:fb_borderColor="#ed715d"
+                fancy:fb_iconPosition="left"
+                fancy:fb_borderWidth="2dp"
+                fancy:fb_radius="18dp"
+                fancy:fb_text="Career"
+                fancy:fb_textColor="#ed715d"
+                />
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/tagacademic"
+                android:layout_width="0dp"
+                android:layout_height="50.7dp"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                fancy:fb_textSize="13sp"
+                fancy:fb_defaultColor="@color/white"
+                fancy:fb_focusColor="#ed715d"
+                fancy:fb_borderColor="#ed715d"
+                fancy:fb_iconPosition="left"
+                fancy:fb_borderWidth="2dp"
+                fancy:fb_radius="18dp"
+                fancy:fb_text="Academic"
+                fancy:fb_textColor="#ed715d" />
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/tagothers"
+                android:layout_width="0dp"
+                android:layout_height="50.7dp"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                fancy:fb_defaultColor="@color/white"
+                fancy:fb_focusColor="#ed715d"
+                fancy:fb_borderColor="#ed715d"
+                fancy:fb_iconPosition="left"
+                fancy:fb_borderWidth="2dp"
+                fancy:fb_radius="18dp"
+                fancy:fb_textSize="11sp"
+                fancy:fb_text="Miscellaneous"
+                fancy:fb_textColor="#ed715d" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/btn_submitquestion"
+        android:layout_width="match_parent"
+        android:layout_height="50.7dp"
+
+        fancy:fb_defaultColor="#ed715d"
+        fancy:fb_focusColor="#ed715d"
+
+        fancy:fb_iconPosition="left"
+        fancy:fb_radius="0dp"
+        fancy:fb_text="SUBMIT"
+        fancy:fb_textColor="#FFFFFF" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"/>
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/btn_cancelquestion"
+        android:layout_width="match_parent"
+        android:layout_height="50.7dp"
+
+        fancy:fb_defaultColor="#ed715d"
+        fancy:fb_focusColor="#ed715d"
+
+        fancy:fb_iconPosition="left"
+        fancy:fb_radius="0dp"
+        fancy:fb_text="BACK"
+
+        fancy:fb_textColor="#FFFFFF" />
+</LinearLayout>

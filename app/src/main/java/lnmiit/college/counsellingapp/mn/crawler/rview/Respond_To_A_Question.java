@@ -52,7 +52,7 @@ import lnmiit.college.counsellingapp.LoginActivity;
 import lnmiit.college.counsellingapp.R;
 import lnmiit.college.counsellingapp.Useremail;
 
-public class Respond_To_A_Question extends AppCompatActivity {
+public class Respond_To_A_Question extends AppCompatActivity implements Dialog_Audio_Player.Audiosubmitted {
     private TextView txt_reply_question, txt_reply_author, txt_reply_tags;
     private EditText txt_reply_answer;
     private Button btn_post_answer;
@@ -174,8 +174,10 @@ public class Respond_To_A_Question extends AppCompatActivity {
                     stopRecording();
                     Bundle bundle= new Bundle();
                     bundle.putString("Audio",mypath);
+                    bundle.putString("filename",Useremail.email+getIntent().getStringExtra("questionid")+".mp4");
                     Dialog_Audio_Player dialog_audio_player = new Dialog_Audio_Player(Respond_To_A_Question.this);
                     dialog_audio_player.setArguments(bundle);
+                    dialog_audio_player.setAudiosubmitted(Respond_To_A_Question.this);
                     dialog_audio_player.show(getSupportFragmentManager(),"dialog_audio_player");
                 }
 
@@ -240,4 +242,26 @@ public class Respond_To_A_Question extends AppCompatActivity {
         txt_timer.stop();
     }
 
+    @Override
+    public void trueaudiosubmitted(String answer) {
+        final ProgressDialog progressDialog = ProgressDialog.show(Respond_To_A_Question.this,"","Please Wait");
+        ff.collection("Questions").document(getIntent().getStringExtra("questionid")).update("isanswered",true).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+
+            }
+        });
+
+        answersmap = (Map<String,String>) getIntent().getSerializableExtra("faculty_answers");
+        answersmap.put(Useremail.email,answer);
+        ff.collection("Questions").document(getIntent().getStringExtra("questionid")).update("faculty_answers",answersmap).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(Respond_To_A_Question.this,"Your response has been submitted succesfully",Toast.LENGTH_LONG).show();
+                progressDialog.dismiss();
+                startActivity(new Intent(Respond_To_A_Question.this,MainActivity.class));
+                finish();
+            }
+        });
+    }
 }
