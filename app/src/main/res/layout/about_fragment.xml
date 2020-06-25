@@ -1,15 +1,324 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_horizontal|center_vertical"
     android:orientation="vertical"
-    >
-    <androidx.recyclerview.widget.RecyclerView
+    android:background="#FFF7F7">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/facultyrecyclerview">
+        android:layout_height="wrap_content"
+        android:id="@+id/swipetorefresh">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/logocwph"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"/>
 
-    </androidx.recyclerview.widget.RecyclerView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="CWPH"
+                    android:textColor="#016099"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/work_sans_medium"
+                    android:lines="1"
+                    android:text="Centre for Wellness and Physical Health"
+                    android:textColor="#016099"
+                    android:textSize="15sp"
+                    tools:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/work_sans"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="6sp"
+                    android:text="The LNMIIT Centre for Wellness and Positive Health was established on 17th January 2019 with Dr. Amit Neogi as it's first centre lead. It aims at at ensuring positive mental health, general feeling of wellness and help
+in realizing the value added by ethics-driven value system in both personal and professional
+spheres.  "
+                    android:textColor="#3b566e"
+
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    tools:autoSizeTextType="uniform"
+                    android:text="Members"
+                    android:textColor="#016099"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textSize="17sp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"/>
+                <!--
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/facultyrecyclerview"
+                    tools:listitem="@layout/facultyrecview"
+                    android:layout_marginBottom="10dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+                -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="8"
+                            android:layout_marginLeft="5dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Dr. Amit Neogi"
+                                android:id="@+id/faculty_name"
+                                android:layout_marginTop="5dp"
+                                android:textSize="17sp"
+                                android:textColor="#3b566e"
+                                android:fontFamily="@font/work_sans_medium"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:id="@+id/faculty_designation"
+                                android:fontFamily="@font/work_sans"
+                                android:lines="1"
+                                android:text="Head"
+                                android:textColor="#3b566e"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp">
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/faculty_mail"
+                                android:id="@+id/amitneogimail"
+                                android:layout_marginRight="30dp"
+                                android:background="@color/white"/>
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/amitneogiphone"
+                                app:srcCompat="@drawable/faculty_phone"
+                                android:background="@color/white"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="8"
+                            android:layout_marginLeft="5dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Prof. AP SIngh"
+                                android:layout_marginTop="5dp"
+                                android:textSize="17sp"
+                                android:textColor="#3b566e"
+                                android:fontFamily="@font/work_sans_medium"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/work_sans"
+                                android:lines="1"
+                                android:text="AC-SAC Representative"
+                                android:textColor="#3b566e"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp">
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/faculty_mail"
+                                android:id="@+id/apsinghmail"
+                                android:layout_marginRight="30dp"
+                                android:background="@color/white"/>
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/apsinghphone"
+                                app:srcCompat="@drawable/faculty_phone"
+                                android:background="@color/white"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="8"
+                            android:layout_marginLeft="5dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Mrs. Arshita Nair"
+                                android:layout_marginTop="5dp"
+                                android:textSize="17sp"
+                                android:textColor="#3b566e"
+                                android:fontFamily="@font/work_sans_medium"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/work_sans"
+                                android:lines="1"
+                                android:text="Student Councellor"
+                                android:textColor="#3b566e"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp">
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/faculty_mail"
+                                android:id="@+id/arshitanairmail"
+                                android:layout_marginRight="30dp"
+                                android:background="@color/white"/>
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/arshitanairphone"
+                                app:srcCompat="@drawable/faculty_phone"
+                                android:background="@color/white"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="8"
+                            android:layout_marginLeft="5dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Dr. Ajit Patel"
+                                android:layout_marginTop="5dp"
+                                android:textSize="17sp"
+                                android:textColor="#3b566e"
+                                android:fontFamily="@font/work_sans_medium"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/work_sans"
+                                android:lines="1"
+                                android:text="Cheif Warden"
+                                android:textColor="#3b566e"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp">
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/faculty_mail"
+                                android:id="@+id/ajitpatelmail"
+                                android:layout_marginRight="30dp"
+                                android:background="@color/white"/>
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/ajitpatelphone"
+                                app:srcCompat="@drawable/faculty_phone"
+                                android:background="@color/white"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </FrameLayout>

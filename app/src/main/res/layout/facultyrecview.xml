@@ -1,43 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    >
-
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/facultyimage"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:layout_weight="2"
-            android:scaleType="centerCrop"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp"
-            />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:layout_marginLeft="5dp"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtfacultyname"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="8"
-            android:gravity="center_vertical|center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Dr. Amit Neogi"
-            android:textSize="25sp" />
-        <QuickContactBadge
-            android:id="@+id/btnaddtocontacts"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="2"
-            android:backgroundTint="#FFFFFF"
-            android:src="@drawable/contacts"/>
+            android:id="@+id/faculty_name"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp"
+            android:textColor="#3b566e"
+            android:fontFamily="@font/work_sans_medium"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:id="@+id/faculty_designation"
+            android:fontFamily="@font/work_sans"
+
+            android:lines="1"
+            android:text="(Head)"
+            android:textColor="#3b566e"
+            android:textSize="14sp" />
+
+
+
+
 
     </LinearLayout>
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:layout_marginTop="10dp">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/faculty_mail"
+            android:id="@+id/faculty_emailbutton"
+            android:layout_marginRight="30dp"
+            android:background="@color/white"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/faculty_phonebutton"
+            app:srcCompat="@drawable/faculty_phone"
+            android:background="@color/white"/>
+    </LinearLayout>
+        
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

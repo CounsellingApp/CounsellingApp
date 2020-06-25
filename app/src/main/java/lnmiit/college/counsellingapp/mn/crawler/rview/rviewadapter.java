@@ -18,9 +18,7 @@ import lnmiit.college.counsellingapp.UnansweredQuestionModel;
 
 public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellingapp.mn.crawler.rview.viewholder> {
 
-    String[] questions = {"How are you?","What you doin?","What' your problem?","What is the best VST that you have ever used?","Is Messi better than Ronaldo?","Can Real Madrid win the champions league with their current squad"};
-    String[] authors = {"Lakshay","Anubhav","Anonymous","Mehak","Ishaan","Lavish"};
-    String [] tags = {"General","General","General","Music Production","Football","Football"};
+
     ArrayList<String> answers = new ArrayList<String>();
     private boolean answers_visible = false;
     List<UnansweredQuestionModel> mainlist = new ArrayList<>();
@@ -41,7 +39,8 @@ public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellin
 
     @Override
     public void onBindViewHolder(@NonNull final lnmiit.college.counsellingapp.mn.crawler.rview.viewholder holder, final int position) {
-        holder.getTxtquestion().setText(mainlist.get(position).getQuestion());
+        holder.getTxtquestion().setText(mainlist.get(position).getQuestion_title());
+        holder.getTxt_description().setText(mainlist.get(position).getQuestion());
         holder.getTxtauthor().setText("By- "+mainlist.get(position).getAsked_by());
         holder.getTxttags().setText("Tags: "+mainlist.get(position).getTag());
         Answers_adapter adapter = new Answers_adapter(position,context);
@@ -70,6 +69,7 @@ public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellin
                 }
             }
         });
+
 
     }
 

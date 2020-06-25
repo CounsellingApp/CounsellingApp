@@ -14,20 +14,27 @@ public class viewholder extends RecyclerView.ViewHolder
     private TextView txtquestion;
     private TextView txtauthor;
     private TextView txttags;
+    private TextView txt_description;
     private ImageButton btnview;
     private RecyclerView answers_rec_view;
+    private TextView txtline;
     public viewholder(View view)
     {
         super(view);
         txtquestion = view.findViewById(R.id.txtproblem);
         txtauthor = view.findViewById(R.id.txtauthor);
+        txt_description = view.findViewById(R.id.txt_description);
         txttags = view.findViewById(R.id.txttags);
         btnview  = view.findViewById(R.id.btnview);
         answers_rec_view = view.findViewById(R.id.answers_rec_view);
+        //txtline = view.findViewById(R.id.txtline);
     }
 
     public TextView getTxtquestion() {
         return txtquestion;
+    }
+    public TextView getTxtline() {
+        return txtline;
     }
 
     public TextView getTxtauthor() {
@@ -41,7 +48,12 @@ public class viewholder extends RecyclerView.ViewHolder
         return btnview;
     }
 
+    public TextView getTxt_description() {
+        return txt_description;
+    }
+
     public RecyclerView getAnswers_rec_view() {
         return answers_rec_view;
     }
+
 }

@@ -16,6 +16,8 @@
         app:itemTextAppearance="@font/open_sans"
         app:headerLayout="@layout/drawer_header"
         android:layout_gravity="start"
+
+        app:itemBackground="@drawable/drawer_list_selector"
         android:fitsSystemWindows="true"/>
 
         <LinearLayout

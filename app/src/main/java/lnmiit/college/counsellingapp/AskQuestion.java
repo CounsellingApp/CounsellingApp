@@ -27,11 +27,12 @@ import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
+import lnmiit.college.counsellingapp.mn.crawler.rview.Custom_Dialog;
 import lnmiit.college.counsellingapp.mn.crawler.rview.Dialog_Tags;
 import lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity;
 import mehdi.sakout.fancybuttons.FancyButton;
 
-public class AskQuestion extends AppCompatActivity implements View.OnClickListener {
+public class AskQuestion extends AppCompatActivity implements View.OnClickListener, Custom_Dialog.Ondialogaction {
     private EditText question, txt_question_title;
     private TextView toolbartext;
     private FancyButton submit;
@@ -73,40 +74,18 @@ public class AskQuestion extends AppCompatActivity implements View.OnClickListen
                     Toast.makeText(AskQuestion.this,"PLEASE SELECT A TAG FIRST",Toast.LENGTH_LONG).show();
                 }
                 else if(!(question.getText()+"").equals("") && !(txt_question_title.getText()+"").equals("") ) {
-                    final ProgressDialog progressDialog = ProgressDialog.show(AskQuestion.this,"","Please Wait");
-                    FirebaseFirestore ff = FirebaseFirestore.getInstance();
-                    Date date = new Date();
-                    Map<String, String> faculty_answer = new HashMap<>();
-                    UUID r = UUID.randomUUID();
-                    Map<String, Object> map = new HashMap<>();
-                    map.put("question_id", r.toString());
-                    map.put("question", question.getText().toString());
-                    map.put("asked_by", getIntent().getStringExtra("privacy"));
-                    map.put("faculty_answers", faculty_answer);
-                    map.put("tag", currentbutton.getText().toString()+"");
-                    map.put("date", date);
-                    map.put("userid", Useremail.email);
-                    map.put("isanswered", false);
-                    ff.collection("Questions").document(String.valueOf(r)).set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(AskQuestion.this, "Your question was submitted succesfully.", Toast.LENGTH_SHORT).show();
-                                AskQuestion.this.finish();
-                                progressDialog.dismiss();
-                            }
-                            else {
-                                Toast.makeText(AskQuestion.this, "Some error occured, please try again.", Toast.LENGTH_SHORT).show();
-                                progressDialog.dismiss();
-                            }
-                        }
-                    });
-                }
+                    Custom_Dialog custom_dialog = new Custom_Dialog();
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("code",20);
+                    custom_dialog.setArguments(bundle);
+                    custom_dialog.setMondialogaction(AskQuestion.this);
+                    custom_dialog.show(getSupportFragmentManager(),"askquestion");
+
+                  }
                 else {
                     Toast.makeText(AskQuestion.this,"Please enter a TITLE and a QUESTION before submitting",Toast.LENGTH_LONG).show();
                 }
-//                Dialog_Tags dialog_tags = new Dialog_Tags();
-//                dialog_tags.show(getSupportFragmentManager(),"Dialog_Tag");
+
             }
         });
     }
@@ -145,5 +124,38 @@ public class AskQuestion extends AppCompatActivity implements View.OnClickListen
             afb.setTextColor(getResources().getColor(R.color.white));
             currentbutton=afb;
         }
+    }
+
+    @Override
+    public void mainactivity() {
+        final ProgressDialog progressDialog = ProgressDialog.show(AskQuestion.this,"","Please Wait");
+        FirebaseFirestore ff = FirebaseFirestore.getInstance();
+        Date date = new Date();
+        Map<String, String> faculty_answer = new HashMap<>();
+        UUID r = UUID.randomUUID();
+        Map<String, Object> map = new HashMap<>();
+        map.put("question_id", r.toString());
+        map.put("question", question.getText().toString());
+        map.put("question_title",txt_question_title.getText().toString());
+        map.put("asked_by", getIntent().getStringExtra("privacy"));
+        map.put("faculty_answers", faculty_answer);
+        map.put("tag", currentbutton.getText().toString()+"");
+        map.put("date", date);
+        map.put("userid", Useremail.email);
+        map.put("isanswered", false);
+        ff.collection("Questions").document(String.valueOf(r)).set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(AskQuestion.this, "Your question was submitted succesfully.", Toast.LENGTH_SHORT).show();
+                    AskQuestion.this.finish();
+                    progressDialog.dismiss();
+                }
+                else {
+                    Toast.makeText(AskQuestion.this, "Some error occured, please try again.", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                }
+            }
+        });
     }
 }

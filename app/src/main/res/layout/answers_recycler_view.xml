@@ -52,7 +52,7 @@
             android:textSize="15sp"
             android:paddingTop="10dp"
             android:visibility="visible"
-            android:text="This is the Answer"/>
+            />
         <me.jagar.chatvoiceplayerlibrary.VoicePlayerView
             android:id="@+id/answer_audio_player"
             android:layout_width="0dp"

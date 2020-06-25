@@ -8,5 +8,6 @@
     <color name="gray">#ffffff</color>
     <color name="green">#00ff00</color>
     <color name="tab_background_selected">#ed715d</color>
-
+    <color name="pressed">#996f8ba4</color>
+    
 </resources>

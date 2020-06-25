@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+
     >
     <group >
         <item android:id="@+id/home"
             android:icon="@drawable/navigation_feed"
             android:title="FEED"
+            android:checkable="true"
+            android:checked="true"
             />
 
         <item android:id="@+id/about"
             android:icon="@drawable/ic_healing_black_24dp"
+            android:checkable="true"
+
             android:title="ABOUT CWPH"/>
         <item android:id="@+id/developers"
             android:icon="@drawable/developersicon"
-            android:title="DEVELOPERS"/>
+            android:title="DEVELOPERS"
+            android:checkable="true"
+            />
         <item android:id="@+id/logout"
             android:icon="@drawable/logout_1"
+
             android:title="LOGOUT"/>
     </group>
 </menu>

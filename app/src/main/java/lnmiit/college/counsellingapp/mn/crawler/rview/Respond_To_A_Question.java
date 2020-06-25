@@ -53,7 +53,7 @@ import lnmiit.college.counsellingapp.LoginActivity;
 import lnmiit.college.counsellingapp.R;
 import lnmiit.college.counsellingapp.Useremail;
 
-public class Respond_To_A_Question extends AppCompatActivity implements Dialog_Audio_Player.Audiosubmitted {
+public class Respond_To_A_Question extends AppCompatActivity implements Dialog_Audio_Player.Audiosubmitted, Custom_Dialog.Ondialogaction {
     private TextView txt_reply_question, txt_reply_author, txt_reply_tags;
     private EditText txt_reply_answer;
     private Button btn_post_answer;
@@ -109,40 +109,46 @@ public class Respond_To_A_Question extends AppCompatActivity implements Dialog_A
                 }
                 else
                 {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(Respond_To_A_Question.this);
-                    builder.setMessage("Are you sure you want to post this answer?");
-                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(final DialogInterface dialog, int which) {
-                                 final ProgressDialog progressDialog = ProgressDialog.show(Respond_To_A_Question.this,"","Please Wait");
-                                 ff.collection("Questions").document(getIntent().getStringExtra("questionid")).update("isanswered",true).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                     @Override
-                                     public void onSuccess(Void aVoid) {
-
-                                     }
-                                 });
-
-                            answersmap = (Map<String,String>) getIntent().getSerializableExtra("faculty_answers");
-                            answersmap.put(Useremail.email,answer);
-                            ff.collection("Questions").document(getIntent().getStringExtra("questionid")).update("faculty_answers",answersmap).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast.makeText(Respond_To_A_Question.this,"Your response has been submitted succesfully",Toast.LENGTH_LONG).show();
-                                    dialog.dismiss();
-                                    progressDialog.dismiss();
-                                    startActivity(new Intent(Respond_To_A_Question.this,MainActivity.class));
-                                    finish();
-                                }
-                            });
-
-                        }
-                    }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-                    builder.create().show();
+                    Custom_Dialog custom_dialog = new Custom_Dialog();
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("code",30);
+                    custom_dialog.setArguments(bundle);
+                    custom_dialog.setMondialogaction(Respond_To_A_Question.this);
+                    custom_dialog.show(getSupportFragmentManager(),"respondtoaquestion");
+//                    AlertDialog.Builder builder = new AlertDialog.Builder(Respond_To_A_Question.this);
+//                    builder.setMessage("Are you sure you want to post this answer?");
+//                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(final DialogInterface dialog, int which) {
+//                                 final ProgressDialog progressDialog = ProgressDialog.show(Respond_To_A_Question.this,"","Please Wait");
+//                                 ff.collection("Questions").document(getIntent().getStringExtra("questionid")).update("isanswered",true).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                                     @Override
+//                                     public void onSuccess(Void aVoid) {
+//
+//                                     }
+//                                 });
+//
+//                            answersmap = (Map<String,String>) getIntent().getSerializableExtra("faculty_answers");
+//                            answersmap.put(Useremail.email,answer);
+//                            ff.collection("Questions").document(getIntent().getStringExtra("questionid")).update("faculty_answers",answersmap).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                                @Override
+//                                public void onSuccess(Void aVoid) {
+//                                    Toast.makeText(Respond_To_A_Question.this,"Your response has been submitted succesfully",Toast.LENGTH_LONG).show();
+//                                    dialog.dismiss();
+//                                    progressDialog.dismiss();
+//                                    startActivity(new Intent(Respond_To_A_Question.this,MainActivity.class));
+//                                    finish();
+//                                }
+//                            });
+//
+//                        }
+//                    }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            dialog.dismiss();
+//                        }
+//                    });
+//                    builder.create().show();
                 }
             }
         });
@@ -247,6 +253,30 @@ public class Respond_To_A_Question extends AppCompatActivity implements Dialog_A
 
     @Override
     public void trueaudiosubmitted(String answer) {
+        final ProgressDialog progressDialog = ProgressDialog.show(Respond_To_A_Question.this,"","Please Wait");
+        ff.collection("Questions").document(getIntent().getStringExtra("questionid")).update("isanswered",true).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+
+            }
+        });
+
+        answersmap = (Map<String,String>) getIntent().getSerializableExtra("faculty_answers");
+        answersmap.put(Useremail.email,answer);
+        ff.collection("Questions").document(getIntent().getStringExtra("questionid")).update("faculty_answers",answersmap).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(Respond_To_A_Question.this,"Your response has been submitted succesfully",Toast.LENGTH_LONG).show();
+                progressDialog.dismiss();
+                startActivity(new Intent(Respond_To_A_Question.this,MainActivity.class));
+                finish();
+            }
+        });
+    }
+
+    @Override
+    public void mainactivity() {
+        final String answer = txt_reply_answer.getText().toString()+"";
         final ProgressDialog progressDialog = ProgressDialog.show(Respond_To_A_Question.this,"","Please Wait");
         ff.collection("Questions").document(getIntent().getStringExtra("questionid")).update("isanswered",true).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

@@ -7,6 +7,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,7 +25,8 @@ public class UnansweredRecyclerViewHolder extends RecyclerView.ViewHolder {
     private Map<String,String> map=new HashMap<>();
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
-    private RelativeLayout mainlayout;
+    private CardView mainlayout;
+    private TextView txtunanswerddescription;
 
     public UnansweredRecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -36,6 +38,7 @@ public class UnansweredRecyclerViewHolder extends RecyclerView.ViewHolder {
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
         mainlayout = itemView.findViewById(R.id.mainlayout);
+        txtunanswerddescription = itemView.findViewById(R.id.txtunanswereddescription);
     }
 
     public LinearLayout getClickablelinearlayout() {
@@ -74,7 +77,11 @@ public class UnansweredRecyclerViewHolder extends RecyclerView.ViewHolder {
         this.map = map;
     }
 
-    public RelativeLayout getMainlayout() {
+    public CardView getMainlayout() {
         return mainlayout;
+    }
+
+    public TextView getTxtunanswerddescription() {
+        return txtunanswerddescription;
     }
 }

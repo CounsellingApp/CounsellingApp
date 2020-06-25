@@ -13,25 +13,29 @@ import lnmiit.college.counsellingapp.R;
 
 public class faculty_viewholder extends RecyclerView.ViewHolder {
 
-    private QuickContactBadge addtocontacts;
-    private TextView facultyname;
-    private CircleImageView circleImageView;
+    private TextView fac_name, fac_des;
+    private ImageButton fac_phone, fac_email;
     public faculty_viewholder(@NonNull View itemView) {
         super(itemView);
-        circleImageView = itemView.findViewById(R.id.facultyimage);
-        facultyname = itemView.findViewById(R.id.txtfacultyname);
-        addtocontacts = itemView.findViewById(R.id.btnaddtocontacts);
+        fac_des = itemView.findViewById(R.id.faculty_designation);
+        fac_name = itemView.findViewById(R.id.faculty_name);
+        fac_email = itemView.findViewById(R.id.faculty_emailbutton);
+        fac_phone = itemView.findViewById(R.id.faculty_phonebutton);
     }
 
-    public QuickContactBadge getAddtocontacts() {
-        return addtocontacts;
+    public TextView getFac_name() {
+        return fac_name;
     }
 
-    public TextView getFacultyname() {
-        return facultyname;
+    public TextView getFac_des() {
+        return fac_des;
     }
 
-    public CircleImageView getCircleImageView() {
-        return circleImageView;
+    public ImageButton getFac_phone() {
+        return fac_phone;
+    }
+
+    public ImageButton getFac_email() {
+        return fac_email;
     }
 }

@@ -14,9 +14,7 @@ import lnmiit.college.counsellingapp.R;
 
 public class faculty_recyclerview_adapter extends RecyclerView.Adapter<faculty_viewholder> {
 
-    String[] facultynames = {"Dr. Amit Neogi","Dr. Ruchir Sodhani","Dr. Rahul Banerjee"};
-    String[] facultynmubers = {"8963807110","9468586840","9799225550"};
-    int [] images = {R.drawable.amitneogi,R.drawable.ruchirsodhani, R.drawable.rahulbanerjee};
+
     @NonNull
     @Override
     public faculty_viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -27,17 +25,32 @@ public class faculty_recyclerview_adapter extends RecyclerView.Adapter<faculty_v
 
     @Override
     public void onBindViewHolder(@NonNull final faculty_viewholder holder, final int position) {
-        holder.getCircleImageView().setImageResource(images[position]);
-        holder.getFacultyname().setText(facultynames[position]);
-
-        holder.getAddtocontacts().assignContactFromPhone(facultynmubers[position],true);
+        switch (position)
+        {
+            case 0:
+                holder.getFac_name().setText("Dr. Amit Neogi");
+                holder.getFac_des().setText("Head");
+                break;
+            case 1:
+                holder.getFac_name().setText("Prof. AP Singh");
+                holder.getFac_des().setText("SAC Member");
+                break;
+            case 2:
+                holder.getFac_name().setText("Mrs. Arshita Nair");
+                holder.getFac_des().setText("Student Councellor");
+                break;
+            case 3:
+                holder.getFac_name().setText("Dr. Ajit Patel");
+                holder.getFac_des().setText("Cheif Warden");
+                break;
+        }
 
 
     }
 
     @Override
     public int getItemCount() {
-        return facultynames.length;
+        return 4;
     }
 }
 

@@ -7,6 +7,7 @@ import java.util.Map;
 public class UnansweredQuestionModel {
     private String question_id;
     private String question;
+    private String question_title;
     private String asked_by = "Anonymous";
     private Map<String,String> faculty_answers;
     private String tag;
@@ -14,9 +15,10 @@ public class UnansweredQuestionModel {
     private String userid;
     private boolean isanswered;
 
-    public UnansweredQuestionModel(String question_id, String question, String asked_by, Map<String, String> faculty_answers, String tag, Date date, String userid, boolean answered) {
+    public UnansweredQuestionModel(String question_id, String question, String question_title, String asked_by, Map<String, String> faculty_answers, String tag, Date date, String userid, boolean answered) {
         this.question_id = question_id;
         this.question = question;
+        this.question_title = question_title;
         this.asked_by = asked_by;
         this.faculty_answers = faculty_answers;
         this.tag = tag;
@@ -92,6 +94,7 @@ public class UnansweredQuestionModel {
         this.isanswered = answered;
     }
 
-
-
+    public String getQuestion_title() {
+        return question_title;
+    }
 }

@@ -14,6 +14,6 @@
     <item name="colorPrimaryDark">#ed775d</item>
 
     <item name="colorAccent">#e0675d</item>
-
+        <item name="android:activatedBackgroundIndicator">@drawable/drawer_list_selector</item>
     </style>
 </resources>

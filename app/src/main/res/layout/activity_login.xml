@@ -17,8 +17,8 @@
 
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_height="wrap_content"
+
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"
@@ -42,8 +42,8 @@
         android:gravity="center_horizontal"
         android:textColor="#1e1c61"
         android:textSize="38sp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"/>
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -142,7 +142,8 @@
         <com.google.android.gms.common.SignInButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/googlesignin"/>
+            android:id="@+id/googlesignin"
+            />
         <ImageButton
             android:id="@+id/loginAsFaculty"
             android:layout_width="wrap_content"

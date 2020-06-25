@@ -264,6 +264,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 progressDialog.dismiss();
                                 startActivity(intent);
+                                finish();
                             }
                             else
                             {

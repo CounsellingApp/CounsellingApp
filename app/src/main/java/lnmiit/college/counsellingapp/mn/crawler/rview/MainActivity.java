@@ -59,7 +59,7 @@ import lnmiit.college.counsellingapp.R;
 import lnmiit.college.counsellingapp.UnansweredQuestion;
 import lnmiit.college.counsellingapp.Useremail;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, Custom_Dialog.Ondialogaction{
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     private BottomNavigationView bottomNavigationView;
+    public static FragmentManager mainfm;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     private FirebaseFirestore ff;
@@ -83,7 +84,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         checkforpermissions();
+
         ff=FirebaseFirestore.getInstance();
+        mainfm = getSupportFragmentManager();
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
         ff.collection("users").document(firebaseUser.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -202,28 +205,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
                 case R.id.developers:
-                    Toast.makeText(MainActivity.this,"Implement the Developers Activity",Toast.LENGTH_LONG).show();
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.mainframehandler,new Developers());
+                    fragmentTransaction.commit();
+                    toolbartext.setText("DEVELOPERS");
                     break;
             case R.id.logout:
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setTitle("Are you sure you want to Logout?").setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                }).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        FirebaseAuth.getInstance().signOut();
-                        if(LoginActivity.googleSignInClient!=null)
-                        {
-                            LoginActivity.googleSignInClient.signOut();
-                        }
-                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                        finish();
-                    }
-                });
-                builder.show();
+                Custom_Dialog custom_dialog = new Custom_Dialog();
+                custom_dialog.setMondialogaction(MainActivity.this);
+                Bundle bundle = new Bundle();
+                bundle.putInt("code",10);
+                custom_dialog.setArguments(bundle);
+                custom_dialog.show(getSupportFragmentManager(),"customdialog");
                 break;
             case R.id.home:
                 fragmentManager = getSupportFragmentManager();
@@ -370,5 +364,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    @Override
+    public void mainactivity() {
+        FirebaseAuth.getInstance().signOut();
+        if(LoginActivity.googleSignInClient!=null)
+        {
+            LoginActivity.googleSignInClient.signOut();
+        }
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        finish();
+    }
 }
 

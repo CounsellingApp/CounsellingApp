@@ -70,7 +70,8 @@ public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<Unanswer
             holder.getMainlayout().setBackgroundColor(Color.parseColor("#00FF00"));
         }
             holder.getTxtunansweredatgs().setText("Tags : "+list.get(position).getTag());
-            holder.getTxtunansweredquestion().setText(list.get(position).getQuestion());
+            holder.getTxtunansweredquestion().setText(list.get(position).getQuestion_title());
+            holder.getTxtunanswerddescription().setText(list.get(position).getQuestion());
             holder.getTxtunansweredauthor().setText("By - "+list.get(position).getAsked_by());
             holder.getClickablelinearlayout().setOnClickListener(new View.OnClickListener() {
                 @Override
