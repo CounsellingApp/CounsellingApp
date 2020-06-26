@@ -1,6 +1,8 @@
 package lnmiit.college.counsellingapp.mn.crawler.rview;
 
-public class AnswerModel {
+import java.io.Serializable;
+
+public class AnswerModel implements Serializable {
     private String faculty_name;
     private String answer_text;
     private String faculty_image_url;

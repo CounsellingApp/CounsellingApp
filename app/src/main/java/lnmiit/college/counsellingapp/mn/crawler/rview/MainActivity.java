@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -24,9 +25,11 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -78,13 +81,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private MenuItem askmenuitem;
     private Bitmap bitmap;
     private String imageIdentifier;
+    private LinearLayout framecontainer;
     private TextView toolbartext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         checkforpermissions();
-
+        framecontainer = findViewById(R.id.framecontainer);
         ff=FirebaseFirestore.getInstance();
         mainfm = getSupportFragmentManager();
         firebaseAuth=FirebaseAuth.getInstance();
@@ -137,18 +141,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationheaderemail.setText(Useremail.email+"");
         profileimage = heaferview.findViewById(R.id.profile_image);
         if(Useremail.isfaculty) {
-            FirebaseStorage.getInstance().getReference().child("faculty_images").child(Useremail.email + ".png").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-                    Picasso.get().load(uri).into(profileimage);
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    profileimage.setImageResource(R.drawable.personimage);
-                }
-            });
-
+//            FirebaseStorage.getInstance().getReference().child("faculty_images").child(Useremail.email + ".png").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//                @Override
+//                public void onSuccess(Uri uri) {
+//                    Picasso.get().load(uri).into(profileimage);
+//                }
+//            }).addOnFailureListener(new OnFailureListener() {
+//                @Override
+//                public void onFailure(@NonNull Exception e) {
+//                    profileimage.setImageResource(R.drawable.personimage);
+//                }
+//            });
+            Log.i("URI",Useremail.photouri.toString());
+            Picasso.get().load(Useremail.photouri).into(profileimage);
             profileimage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -195,8 +200,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch(item.getItemId())
         {
             case R.id.about:
-                Toast.makeText(MainActivity.this,"Implement the About CWPH Activity",Toast.LENGTH_LONG).show();
-
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.mainframehandler,new about_fragment());
@@ -271,7 +274,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 LoginActivity.googleSignInClient.signOut();
             }
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
-            Toast.makeText(MainActivity.this,"You can't use this application without granting all the permissions :)",Toast.LENGTH_LONG).show();
+            //Toast.makeText(MainActivity.this,"You can't use this application without granting all the permissions :)",Toast.LENGTH_LONG).show();
+            Showfancytoasr.show(MainActivity.this,"You can't use this application without granting all the permissions :)");
             finish();
         }
         else if((requestCode==690 && grantResults[0]!=PackageManager.PERMISSION_GRANTED)||(requestCode==6900 && grantResults[0]!=PackageManager.PERMISSION_GRANTED))
@@ -281,7 +285,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             {
                 LoginActivity.googleSignInClient.signOut();
             }
-            Toast.makeText(MainActivity.this,"You can't use this application without granting all the permissions :)",Toast.LENGTH_LONG).show();
+            Showfancytoasr.show(MainActivity.this,"You can't use this application without granting all the permissions :)");
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
         }
@@ -308,7 +312,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
     private void uploadimage() {
         if (bitmap != null) {
-            // Get the data from an ImageView as bytes
+            final ProgressDialog progressDialog = ProgressDialog.show(MainActivity.this,"","Please Wait");
             imageIdentifier = Useremail.email + ".png";
             profileimage.setDrawingCacheEnabled(true);
             profileimage.buildDrawingCache();
@@ -320,24 +324,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             uploadTask.addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception exception) {
-                    Toast.makeText(MainActivity.this, exception.getMessage(), Toast.LENGTH_LONG).show();// Handle unsuccessful uploads
+                    Showfancytoasr.show(MainActivity.this,"Upload was unsuccessful, please try again");
                 }
             }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
                     // ...
-                    Toast.makeText(MainActivity.this, "Uploading process was successful", Toast.LENGTH_LONG).show();
+
                     taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
                         @Override
                         public void onComplete(@NonNull Task<Uri> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(MainActivity.this,"Upload Succesful",Toast.LENGTH_LONG).show();
+                                FirebaseStorage.getInstance().getReference().child("faculty_images").child(imageIdentifier).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        Useremail.photouri = uri;
+                                        FirebaseFirestore.getInstance().collection("Faculty_Bag").document(Useremail.email).update("photo_uri",Useremail.photouri.toString()).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Showfancytoasr.show(MainActivity.this,"Uploading process was successful");
+                                                progressDialog.dismiss();
+                                                finish();
+                                                startActivity(getIntent());
+                                            }
+                                        });
+                                    }
+                                });
                             }
                         }
                     });
                 }
             });
+
+
         }
     }
     private void checkforpermissions()

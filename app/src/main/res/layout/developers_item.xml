@@ -45,7 +45,7 @@
             android:layout_height="20dp"
             android:id="@+id/linkedin"
             android:src="@drawable/linkedin"
-            android:background="#FFF7F7"
+            android:background="@color/main_app_background"
             android:scaleType="fitXY"
             android:layout_marginRight="15dp"/>
         <ImageButton
@@ -54,7 +54,7 @@
             android:id="@+id/developer_mail"
             android:scaleType="fitXY"
             android:src="@drawable/maildev"
-            android:background="#FFF7F7"/>
+            android:background="@color/main_app_background"/>
 
 
     </LinearLayout>

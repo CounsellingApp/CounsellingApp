@@ -58,7 +58,7 @@ public class Dialog_Audio_Player extends DialogFragment {
         btncancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(),"Audio will not be submitted",Toast.LENGTH_LONG).show();
+
                 File file = new File(getArguments().getString("Audio"));
                 file.delete();
                 curactivity.finish();
@@ -78,7 +78,7 @@ public class Dialog_Audio_Player extends DialogFragment {
                 uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Toast.makeText(v.getContext(),"Audio uploaded succesfully",Toast.LENGTH_LONG).show();
+                        Showfancytoasr.show(v.getContext(),"Audio updated successfully");
                         progressDialog.dismiss();
                         maudiosubmitted.trueaudiosubmitted(getArguments().getString("filename"));
                         dismiss();
@@ -87,7 +87,7 @@ public class Dialog_Audio_Player extends DialogFragment {
                 uploadTask.addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(v.getContext(),"Uploadfailed",Toast.LENGTH_LONG).show();
+                        Showfancytoasr.show(v.getContext(),"Upload failed. Please try again");
                         Log.i("uploaderror",e.getMessage());
                         progressDialog.dismiss();
                     }

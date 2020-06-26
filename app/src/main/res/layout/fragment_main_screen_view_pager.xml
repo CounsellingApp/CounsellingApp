@@ -22,17 +22,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tablayout"
+                android:background="@color/main_app_background"
                 app:tabBackground="@drawable/tabcolorselector">
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="POSTS"
-
+                    android:icon="@drawable/bottom_home"
+                    android:background="@color/main_app_background"
                     android:id="@+id/feed"/>
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="REQUESTS"
+                    android:background="@color/main_app_background"
+                    android:icon="@drawable/bottom_requests"
 
                     android:id="@+id/respond"
                     />

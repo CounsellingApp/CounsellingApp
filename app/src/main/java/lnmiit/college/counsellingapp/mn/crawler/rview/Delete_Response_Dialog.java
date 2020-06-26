@@ -52,7 +52,7 @@ public class Delete_Response_Dialog extends AppCompatDialogFragment {
         delete_response_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(),"Question will be deleted permanently",Toast.LENGTH_LONG).show();
+                Showfancytoasr.show(v.getContext(),"Question will be deleted permanently");
                 ff.collection("Questions").document(bundle.getString("did")).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -67,7 +67,7 @@ public class Delete_Response_Dialog extends AppCompatDialogFragment {
         delete_response_no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(),"Question will not be deleted",Toast.LENGTH_SHORT).show();
+
                 minputselected.sendInput(false,bundle.getInt("position"));
                 getDialog().dismiss();
             }

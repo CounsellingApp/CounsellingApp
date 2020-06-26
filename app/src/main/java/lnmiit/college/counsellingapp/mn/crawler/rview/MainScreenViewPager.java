@@ -31,10 +31,17 @@ public class MainScreenViewPager extends Fragment {
         tabLayout = view.findViewById(R.id.tablayout);
 
         mainviewpager = view.findViewById(R.id.mainviewpager);
+
         feed = view.findViewById(R.id.feed);
         respond = view.findViewById(R.id.respond);
         mainScreenViewPagerAdapter = new MainScreenViewPagerAdapter(getChildFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT,tabLayout.getTabCount());
+        mainScreenViewPagerAdapter.addFrag(new mainFragment(),"POSTS");
+        mainScreenViewPagerAdapter.addFrag(new RespondFragment(),"REQUESTS");
         mainviewpager.setAdapter(mainScreenViewPagerAdapter);
+        tabLayout.setupWithViewPager(mainviewpager);
+//        tabLayout.getTabAt(0).setIcon(R.drawable.bottom_home);
+//        tabLayout.getTabAt(1).setIcon(R.drawable.bottom_requests);
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

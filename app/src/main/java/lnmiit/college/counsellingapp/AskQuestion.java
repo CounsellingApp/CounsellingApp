@@ -30,6 +30,8 @@ import java.util.UUID;
 import lnmiit.college.counsellingapp.mn.crawler.rview.Custom_Dialog;
 import lnmiit.college.counsellingapp.mn.crawler.rview.Dialog_Tags;
 import lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity;
+import lnmiit.college.counsellingapp.mn.crawler.rview.Respond_To_A_Question;
+import lnmiit.college.counsellingapp.mn.crawler.rview.Showfancytoasr;
 import mehdi.sakout.fancybuttons.FancyButton;
 
 public class AskQuestion extends AppCompatActivity implements View.OnClickListener, Custom_Dialog.Ondialogaction {
@@ -147,12 +149,12 @@ public class AskQuestion extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(AskQuestion.this, "Your question was submitted succesfully.", Toast.LENGTH_SHORT).show();
+                    Showfancytoasr.show(AskQuestion.this,"Your question was submitted succesfully");
                     AskQuestion.this.finish();
                     progressDialog.dismiss();
                 }
                 else {
-                    Toast.makeText(AskQuestion.this, "Some error occured, please try again.", Toast.LENGTH_SHORT).show();
+                    Showfancytoasr.show(AskQuestion.this,"Some error occured, please try again");
                     progressDialog.dismiss();
                 }
             }

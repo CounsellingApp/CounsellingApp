@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Introduction_Activity"
-    android:background="@color/white">
+    android:background="@color/main_app_background">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/loginbutton"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/main_app_background"
             android:visibility="invisible"
             android:layout_height="0dp"
             android:layout_weight="1"/>

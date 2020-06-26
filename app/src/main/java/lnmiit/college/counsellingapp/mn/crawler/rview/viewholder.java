@@ -7,9 +7,11 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 import lnmiit.college.counsellingapp.R;
 
-public class viewholder extends RecyclerView.ViewHolder
+public class viewholder extends RecyclerView.ViewHolder implements View.OnClickListener
 {
     private TextView txtquestion;
     private TextView txtauthor;
@@ -18,6 +20,8 @@ public class viewholder extends RecyclerView.ViewHolder
     private ImageButton btnview;
     private RecyclerView answers_rec_view;
     private TextView txtline;
+    private List<AnswerModel> mylist;
+    onNoteListener my_notelistener;
     public viewholder(View view)
     {
         super(view);
@@ -27,6 +31,20 @@ public class viewholder extends RecyclerView.ViewHolder
         txttags = view.findViewById(R.id.txttags);
         btnview  = view.findViewById(R.id.btnview);
         answers_rec_view = view.findViewById(R.id.answers_rec_view);
+
+        //txtline = view.findViewById(R.id.txtline);
+    }
+    public viewholder(View view, onNoteListener my_notelistener)
+    {
+        super(view);
+        txtquestion = view.findViewById(R.id.txtproblem);
+        txtauthor = view.findViewById(R.id.txtauthor);
+        txt_description = view.findViewById(R.id.txt_description);
+        txttags = view.findViewById(R.id.txttags);
+        btnview  = view.findViewById(R.id.btnview);
+        answers_rec_view = view.findViewById(R.id.answers_rec_view);
+        view.setOnClickListener(this);
+        this.my_notelistener = my_notelistener;
         //txtline = view.findViewById(R.id.txtline);
     }
 
@@ -55,5 +73,20 @@ public class viewholder extends RecyclerView.ViewHolder
     public RecyclerView getAnswers_rec_view() {
         return answers_rec_view;
     }
+    public interface onNoteListener{
+        void onnoteclick(String question,String descrption,String author,String tags,List<AnswerModel> mylist);
+    }
 
+    @Override
+    public void onClick(View v) {
+        my_notelistener.onnoteclick(txtquestion.getText().toString()+"",txt_description.getText().toString()+"",txtauthor.getText().toString()+"",txttags.getText().toString()+"",mylist);
+    }
+
+    public List<AnswerModel> getMylist() {
+        return mylist;
+    }
+
+    public void setMylist(List<AnswerModel> mylist) {
+        this.mylist = mylist;
+    }
 }

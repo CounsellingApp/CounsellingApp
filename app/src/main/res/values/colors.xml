@@ -9,5 +9,5 @@
     <color name="green">#00ff00</color>
     <color name="tab_background_selected">#ed715d</color>
     <color name="pressed">#996f8ba4</color>
-    
+    <color name="main_app_background">#F9F9F9</color>
 </resources>

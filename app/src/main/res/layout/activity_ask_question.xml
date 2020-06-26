@@ -7,7 +7,7 @@
     xmlns:fancy="http://schemas.android.com/apk/res-auto"
     tools:context=".AskQuestion"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/main_app_background">
     <include
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,12 +16,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/white">
+        android:background="@color/main_app_background">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/white">
+        android:background="@color/main_app_background">
         <EditText
             android:layout_width="match_parent"
             android:layout_marginTop="10dp"
@@ -31,7 +31,7 @@
 
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/white"
+            android:background="@color/main_app_background"
             android:layout_marginBottom="10dp"/>
         <TextView
             android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                     android:layout_height="30dp"
                     android:layout_weight="1"
                     android:layout_margin="5dp"
-                    fancy:fb_defaultColor="@color/white"
+                    fancy:fb_defaultColor="@color/main_app_background"
                     fancy:fb_focusColor="#ed715d"
                     fancy:fb_borderColor="#ed715d"
                     fancy:fb_iconPosition="left"
@@ -78,7 +78,7 @@
                     android:layout_height="30dp"
                     android:layout_weight="1"
                     android:layout_margin="5dp"
-                    fancy:fb_defaultColor="@color/white"
+                    fancy:fb_defaultColor="@color/main_app_background"
                     fancy:fb_focusColor="#ed715d"
                     fancy:fb_borderColor="#ed715d"
                     fancy:fb_iconPosition="left"
@@ -95,7 +95,7 @@
                     android:layout_height="30dp"
                     android:layout_weight="1"
                     android:layout_margin="5dp"
-                    fancy:fb_defaultColor="@color/white"
+                    fancy:fb_defaultColor="@color/main_app_background"
                     fancy:fb_focusColor="#ed715d"
                     fancy:fb_borderColor="#ed715d"
                     fancy:fb_iconPosition="left"
@@ -117,7 +117,7 @@
                     android:layout_height="30dp"
                     android:layout_weight="1"
                     android:layout_margin="5dp"
-                    fancy:fb_defaultColor="@color/white"
+                    fancy:fb_defaultColor="@color/main_app_background"
                     fancy:fb_focusColor="#ed715d"
                     fancy:fb_borderColor="#ed715d"
                     fancy:fb_iconPosition="left"
@@ -134,7 +134,7 @@
                     android:layout_weight="1"
                     android:layout_margin="5dp"
 
-                    fancy:fb_defaultColor="@color/white"
+                    fancy:fb_defaultColor="@color/main_app_background"
                     fancy:fb_focusColor="#ed715d"
                     fancy:fb_borderColor="#ed715d"
                     fancy:fb_iconPosition="left"
@@ -150,7 +150,7 @@
                     android:layout_height="30dp"
                     android:layout_weight="1"
                     android:layout_margin="5dp"
-                    fancy:fb_defaultColor="@color/white"
+                    fancy:fb_defaultColor="@color/main_app_background"
                     fancy:fb_focusColor="#ed715d"
                     fancy:fb_borderColor="#ed715d"
                     fancy:fb_iconPosition="left"
@@ -182,7 +182,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:hint="Type your question here"
-                android:background="@color/white"
+                android:background="@color/main_app_background"
                 android:paddingTop="10dp"
                 android:inputType="textMultiLine"
                  />

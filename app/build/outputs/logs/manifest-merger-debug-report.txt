@@ -9,6 +9,7 @@ MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\LAKSHAY\
 MERGED from [com.google.firebase:firebase-auth:19.3.1] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:17:1-42:12
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\6af06f9d40a95d9b96f51ad530b77046\jetified-materialsearchview-1.4.0\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\6029c1862846be4a7ec1743d4d20ec64\material-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.GrenderG:Toasty:1.4.2] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\4b10e4509c28b891ef78b10e0aeca22d\jetified-Toasty-1.4.2\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\6c5a1a33c151bf1b1b969a4997bc8337\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-firestore:17.1.2] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\5e4032349ad98babcb6431679b82bef1\jetified-firebase-firestore-17.1.2\AndroidManifest.xml:2:1-21:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\fc5ce96d0556e9e525188cc47c233aa7\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -195,9 +196,9 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\LA
 	android:label
 		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:12:9-41
 	android:roundIcon
-		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:13:9-54
+		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:13:9-47
 	android:icon
-		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:11:9-42
 	android:allowBackup
 		ADDED from G:\CWPHAPP_REPO\CounsellingApp\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme
@@ -280,6 +281,8 @@ MERGED from [com.miguelcatalan:materialsearchview:1.4.0] C:\Users\LAKSHAY\.gradl
 MERGED from [com.miguelcatalan:materialsearchview:1.4.0] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\6af06f9d40a95d9b96f51ad530b77046\jetified-materialsearchview-1.4.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\6029c1862846be4a7ec1743d4d20ec64\material-1.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\6029c1862846be4a7ec1743d4d20ec64\material-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.GrenderG:Toasty:1.4.2] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\4b10e4509c28b891ef78b10e0aeca22d\jetified-Toasty-1.4.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.GrenderG:Toasty:1.4.2] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\4b10e4509c28b891ef78b10e0aeca22d\jetified-Toasty-1.4.2\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\6c5a1a33c151bf1b1b969a4997bc8337\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\6c5a1a33c151bf1b1b969a4997bc8337\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-firestore:17.1.2] C:\Users\LAKSHAY\.gradle\caches\transforms-2\files-2.1\5e4032349ad98babcb6431679b82bef1\jetified-firebase-firestore-17.1.2\AndroidManifest.xml:6:5-8:41

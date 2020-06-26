@@ -54,7 +54,7 @@ import lnmiit.college.counsellingapp.R;
 import lnmiit.college.counsellingapp.Useremail;
 
 public class Respond_To_A_Question extends AppCompatActivity implements Dialog_Audio_Player.Audiosubmitted, Custom_Dialog.Ondialogaction {
-    private TextView txt_reply_question, txt_reply_author, txt_reply_tags;
+    private TextView txt_reply_question, txt_reply_author, txt_reply_tags, txt_reply_description;
     private EditText txt_reply_answer;
     private Button btn_post_answer;
     private TextView toolbartext;
@@ -78,6 +78,7 @@ public class Respond_To_A_Question extends AppCompatActivity implements Dialog_A
         setContentView(R.layout.activity_respond__to__a__question);
         txt_reply_answer = findViewById(R.id.txt_reply_answer);
         txt_reply_author = findViewById(R.id.txt_reply_author);
+        txt_reply_description = findViewById(R.id.txt_reply_description);
         txt_reply_question = findViewById(R.id.txt_reply_question);
         txt_reply_tags = findViewById(R.id.txt_reply_tags);
         btn_post_answer = findViewById(R.id.btn_post_answer);
@@ -97,7 +98,7 @@ public class Respond_To_A_Question extends AppCompatActivity implements Dialog_A
         txt_reply_question.setText(getIntent().getStringExtra("question"));
         txt_reply_tags.setText(getIntent().getStringExtra("tags"));
         txt_reply_author.setText(getIntent().getStringExtra("author"));
-
+        txt_reply_description.setText(getIntent().getStringExtra("description"));
         final Dialog_Privacy_Settings dialog_privacy_settings = new Dialog_Privacy_Settings(Respond_To_A_Question.this);
         btn_post_answer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,7 +106,7 @@ public class Respond_To_A_Question extends AppCompatActivity implements Dialog_A
                 final String answer = txt_reply_answer.getText().toString()+"";
                 if(answer=="") {
                     //dialog_privacy_settings.show(getSupportFragmentManager(), "sure");
-                    Toast.makeText(Respond_To_A_Question.this,"Please enter a response",Toast.LENGTH_LONG).show();
+                    Showfancytoasr.show(Respond_To_A_Question.this,"Please enter a response");
                 }
                 else
                 {
@@ -236,7 +237,8 @@ public class Respond_To_A_Question extends AppCompatActivity implements Dialog_A
             }
             catch (IllegalStateException e)
             {
-                Toast.makeText(Respond_To_A_Question.this,e.getMessage(),Toast.LENGTH_LONG).show();
+
+                Showfancytoasr.show(Respond_To_A_Question.this,"Error recording audio, please ensure that you have granted all the permissions to the application");
             }
 
 
@@ -266,7 +268,7 @@ public class Respond_To_A_Question extends AppCompatActivity implements Dialog_A
         ff.collection("Questions").document(getIntent().getStringExtra("questionid")).update("faculty_answers",answersmap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(Respond_To_A_Question.this,"Your response has been submitted succesfully",Toast.LENGTH_LONG).show();
+                Showfancytoasr.show(Respond_To_A_Question.this,"Your response has been submitted successfully");
                 progressDialog.dismiss();
                 startActivity(new Intent(Respond_To_A_Question.this,MainActivity.class));
                 finish();
@@ -290,7 +292,7 @@ public class Respond_To_A_Question extends AppCompatActivity implements Dialog_A
         ff.collection("Questions").document(getIntent().getStringExtra("questionid")).update("faculty_answers",answersmap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(Respond_To_A_Question.this,"Your response has been submitted succesfully",Toast.LENGTH_LONG).show();
+                Showfancytoasr.show(Respond_To_A_Question.this,"Your response has been submitted successfully");
                 progressDialog.dismiss();
                 startActivity(new Intent(Respond_To_A_Question.this,MainActivity.class));
                 finish();

@@ -16,9 +16,9 @@ import java.util.Map;
 import lnmiit.college.counsellingapp.R;
 import lnmiit.college.counsellingapp.UnansweredQuestionModel;
 
-public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellingapp.mn.crawler.rview.viewholder> {
+public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellingapp.mn.crawler.rview.viewholder>  {
 
-
+    private viewholder.onNoteListener my_onnotelistener;
     ArrayList<String> answers = new ArrayList<String>();
     private boolean answers_visible = false;
     List<UnansweredQuestionModel> mainlist = new ArrayList<>();
@@ -27,13 +27,17 @@ public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellin
     {
         this.context = context;
     }
-
+    public rviewadapter(Context context, viewholder.onNoteListener my_onnotelistener)
+    {
+        this.context = context;
+        this.my_onnotelistener = my_onnotelistener;
+    }
     @NonNull
     @Override
     public lnmiit.college.counsellingapp.mn.crawler.rview.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater lf = LayoutInflater.from(parent.getContext());
         View view = lf.inflate(R.layout.reclayout,parent,false);
-        return new lnmiit.college.counsellingapp.mn.crawler.rview.viewholder(view);
+        return new lnmiit.college.counsellingapp.mn.crawler.rview.viewholder(view,my_onnotelistener);
 
     }
 
@@ -50,25 +54,27 @@ public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellin
         {
             answerslist.add(new AnswerModel(entry.getKey(),entry.getValue(),entry.getKey()+".png"));
         }
-        adapter.Setmainlist(answerslist);
-        holder.getAnswers_rec_view().setAdapter(adapter);
-        holder.getAnswers_rec_view().setLayoutManager(new LinearLayoutManager(context));
-        holder.getBtnview().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(answers_visible) {
-                    holder.getAnswers_rec_view().setVisibility(View.GONE);
-                    answers_visible=false;
-                    v.animate().rotationBy(-90).setDuration(50);
-                }
-                else {
-                    holder.getAnswers_rec_view().setVisibility(View.VISIBLE);
-                    answers_visible= true;
-                    v.animate().rotationBy(90).setDuration(50);
-                }
-            }
-        });
+        holder.setMylist(answerslist);
+//        adapter.Setmainlist(answerslist);
+//        activity_answer.mylist = answerslist;
+//        holder.getAnswers_rec_view().setAdapter(adapter);
+//        holder.getAnswers_rec_view().setLayoutManager(new LinearLayoutManager(context));
+//        holder.getBtnview().setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                if(answers_visible) {
+//                    holder.getAnswers_rec_view().setVisibility(View.GONE);
+//                    answers_visible=false;
+//                    v.animate().rotationBy(-90).setDuration(50);
+//                }
+//                else {
+//                    holder.getAnswers_rec_view().setVisibility(View.VISIBLE);
+//                    answers_visible= true;
+//                    v.animate().rotationBy(90).setDuration(50);
+//                }
+//            }
+//        });
 
 
     }

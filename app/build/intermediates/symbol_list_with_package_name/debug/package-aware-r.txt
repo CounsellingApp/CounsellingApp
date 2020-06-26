@@ -847,6 +847,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color defaultTextColor
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -889,6 +890,7 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color errorColor
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
@@ -897,8 +899,10 @@ color gray
 color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color infoColor
 color introslidertext
 color lightPink
+color main_app_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -972,6 +976,7 @@ color mtrl_textinput_disabled_color
 color mtrl_textinput_filled_box_default_background_color
 color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
+color normalColor
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
@@ -992,6 +997,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color successColor
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1003,6 +1009,7 @@ color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
+color warningColor
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -1486,11 +1493,15 @@ drawable ic_action_navigation_close_inverted
 drawable ic_action_voice_search
 drawable ic_action_voice_search_inverted
 drawable ic_calendar_black_24dp
+drawable ic_check_white_24dp
 drawable ic_clear_black_24dp
+drawable ic_clear_white_24dp
 drawable ic_edit_black_24dp
+drawable ic_error_outline_white_24dp
 drawable ic_frame_27
 drawable ic_healing_black_24dp
 drawable ic_home_black_24dp
+drawable ic_info_outline_white_24dp
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
 drawable ic_launcher_background
@@ -1562,6 +1573,7 @@ drawable slide2image
 drawable tabcolorselector
 drawable tag
 drawable test_custom_background
+drawable toast_frame
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable trash
@@ -1802,8 +1814,8 @@ id linkedin
 id listMode
 id list_item
 id loginAsFaculty
-id loginAsStudent
 id logout
+id mainfragmentswipetorefresh
 id mainframehandler
 id mainlayout
 id mainlinearlayout
@@ -1860,7 +1872,6 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
-id password
 id password_toggle
 id pb_play
 id peekHeight
@@ -1876,6 +1887,7 @@ id question
 id radio
 id recview
 id respond
+id respondfragmentrefresh
 id right
 id right_icon
 id right_side
@@ -1910,9 +1922,6 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
-id signin
-id signup
-id signupLayout
 id skipCollapsed
 id slide
 id slidetocancel
@@ -1922,6 +1931,7 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id specific_answer_recycler_view
 id split_action_bar
 id spread
 id spread_inside
@@ -1932,10 +1942,6 @@ id standard
 id start
 id status_bar_latest_event_content
 id stretch
-id studentLinearLayout
-id studentLogin
-id studentPassword
-id studentUsername
 id submenuarrow
 id submit
 id submit_area
@@ -1976,6 +1982,9 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toast_icon
+id toast_root
+id toast_text
 id toolbar
 id toolbartitle
 id top
@@ -1992,19 +2001,18 @@ id txt_answers
 id txt_description
 id txt_reply_answer
 id txt_reply_author
+id txt_reply_description
 id txt_reply_question
 id txt_reply_tags
 id txt_timer
 id txtauthor
 id txtproblem
 id txtquestion_title
-id txtsolution
 id txttags
 id txtunansweredauthor
 id txtunanswereddescription
 id txtunansweredquestion
 id txtunansweredtags
-id type
 id unansweredQuestion
 id unansweredQuestionrecycler
 id unansweredrecview
@@ -2013,7 +2021,6 @@ id uniform
 id unlabeled
 id up
 id useLogo
-id username
 id view_offset_helper
 id viewpager
 id visible
@@ -2191,6 +2198,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout toast_layout
 layout unanswered_recyclerview_item
 menu bottommenu
 menu my_menu
@@ -2311,6 +2319,7 @@ string search_hint
 string search_menu_title
 string share
 string status_bar_notification_info_overflow
+string toast_message
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

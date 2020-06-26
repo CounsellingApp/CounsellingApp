@@ -76,14 +76,14 @@ public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<Unanswer
             holder.getClickablelinearlayout().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "You will be prompted to answer the question", Toast.LENGTH_LONG).show();
+
                     Intent intent = new Intent(v.getContext(), Respond_To_A_Question.class);
                     intent.putExtra("question", holder.getTxtunansweredquestion().getText().toString() + "");
                     intent.putExtra("author", holder.getTxtunansweredauthor().getText().toString() + "");
                     intent.putExtra("tags", holder.getTxtunansweredatgs().getText().toString() + "");
                     intent.putExtra("questionid",list.get(position).getQuestion_id());
                     intent.putExtra("faculty_answers", (Serializable) holder.getMap());
-
+                    intent.putExtra("description",holder.getTxtunanswerddescription().getText().toString()+"");
                     context.startActivity(intent);
                     context.finish();
                 }

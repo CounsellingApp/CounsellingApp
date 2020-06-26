@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/main_app_background"
     tools:context=".LoginActivity"
     android:layout_gravity="center">
     <TextView
@@ -48,40 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"/>
-    <LinearLayout
-        android:visibility="gone"
-        android:id="@+id/studentLinearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_gravity="center_horizontal|center_vertical">
 
-        <EditText
-            android:id="@+id/studentUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Username"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/studentPassword"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="password" />
-
-        <ImageButton
-            android:id="@+id/studentLogin"
-            android:layout_marginTop="50dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/loginbutton" />
-        
-    </LinearLayout>
     <LinearLayout
         android:visibility="gone"
         android:id="@+id/facultyLinearLayout"
@@ -130,15 +97,6 @@
         android:orientation="vertical"
         >
 
-        <ImageButton
-            android:id="@+id/loginAsStudent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/loginasstudent"
-            android:visibility="gone"/>
-
         <com.google.android.gms.common.SignInButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -150,71 +108,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/facultylogin" />
-
-        <TextView
-            android:id="@+id/signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="@color/white"
-            android:fontFamily="@font/work_sans_medium"
-            android:text="New here? Sign Up"
-            android:textColor="#1e1c61"
-            android:textSize="16sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:visibility="gone"
-        android:id="@+id/signupLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Username"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="password"
-
-            />
-        <EditText
-            android:id="@+id/type"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="type"
-
-            />
-        <ImageButton
-            android:id="@+id/signin"
-            android:layout_marginTop="50dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/loginbutton" />
+            app:srcCompat="@drawable/facultylogin"
+            android:visibility="gone"/>
 
 
     </LinearLayout>
-
-
-
-
 </LinearLayout>

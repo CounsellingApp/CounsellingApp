@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".mn.crawler.rview.Respond_To_A_Question"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/main_app_background"
     android:id="@+id/mainlinearlayout">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/white">
+        android:background="@color/main_app_background">
         <include android:layout_height="wrap_content"
                 android:layout_width="match_parent"
             layout="@layout/drawer_toolbar"/>
@@ -20,41 +20,57 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="@color/main_app_background"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/txt_reply_question"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:autoText="true"
-                android:ems="10"
-                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/open_sans_semibold"
-                android:foregroundTint="#3F51B5"
+                android:textColor="#3b566e"
                 android:gravity="start|top"
                 android:inputType="textMultiLine"
-                android:text="Question"
-                android:textSize="20sp"
+                android:text="This is the title"
+                android:textSize="18sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/txt_reply_author"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:fontFamily="@font/open_sans"
+                android:text="Author"
+                android:textSize="11sp"
                 android:layout_marginTop="5dp"
-                android:text="Author" />
+                android:textColor="#6f8ba4"
+                android:fontFamily="@font/open_sans" />
             <TextView
                 android:id="@+id/txt_reply_tags"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
-                android:fontFamily="@font/open_sans"
                 android:gravity="clip_horizontal|clip_vertical"
-                android:textColor="#497cfb"
-                android:text="Tags" />
+                android:textColor="#444053"
+                android:layout_marginTop="7dp"
+                android:textSize="11sp"
+                android:text="Tags: Career"
+                android:fontFamily="@font/open_sans" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#6f8ba4"
+                android:text="This is the description"
+                android:id="@+id/txt_reply_description"
+                android:layout_marginTop="7dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/open_sans"/>
             <TextView
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
@@ -71,8 +87,9 @@
                 android:textSize="15sp"
                 android:textColor="#756f8ba4"
                 android:gravity="top|left"
+                android:background="@color/main_app_background"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginBottom="2dp"/>
 
         </LinearLayout>
@@ -80,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:orientation="horizontal"
-            android:background="@color/white"
+            android:background="@color/main_app_background"
             android:layout_marginLeft="10dp"
 
 
@@ -92,7 +109,7 @@
                 android:layout_weight="10"
                 android:orientation="vertical"
 
-                android:background="@color/white">
+                android:background="@color/main_app_background">
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -115,13 +132,13 @@
                     android:orientation="horizontal"
                     android:id="@+id/slidetocancel"
                     android:visibility="gone"
-                    android:background="@color/white">
+                    android:background="@color/main_app_background">
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.7"
                         android:src="@drawable/recording_mic"
-                        android:background="@color/white"/>
+                        android:background="@color/main_app_background"/>
                     <Chronometer
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -137,7 +154,7 @@
                         app:autoSizeTextType="uniform"
                         android:text="RELEASE TO STOP RECORDING"
                         android:gravity="right|center_vertical"
-                        android:background="@color/white"
+                        android:background="@color/main_app_background"
                         android:textSize="16sp"
                         android:layout_marginRight="2dp"
                         />
@@ -148,10 +165,11 @@
                 android:layout_height="match_parent"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="2"
+                android:scaleType="fitCenter"
                 app:srcCompat="@drawable/mic"
                 android:id="@+id/btnrecord"
                 android:src="@drawable/mic"
-                android:background="@color/white"/>
+                android:background="@color/main_app_background"/>
 
 
 

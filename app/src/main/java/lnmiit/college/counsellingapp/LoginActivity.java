@@ -9,6 +9,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -29,12 +30,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -43,6 +46,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import lnmiit.college.counsellingapp.mn.crawler.rview.MainActivity;
+import lnmiit.college.counsellingapp.mn.crawler.rview.Showfancytoasr;
 
 import static android.widget.Toast.*;
 
@@ -66,6 +70,42 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        if(GoogleSignIn.getLastSignedInAccount(LoginActivity.this) != null) {
+            final ProgressDialog progressDialog = ProgressDialog.show(LoginActivity.this,"","Please Wait");
+            GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+            Useremail.email = account.getEmail();
+            Useremail.username = account.getDisplayName();
+            if(account.getEmail().equals("lakshay.bhagtani@gmail.com")||account.getEmail().equals("me.govind23@gmail.com"))
+            {
+                Useremail.isfaculty = true;
+                FirebaseFirestore.getInstance().collection("Faculty_Bag").document(Useremail.email).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if(task.isSuccessful())
+                        {
+                            DocumentSnapshot dsnap = task.getResult();
+                            if(dsnap.exists())
+                            {
+                                Useremail.photouri = Uri.parse(dsnap.get("photo_uri").toString());
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                                progressDialog.dismiss();
+                            }
+                        }
+                    }
+                });
+
+            }
+            else
+            {
+                Useremail.isfaculty = false;
+                Useremail.photouri = account.getPhotoUrl();
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }
         ff=FirebaseFirestore.getInstance();
         firebaseAuth=FirebaseAuth.getInstance();
 
@@ -75,38 +115,24 @@ public class LoginActivity extends AppCompatActivity {
         welcometext = findViewById(R.id.welcometext);
 
         choice_layout=findViewById(R.id.choiceLinearLayout);
-        signup_layout=findViewById(R.id.signupLayout);
-        student_layout=findViewById(R.id.studentLinearLayout);
+
         faculty_layout=findViewById(R.id.facultyLinearLayout);
 
-        student_username=findViewById(R.id.studentUsername);
+
         faculty_username=findViewById(R.id.facultyUsername);
-        student_password=findViewById(R.id.studentPassword);
+
         faculty_password=findViewById(R.id.facultyPassword);
-        username=findViewById(R.id.username);
-        password=findViewById(R.id.password);
-        type=findViewById(R.id.type);
 
 
-        signup=findViewById(R.id.signup);
-        login_as_student=findViewById(R.id.loginAsStudent);
+
+
         login_as_faculty=findViewById(R.id.loginAsFaculty);
 
-        signin=findViewById(R.id.signin);
+
         faculty_login=findViewById(R.id.facultyLogin);
-        student_login=findViewById(R.id.studentLogin);
 
-        login_as_student.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                student_layout.setVisibility(View.VISIBLE);
-//
-                choice_layout.setVisibility(View.GONE);
-                welcomeimage.setVisibility(View.GONE);
-                welcometext.setVisibility(View.GONE);
 
-            }
-        });
+
         login_as_faculty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,41 +142,9 @@ public class LoginActivity extends AppCompatActivity {
                 welcometext.setVisibility(View.GONE);
             }
         });
-        signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signup_layout.setVisibility(View.VISIBLE);
-                choice_layout.setVisibility(View.GONE);
-                welcomeimage.setVisibility(View.GONE);
-                welcometext.setVisibility(View.GONE);
-            }
-        });
-        prefs = getSharedPreferences("lnmiit.college.counsellingapp",MODE_PRIVATE);
-        student_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                final ProgressDialog progressDialog = ProgressDialog.show(LoginActivity.this,"","Please Wait");
-                mauth.signInWithEmailAndPassword(student_username.getText().toString(),student_password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(LoginActivity.this, "signin successful", LENGTH_LONG).show();
-                            Useremail.email = student_username.getText().toString();
-                            Useremail.isfaculty=false;
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            progressDialog.dismiss();
-                            finish();
-                        }
-                        else{
-                            Toast.makeText(LoginActivity.this, "signin failed", LENGTH_LONG).show();
-                            progressDialog.dismiss();
-                        }
-                    }
-                });
-            }
-        });
+        prefs = getSharedPreferences("lnmiit.college.counsellingapp",MODE_PRIVATE);
+
         faculty_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
                                     DocumentSnapshot queryDocumentSnapshot=task.getResult();
                                     Double type= queryDocumentSnapshot.getDouble("type");
                                     if(type==1){
-                                        Toast.makeText(LoginActivity.this, "signin successful", LENGTH_LONG).show();
+                                        Showfancytoasr.show(LoginActivity.this,"Login successful");
                                         Useremail.email= faculty_username.getText().toString();
                                         Useremail.isfaculty=true;
                                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
@@ -177,7 +171,7 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                     else{
                                         firebaseUser=null;
-                                        Toast.makeText(LoginActivity.this, "signin failed", LENGTH_LONG).show();
+                                        Showfancytoasr.show(LoginActivity.this,"Login failed, please try again with the correct credentials");
                                         progressDialog.dismiss();
                                     }
                                 }
@@ -185,38 +179,14 @@ public class LoginActivity extends AppCompatActivity {
 
                         }
                         else{
-                            Toast.makeText(LoginActivity.this, "signin failed", LENGTH_LONG).show();
+                            Showfancytoasr.show(LoginActivity.this,"Login failed, please try again with the correct credentials");
                             progressDialog.dismiss();
                         }
                     }
                 });
             }
         });
-        signin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                firebaseAuth.createUserWithEmailAndPassword(username.getText().toString(),password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Map<String,Object>map=new HashMap<>();
-                            if(type.getText().toString().equals("faculty")){
-                                map.put("type",1);
-                            }
-                            else{
-                                map.put("type",2);
-                            }
-                            firebaseUser=firebaseAuth.getCurrentUser();
-                            ff.collection("users").document(firebaseUser.getUid()).set(map);
-                            Toast.makeText(LoginActivity.this,"done", LENGTH_SHORT).show();
-                        }
-                        else{
-                            Toast.makeText(LoginActivity.this,"error", LENGTH_SHORT).show();
-                        }
-                    }
-                });
-            }
-        });
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         googleSignInClient = GoogleSignIn.getClient(LoginActivity.this,gso);
@@ -236,13 +206,14 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable final Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==500)
         {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            final ProgressDialog progressDialog = ProgressDialog.show(LoginActivity.this,"","Please Wait");
             try {
-                final ProgressDialog progressDialog = ProgressDialog.show(LoginActivity.this,"","Please Wait");
+
                 final GoogleSignInAccount googleSignInAccount = task.getResult(ApiException.class);
                 //Toast.makeText(LoginActivity.this,"Signed in succesfully",LENGTH_LONG).show();
                 AuthCredential authCredential = GoogleAuthProvider.getCredential(googleSignInAccount.getIdToken(),null);
@@ -253,7 +224,7 @@ public class LoginActivity extends AppCompatActivity {
                         {
                             //Toast.makeText(LoginActivity.this,"Firebase Signin success",LENGTH_LONG).show();
                             firebaseUser = mauth.getCurrentUser();
-                            GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+                            final GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
                             String checkablemail = account.getEmail();
                             String[] parts = checkablemail.split("@");
                             if(parts[1].equals("lnmiit.ac.in")) {
@@ -266,10 +237,55 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             }
+                            else if(checkablemail.equals("lakshay.bhagtani@gmail.com")||checkablemail.equals("me.govind23@gmail.com")) {
+                                final FirebaseFirestore currentff = FirebaseFirestore.getInstance();
+                                Useremail.email = account.getEmail();
+                                Useremail.isfaculty = true;
+                                Useremail.username = account.getDisplayName();
+                                DocumentReference dref = currentff.collection("Faculty_Bag").document(Useremail.email);
+                                dref.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                        if(task.isSuccessful()) {
+                                            DocumentSnapshot dsnap = task.getResult();
+                                            if(dsnap.exists())
+                                            {
+                                                Useremail.photouri = Uri.parse(dsnap.get("photo_uri").toString());
+                                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                                progressDialog.dismiss();
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                            else{
+                                                    FirebaseFirestore thisff = FirebaseFirestore.getInstance();
+                                                    Map<String,Object> currmap = new HashMap<>();
+                                                    currmap.put("email",Useremail.email);
+                                                    currmap.put("username",Useremail.username);
+                                                    currmap.put("photo_uri",account.getPhotoUrl().toString());
+                                                    thisff.collection("Faculty_Bag").document(Useremail.email).set(currmap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void aVoid) {
+                                                            Useremail.photouri = account.getPhotoUrl();
+                                                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                                            progressDialog.dismiss();
+                                                            startActivity(intent);
+                                                            finish();
+                                                        }
+                                                    });
+
+
+                                            }
+                                        }
+                                    }
+                                });
+
+
+
+                            }
                             else
                             {
                                 googleSignInClient.signOut();
-                                Toast.makeText(LoginActivity.this,"Please use your college email address", LENGTH_LONG).show();
+                                Showfancytoasr.show(LoginActivity.this,"Please use your college email address");
                                 progressDialog.dismiss();
                             }
 
@@ -277,15 +293,17 @@ public class LoginActivity extends AppCompatActivity {
                         else
                         {
                             progressDialog.dismiss();
-                            Toast.makeText(LoginActivity.this,"Firebase Signin failure",LENGTH_LONG).show();
+                            Showfancytoasr.show(LoginActivity.this,"Signin failed, please try again");
                         }
                     }
                 });
             }
             catch (ApiException e)
             {
-                Toast.makeText(LoginActivity.this,e.getMessage(),LENGTH_LONG).show();
+                //Showfancytoasr.show(LoginActivity.this,"Following error occured : "+e.getMessage());
                 Log.i("Excaption",e.getMessage());
+                progressDialog.dismiss();
+
             }
         }
     }

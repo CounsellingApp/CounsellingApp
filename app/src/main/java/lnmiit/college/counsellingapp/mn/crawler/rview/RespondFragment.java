@@ -4,9 +4,11 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,6 +40,7 @@ public class RespondFragment extends Fragment implements UnansweredRecyclerViewA
     private ArrayList<UnansweredQuestionModel> list;
     private FirebaseFirestore ff;
     private UnansweredRecyclerViewAdapter myadapter;
+    private SwipeRefreshLayout swipeRefreshLayout;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -64,7 +67,7 @@ public class RespondFragment extends Fragment implements UnansweredRecyclerViewA
 
                 }
                 else{
-                    Toast.makeText(getActivity(),"Error",Toast.LENGTH_LONG).show();
+                    Showfancytoasr.show(getContext(),"Error fetching data, please try again");
                 }
             }
         });
@@ -72,17 +75,27 @@ public class RespondFragment extends Fragment implements UnansweredRecyclerViewA
         myadapter.setOnrefreshfragment(this);
         unansweredrecyclerview.setAdapter(myadapter);
         unansweredrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
-
+        swipeRefreshLayout = view.findViewById(R.id.respondfragmentrefresh);
+        final FragmentManager nowfm = MainScreenViewPagerAdapter.fm;
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                FragmentTransaction nowft = nowfm.beginTransaction();
+                nowft.detach(RespondFragment.this);
+                nowft.attach(new RespondFragment());
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
         return view;
     }
 
     @Override
     public void refreshfragment() {
         FragmentTransaction ft = MainScreenViewPagerAdapter.fm.beginTransaction();
-        ft.detach(RespondFragment.this);
-        ft.attach(RespondFragment.this);
         ft.detach(mainFragment.mainfrag);
         ft.attach(mainFragment.mainfrag);
+        ft.detach(RespondFragment.this);
+        ft.attach(RespondFragment.this);
         ft.commit();
     }
 }
