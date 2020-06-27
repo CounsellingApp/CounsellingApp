@@ -47,6 +47,7 @@ public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellin
         holder.getTxt_description().setText(mainlist.get(position).getQuestion());
         holder.getTxtauthor().setText("By- "+mainlist.get(position).getAsked_by());
         holder.getTxttags().setText("Tags: "+mainlist.get(position).getTag());
+        holder.getTxt_noa().setText(mainlist.get(position).getFaculty_answers().size()+" answer(s)");
         Answers_adapter adapter = new Answers_adapter(position,context);
         Map<String,String> mymap = mainlist.get(position).getFaculty_answers();
         List<AnswerModel> answerslist = new ArrayList<>();

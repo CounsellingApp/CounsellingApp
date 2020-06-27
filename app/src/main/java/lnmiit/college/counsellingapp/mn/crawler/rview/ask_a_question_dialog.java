@@ -35,7 +35,7 @@ public class ask_a_question_dialog extends AppCompatDialogFragment {
             public void onClick(View v) {
                 //Toast.makeText(v.getContext(),"Identity will be hidden",Toast.LENGTH_LONG).show();
                 getDialog().dismiss();
-                String uname = "Anonymous User";
+                String uname = "Anonymous LNMIITian";
                 Intent intent = new Intent(v.getContext(), AskQuestion.class);
                 intent.putExtra("privacy",uname);
                 startActivity(intent);

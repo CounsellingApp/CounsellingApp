@@ -5,12 +5,16 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
+    app:cardElevation="0dp"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp">
         <LinearLayout
@@ -24,10 +28,14 @@
                 android:orientation="vertical"
                 android:id="@+id/clickablelinearlayout">
 
-
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
                 <TextView
                     android:id="@+id/txtunansweredquestion"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="9"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/open_sans_semibold"
                     android:textColor="#3b566e"
@@ -36,6 +44,15 @@
                     android:text="This is the title"
                     android:textSize="18sp"
                     android:textStyle="bold" />
+
+                    <ImageButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.25"
+                        app:srcCompat="@drawable/deleteresponse"
+                        android:background="@color/white"
+                        android:id="@+id/btn_delete_response_icon"/>
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/txtunansweredauthor"
@@ -48,10 +65,25 @@
                     android:fontFamily="@font/open_sans" />
 
 
-
-                <TextView
-                    android:id="@+id/txtunansweredtags"
+                <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="clip_horizontal|clip_vertical"
+                        android:textColor="#444053"
+                        android:layout_marginTop="7dp"
+                        android:id="@+id/txt_unanswered_noa"
+                        android:textSize="11sp"
+                        android:text="2 answers"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/open_sans_semibold"
+                        />
+                    <TextView
+                    android:id="@+id/txtunansweredtags"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="clip_horizontal|clip_vertical"
                     android:textColor="#444053"
@@ -59,6 +91,7 @@
                     android:textSize="11sp"
                     android:text="Tags: Career"
                     android:fontFamily="@font/open_sans" />
+                </LinearLayout>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -73,6 +106,7 @@
 
 
             </LinearLayout>
+            <!--
             <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -80,6 +114,7 @@
                 app:srcCompat="@drawable/deleteresponse"
                 android:background="@color/white"
                 android:id="@+id/btn_delete_response_icon"/>
+                -->
         </LinearLayout>
 
     </LinearLayout>

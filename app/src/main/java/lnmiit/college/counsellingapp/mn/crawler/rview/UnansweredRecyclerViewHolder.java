@@ -27,6 +27,7 @@ public class UnansweredRecyclerViewHolder extends RecyclerView.ViewHolder {
     private FirebaseUser firebaseUser;
     private CardView mainlayout;
     private TextView txtunanswerddescription;
+    private TextView txt_unanswered_noa;
 
     public UnansweredRecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -39,6 +40,7 @@ public class UnansweredRecyclerViewHolder extends RecyclerView.ViewHolder {
         firebaseUser=firebaseAuth.getCurrentUser();
         mainlayout = itemView.findViewById(R.id.mainlayout);
         txtunanswerddescription = itemView.findViewById(R.id.txtunanswereddescription);
+        txt_unanswered_noa = itemView.findViewById(R.id.txt_unanswered_noa);
     }
 
     public LinearLayout getClickablelinearlayout() {
@@ -75,6 +77,10 @@ public class UnansweredRecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public void setMap(Map<String, String> map) {
         this.map = map;
+    }
+
+    public TextView getTxt_unanswered_noa() {
+        return txt_unanswered_noa;
     }
 
     public CardView getMainlayout() {

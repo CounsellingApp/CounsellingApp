@@ -112,14 +112,14 @@ public class AskQuestion extends AppCompatActivity implements View.OnClickListen
     {
         if(currentbutton==afb)
         {
-            afb.setBackgroundColor(getResources().getColor(R.color.white));
+            afb.setBackgroundColor(getResources().getColor(R.color.main_app_background));
             afb.setTextColor(getResources().getColor(R.color.tab_background_selected));
             currentbutton=null;
         }
         else
         {
             if(currentbutton!=null) {
-                currentbutton.setBackgroundColor(getResources().getColor(R.color.white));
+                currentbutton.setBackgroundColor(getResources().getColor(R.color.main_app_background));
                 currentbutton.setTextColor(getResources().getColor(R.color.tab_background_selected));
             }
             afb.setBackgroundColor(getResources().getColor(R.color.tab_background_selected));

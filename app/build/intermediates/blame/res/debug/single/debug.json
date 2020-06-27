@@ -160,12 +160,12 @@
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\back.xml"
     },
     {
-        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottommenu.xml.flat",
-        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\menu\\bottommenu.xml"
-    },
-    {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logout_1.xml.flat",
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\logout_1.xml"
+    },
+    {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottommenu.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\menu\\bottommenu.xml"
     },
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_answered_question.xml.flat",
@@ -194,6 +194,10 @@
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_facultyrecview.xml.flat",
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\layout\\facultyrecview.xml"
+    },
+    {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mehak.jpg.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\mehak.jpg"
     },
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
@@ -250,6 +254,10 @@
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_amitneogi.jpg.flat",
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\amitneogi.jpg"
+    },
+    {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ishan.jpg.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ishan.jpg"
     },
     {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_remove_circle_outline_black_24dp.xml.flat",

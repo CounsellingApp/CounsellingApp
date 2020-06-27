@@ -1520,6 +1520,7 @@ drawable ic_share_white_24dp
 drawable ic_suggestion
 drawable imagelogin
 drawable imageswitchernavidot1
+drawable ishan
 drawable lakshay_bhagtani
 drawable leftarrow
 drawable linkedin
@@ -1530,6 +1531,7 @@ drawable logout
 drawable logout_1
 drawable maildev
 drawable main_layout_bg
+drawable mehak
 drawable message
 drawable mic
 drawable mic_clicked
@@ -1668,7 +1670,6 @@ id answer_audio_player
 id answeredQuestion
 id answers_facultyimage
 id answers_facultyname
-id answers_rec_view
 id apsinghmail
 id apsinghphone
 id arshitanairmail
@@ -1999,12 +2000,14 @@ id transparent_view
 id txtTime
 id txt_answers
 id txt_description
+id txt_noa
 id txt_reply_answer
 id txt_reply_author
 id txt_reply_description
 id txt_reply_question
 id txt_reply_tags
 id txt_timer
+id txt_unanswered_noa
 id txtauthor
 id txtproblem
 id txtquestion_title

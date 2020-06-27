@@ -43,7 +43,7 @@
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/work_sans_medium"
                     android:lines="1"
-                    android:text="Centre for Wellness and Physical Health"
+                    android:text="Centre of Wellness and Physical Health"
                     android:textColor="#016099"
                     android:textSize="15sp"
                     tools:autoSizeTextType="uniform" />
@@ -59,7 +59,7 @@
                     android:fontFamily="@font/work_sans"
                     android:gravity="center_horizontal"
                     android:lineSpacingExtra="6sp"
-                    android:text="The LNMIIT Centre for Wellness and Positive Health was established on 17th January 2019 with Dr. Amit Neogi as it's first centre lead. It aims at at ensuring positive mental health, general feeling of wellness and help
+                    android:text="The LNMIIT Centre of Wellness and Positive Health was established on 17th January 2019 with Dr. Amit Neogi as it's first centre lead. It aims at at ensuring positive mental health, general feeling of wellness and help
 in realizing the value added by ethics-driven value system in both personal and professional
 spheres.  "
                     android:textColor="#3b566e"
@@ -91,12 +91,15 @@ spheres.  "
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    app:cardElevation="0dp"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
                         android:orientation="horizontal">
                         <LinearLayout
                             android:layout_width="0dp"
@@ -150,12 +153,15 @@ spheres.  "
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    app:cardElevation="0dp"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
                         android:orientation="horizontal">
                         <LinearLayout
                             android:layout_width="0dp"
@@ -166,7 +172,7 @@ spheres.  "
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Prof. AP SIngh"
+                                android:text="Prof. AP Singh"
                                 android:layout_marginTop="5dp"
                                 android:textSize="17sp"
                                 android:textColor="#3b566e"
@@ -207,12 +213,15 @@ spheres.  "
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    app:cardElevation="0dp"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
                         android:orientation="horizontal">
                         <LinearLayout
                             android:layout_width="0dp"
@@ -265,11 +274,14 @@ spheres.  "
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="20dp"
+                    app:cardElevation="0dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
                         android:orientation="horizontal">
                         <LinearLayout
                             android:layout_width="0dp"

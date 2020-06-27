@@ -80,7 +80,8 @@ public class mainFragment extends Fragment implements viewholder.onNoteListener 
                      nowft = MainActivity.mainfm.beginTransaction();
                 }
                 nowft.detach(mainFragment.this);
-                nowft.attach(new mainFragment());
+                nowft.attach(mainFragment.this);
+                nowft.commit();
                 swipeRefreshLayout.setRefreshing(false);
             }
         });

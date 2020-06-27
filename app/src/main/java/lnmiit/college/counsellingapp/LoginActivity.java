@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
             GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
             Useremail.email = account.getEmail();
             Useremail.username = account.getDisplayName();
-            if(account.getEmail().equals("lakshay.bhagtani@gmail.com")||account.getEmail().equals("me.govind23@gmail.com"))
+            if(account.getEmail().equals("lakshay.bhagtani@gmail.com")||account.getEmail().equals("me.govind23@gmail.com")||account.getEmail().equals("ishanb129@gmail.com")||account.getEmail().equals("mehak.sin58@gmail.com"))
             {
                 Useremail.isfaculty = true;
                 FirebaseFirestore.getInstance().collection("Faculty_Bag").document(Useremail.email).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -237,7 +237,7 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             }
-                            else if(checkablemail.equals("lakshay.bhagtani@gmail.com")||checkablemail.equals("me.govind23@gmail.com")) {
+                            else if(checkablemail.equals("lakshay.bhagtani@gmail.com")||checkablemail.equals("me.govind23@gmail.com")||account.getEmail().equals("ishanb129@gmail.com")||account.getEmail().equals("ishanb129@@gmail.com")||account.getEmail().equals("mehak.sin58@gmail.com")) {
                                 final FirebaseFirestore currentff = FirebaseFirestore.getInstance();
                                 Useremail.email = account.getEmail();
                                 Useremail.isfaculty = true;

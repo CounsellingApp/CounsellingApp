@@ -110,13 +110,63 @@ public class Developers_Recycler_View extends RecyclerView.Adapter<Developers_Re
                         }
                     });
                     break;
+                case 3:
+                    holder.getDeveloper_name().setText("Ishan Bajaj");
+                    holder.getDeveloper_desc().setText("Android Developer");
+                    holder.getDeveloper_image().setImageResource(R.drawable.ishan);
+                    final String link4 ="https://www.linkedin.com/in/ishan-bajaj-505b6719a/";
+                    final String email4 = "ishanb129@@gmail.com";
+                    holder.getDeveloper_mail().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+                            emailIntent.setType("plain/text");
+                            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{email4});
+                            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "");
+                            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "");
+                            context.startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+                        }
+                    });
+                    holder.getLinkedin().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(link4));
+                            context.startActivity(browserIntent);
+                        }
+                    });
+                    break;
+                case 4:
+                    holder.getDeveloper_name().setText("Mehak Singhal");
+                    holder.getDeveloper_desc().setText("Flutter Developer");
+                    holder.getDeveloper_image().setImageResource(R.drawable.mehak);
+                    final String link5 ="https://www.linkedin.com/in/mehak-singhal-0471021a5/";
+                    final String email5 = "mehak.sin58@gmail.com";
+                    holder.getDeveloper_mail().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+                            emailIntent.setType("plain/text");
+                            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{email5});
+                            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "");
+                            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "");
+                            context.startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+                        }
+                    });
+                    holder.getLinkedin().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(link5));
+                            context.startActivity(browserIntent);
+                        }
+                    });
+                    break;
             }
 
     }
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 5;
     }
     public class Developers_Viewholder extends RecyclerView.ViewHolder{
         private CircleImageView developer_image;

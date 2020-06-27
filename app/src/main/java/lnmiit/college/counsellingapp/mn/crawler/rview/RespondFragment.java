@@ -82,7 +82,8 @@ public class RespondFragment extends Fragment implements UnansweredRecyclerViewA
             public void onRefresh() {
                 FragmentTransaction nowft = nowfm.beginTransaction();
                 nowft.detach(RespondFragment.this);
-                nowft.attach(new RespondFragment());
+                nowft.attach(RespondFragment.this);
+                nowft.commit();
                 swipeRefreshLayout.setRefreshing(false);
             }
         });

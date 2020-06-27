@@ -21,6 +21,7 @@ public class viewholder extends RecyclerView.ViewHolder implements View.OnClickL
     private RecyclerView answers_rec_view;
     private TextView txtline;
     private List<AnswerModel> mylist;
+    private TextView txt_noa;
     onNoteListener my_notelistener;
     public viewholder(View view)
     {
@@ -30,7 +31,7 @@ public class viewholder extends RecyclerView.ViewHolder implements View.OnClickL
         txt_description = view.findViewById(R.id.txt_description);
         txttags = view.findViewById(R.id.txttags);
         btnview  = view.findViewById(R.id.btnview);
-        answers_rec_view = view.findViewById(R.id.answers_rec_view);
+        txt_noa = view.findViewById(R.id.txt_noa);
 
         //txtline = view.findViewById(R.id.txtline);
     }
@@ -42,8 +43,10 @@ public class viewholder extends RecyclerView.ViewHolder implements View.OnClickL
         txt_description = view.findViewById(R.id.txt_description);
         txttags = view.findViewById(R.id.txttags);
         btnview  = view.findViewById(R.id.btnview);
-        answers_rec_view = view.findViewById(R.id.answers_rec_view);
+        txt_noa = view.findViewById(R.id.txt_noa);
         view.setOnClickListener(this);
+        btnview.setOnClickListener(this);
+        txtquestion.setOnClickListener(this);
         this.my_notelistener = my_notelistener;
         //txtline = view.findViewById(R.id.txtline);
     }
@@ -64,6 +67,10 @@ public class viewholder extends RecyclerView.ViewHolder implements View.OnClickL
     }
     public ImageButton getBtnview() {
         return btnview;
+    }
+
+    public TextView getTxt_noa() {
+        return txt_noa;
     }
 
     public TextView getTxt_description() {

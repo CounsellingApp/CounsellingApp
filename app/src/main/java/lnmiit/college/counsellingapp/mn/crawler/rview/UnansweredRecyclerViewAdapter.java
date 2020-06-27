@@ -66,13 +66,27 @@ public class UnansweredRecyclerViewAdapter extends RecyclerView.Adapter<Unanswer
     @Override
     public void onBindViewHolder(@NonNull final UnansweredRecyclerViewHolder holder, final int position) {
         holder.setMap(list.get(position).getFaculty_answers());
-        if(holder.getMap().containsKey(Useremail.email)){
-            holder.getMainlayout().setBackgroundColor(Color.parseColor("#00FF00"));
-        }
+        holder.getTxt_unanswered_noa().setText(holder.getMap().size()+" answer(s)");
+        //Showfancytoasr.show(context,"This question has been answered "+holder.getMap().size()+" times");
             holder.getTxtunansweredatgs().setText("Tags : "+list.get(position).getTag());
             holder.getTxtunansweredquestion().setText(list.get(position).getQuestion_title());
             holder.getTxtunanswerddescription().setText(list.get(position).getQuestion());
             holder.getTxtunansweredauthor().setText("By - "+list.get(position).getAsked_by());
+            View.OnClickListener onc = new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext(), Respond_To_A_Question.class);
+                    intent.putExtra("question", holder.getTxtunansweredquestion().getText().toString() + "");
+                    intent.putExtra("author", holder.getTxtunansweredauthor().getText().toString() + "");
+                    intent.putExtra("tags", holder.getTxtunansweredatgs().getText().toString() + "");
+                    intent.putExtra("questionid",list.get(position).getQuestion_id());
+                    intent.putExtra("faculty_answers", (Serializable) holder.getMap());
+                    intent.putExtra("description",holder.getTxtunanswerddescription().getText().toString()+"");
+                    context.startActivity(intent);
+                    context.finish();
+                }
+            };
+            holder.getTxtunansweredquestion().setOnClickListener(onc);
             holder.getClickablelinearlayout().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -12,7 +12,7 @@
             android:orientation="horizontal"
             android:background="@color/main_app_background"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="10dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -20,10 +20,8 @@
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-                android:scaleType="centerCrop"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp"
+            android:layout_centerInParent="true" android:scaleType="centerCrop"
+
             />
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -71,9 +69,9 @@
             app:visualizationPlayedColor="#ed715d"
             app:visualizationNotPlayedColor="#727171"
             app:playPauseBackgroundColor="#ed715d"
-            app:timingBackgroundColor="@color/white"
+            app:timingBackgroundColor="@color/main_app_background"
             app:seekBarProgressColor="#000"
-            app:showShareButton="true"
+            app:showShareButton="false"
             app:shareCornerRadius="100"
             app:playPauseCornerRadius="1"
             app:showTiming="true"
@@ -82,7 +80,7 @@
             app:viewBackground="@color/main_app_background"
             app:progressTimeColor="#000"
             app:seekBarThumbColor="#FFC107"
-            app:shareBackgroundColor="@color/white"
+            app:shareBackgroundColor="@color/main_app_background"
             app:playProgressbarColor="#ed715d"
             app:shareText="SHARE ME"/>
     </LinearLayout>
