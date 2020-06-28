@@ -20,6 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:background="@color/main_app_background"
             android:orientation="vertical">
             <TextView
@@ -100,7 +102,7 @@
             android:orientation="horizontal"
             android:background="@color/main_app_background"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="15dp"
 
             android:layout_marginTop="5dp"
             android:layout_marginBottom="10dp">
@@ -120,10 +122,12 @@
                     android:text="Post"
                     android:textSize="20sp"
                     android:textColor="@color/white"
+                    android:shadowColor="@color/main_app_background"
                     android:fontFamily="@font/open_sans_semibold"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"
+                    android:elevation="0dp"
 
                     />
                 <LinearLayout

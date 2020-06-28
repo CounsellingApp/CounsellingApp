@@ -145,10 +145,11 @@ public class LoginActivity extends AppCompatActivity {
         login_as_faculty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                faculty_layout.setVisibility(View.VISIBLE);
-                choice_layout.setVisibility(View.GONE);
-                welcomeimage.setVisibility(View.GONE);
-                welcometext.setVisibility(View.GONE);
+//                faculty_layout.setVisibility(View.VISIBLE);
+//                choice_layout.setVisibility(View.GONE);
+//                welcomeimage.setVisibility(View.GONE);
+//                welcometext.setVisibility(View.GONE);
+                googlesinin();
             }
         });
 
@@ -157,42 +158,42 @@ public class LoginActivity extends AppCompatActivity {
         faculty_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                final ProgressDialog progressDialog = ProgressDialog.show(LoginActivity.this,"","Please Wait");
-                mauth.signInWithEmailAndPassword(faculty_username.getText().toString(),faculty_password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            firebaseUser=firebaseAuth.getCurrentUser();
-                            ff.collection("users").document(firebaseUser.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                    DocumentSnapshot queryDocumentSnapshot=task.getResult();
-                                    Double type= queryDocumentSnapshot.getDouble("type");
-                                    if(type==1){
-                                        Showfancytoasr.show(LoginActivity.this,"Login successful");
-                                        Useremail.email= faculty_username.getText().toString();
-                                        Useremail.isfaculty=true;
-                                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                        startActivity(intent);
-                                        progressDialog.dismiss();
-                                        finish();
-                                    }
-                                    else{
-                                        firebaseUser=null;
-                                        Showfancytoasr.show(LoginActivity.this,"Login failed, please try again with the correct credentials");
-                                        progressDialog.dismiss();
-                                    }
-                                }
-                            });
-
-                        }
-                        else{
-                            Showfancytoasr.show(LoginActivity.this,"Login failed, please try again with the correct credentials");
-                            progressDialog.dismiss();
-                        }
-                    }
-                });
+                googlesinin();
+//                final ProgressDialog progressDialog = ProgressDialog.show(LoginActivity.this,"","Please Wait");
+//                mauth.signInWithEmailAndPassword(faculty_username.getText().toString(),faculty_password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        if(task.isSuccessful()){
+//                            firebaseUser=firebaseAuth.getCurrentUser();
+//                            ff.collection("users").document(firebaseUser.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                                    DocumentSnapshot queryDocumentSnapshot=task.getResult();
+//                                    Double type= queryDocumentSnapshot.getDouble("type");
+//                                    if(type==1){
+//                                        Showfancytoasr.show(LoginActivity.this,"Login successful");
+//                                        Useremail.email= faculty_username.getText().toString();
+//                                        Useremail.isfaculty=true;
+//                                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                                        startActivity(intent);
+//                                        progressDialog.dismiss();
+//                                        finish();
+//                                    }
+//                                    else{
+//                                        firebaseUser=null;
+//                                        Showfancytoasr.show(LoginActivity.this,"Login failed, please try again with the correct credentials");
+//                                        progressDialog.dismiss();
+//                                    }
+//                                }
+//                            });
+//
+//                        }
+//                        else{
+//                            Showfancytoasr.show(LoginActivity.this,"Login failed, please try again with the correct credentials");
+//                            progressDialog.dismiss();
+//                        }
+//                    }
+//                });
             }
         });
 

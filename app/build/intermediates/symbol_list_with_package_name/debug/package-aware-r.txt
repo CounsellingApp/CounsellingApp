@@ -1499,6 +1499,7 @@ drawable ic_clear_white_24dp
 drawable ic_edit_black_24dp
 drawable ic_error_outline_white_24dp
 drawable ic_frame_27
+drawable ic_frame_53
 drawable ic_healing_black_24dp
 drawable ic_home_black_24dp
 drawable ic_info_outline_white_24dp
@@ -1667,6 +1668,7 @@ id always
 id amitneogimail
 id amitneogiphone
 id answer_audio_player
+id answer_the_question
 id answeredQuestion
 id answers_facultyimage
 id answers_facultyname
@@ -1736,6 +1738,8 @@ id dark
 id date_picker_actions
 id decor_content_parent
 id default_activity_button
+id delete_my_answer
+id delete_relativelayout
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub

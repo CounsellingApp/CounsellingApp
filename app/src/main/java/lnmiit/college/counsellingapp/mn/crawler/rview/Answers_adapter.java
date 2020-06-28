@@ -1,11 +1,15 @@
 package lnmiit.college.counsellingapp.mn.crawler.rview;
 
+import android.app.Activity;
 import android.app.DownloadManager;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
 import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,14 +30,17 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import lnmiit.college.counsellingapp.R;
+import lnmiit.college.counsellingapp.Useremail;
 
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
-public class Answers_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
+public class Answers_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements Custom_Dialog.Ondialogaction  {
 
     private int response_index;
     private Context context;
@@ -42,17 +50,25 @@ public class Answers_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private String description;
     private String author;
     private String tags;
+    private String noa;
+    private Map<String,String> answers_map;
+    private String question_id;
+    private FragmentManager fm;
     ArrayList<ArrayList<String>> answers = new ArrayList<ArrayList<String>>();
 
 
-    public Answers_adapter(int response_index, Context context, String question, String description, String author, String tags)
+    public Answers_adapter(int response_index, Context context, String question, String description, String author, String tags, String noa, FragmentManager fm, String question_id, Map<String,String> answers_map)
     {
         this.response_index = response_index;
+        this.fm = fm;
         this.context = context;
         this.question = question;
         this.description = description;
         this.author = author;
         this.tags = tags;
+        this.noa = noa;
+        this.question_id = question_id;
+        this.answers_map = answers_map;
     }
     public Answers_adapter(int response_index, Context context)
     {
@@ -98,6 +114,24 @@ public class Answers_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ((viewholder)holder).getTxtauthor().setText(author+"");
             ((viewholder)holder).getTxttags().setText(tags);
             ((viewholder)holder).getBtnview().setVisibility(View.INVISIBLE);
+            ((viewholder)holder).getTxt_noa().setText(noa);
+            if(!answers_map.containsKey(Useremail.email)) {
+                ((viewholder) holder).getAnswer_the_question().setVisibility(View.VISIBLE);
+                ((viewholder) holder).getAnswer_the_question().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(context,Respond_To_A_Question.class);
+                        intent.putExtra("question", question);
+                        intent.putExtra("author", author);
+                        intent.putExtra("tags", tags);
+                        intent.putExtra("questionid",question_id);
+                        intent.putExtra("faculty_answers", (Serializable) answers_map);
+                        intent.putExtra("description",description);
+                        context.startActivity(intent);
+                        ((Activity)context).finish();
+                    }
+                });
+            }
         }
         else {
             final String answerfromdatabase = mainlist.get(position-1).getAnswer_text();
@@ -139,6 +173,21 @@ public class Answers_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         if(dsnap.exists())
                         {
                             ((Answers_ViewHolder)holder).getAnswers_facultyname().setText((dsnap.get("username")).toString()+"");
+                            if(Useremail.username.equals(dsnap.get("username").toString()))
+                            {
+                                ((Answers_ViewHolder) holder).getDelete_relaative_layout().setVisibility(View.VISIBLE);
+                                ((Answers_ViewHolder) holder).getDelete_my_response().setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Custom_Dialog custom_dialog = new Custom_Dialog();
+                                        Bundle bundle = new Bundle();
+                                        bundle.putInt("code",40);
+                                        custom_dialog.setArguments(bundle);
+                                        custom_dialog.setMondialogaction(Answers_adapter.this);
+                                        custom_dialog.show(fm,"delete my answer");
+                                    }
+                                });
+                            }
                             Uri uri = Uri.parse(dsnap.get("photo_uri").toString());
                             Picasso.get().load(uri).into(((Answers_ViewHolder)holder).getAnswers_facultyimage());
                         }
@@ -188,4 +237,49 @@ public class Answers_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             }
         }
     };
+
+    @Override
+    public void mainactivity() {
+        final ProgressDialog pd = ProgressDialog.show(context,"","Please wait");
+
+        answers_map.remove(Useremail.email);
+        FirebaseFirestore.getInstance().collection("Questions").document(question_id).update("faculty_answers",answers_map).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                final File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"CWPH_LNMIIT/Answers/"+Useremail.email+question_id+".mp4");
+                if(file.exists()) {
+                    FirebaseStorage.getInstance().getReference().child("Audio_Answers").child(Useremail.email + question_id + ".mp4").delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+
+                            file.delete();
+                            Showfancytoasr.show(context, "Response successfully deleted.");
+                            context.startActivity(new Intent(context, MainActivity.class));
+                            pd.dismiss();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Showfancytoasr.show(context, "Failed to delete from external directory + " + e.getMessage());
+                            context.startActivity(new Intent(context, MainActivity.class));
+                            pd.dismiss();
+                        }
+                    });
+                }
+                else {
+                    Showfancytoasr.show(context, "Response successfully deleted.");
+                    context.startActivity(new Intent(context, MainActivity.class));
+                    pd.dismiss();
+                }
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Showfancytoasr.show(context,"Failed to delete + "+e.getMessage());
+                pd.dismiss();
+            }
+        });
+
+    }
 }

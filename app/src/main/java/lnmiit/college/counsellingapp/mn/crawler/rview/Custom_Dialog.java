@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import lnmiit.college.counsellingapp.R;
 import mehdi.sakout.fancybuttons.FancyButton;
 
@@ -45,6 +47,7 @@ public class Custom_Dialog extends DialogFragment {
             @Override
             public void onClick(View v) {
                 mondialogaction.mainactivity();
+                dismiss();
             }
         });
         code = getArguments().getInt("code");
@@ -66,7 +69,11 @@ public class Custom_Dialog extends DialogFragment {
                 customdialogleftbutton.setText("YES");
                 customdialogtextview.setText("Are you sure you want to post this answer?");
                 break;
-
+            case 40 : //Delete my answer
+                customdialogrightbutton.setText("CANCEL");
+                customdialogleftbutton.setText("YES");
+                customdialogtextview.setText("Are you sure you want to delete your answer?");
+                break;
         }
         builder.setView(view);
         return builder.create();

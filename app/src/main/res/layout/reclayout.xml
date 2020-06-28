@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
     android:paddingLeft="5dp"
     app:cardElevation="0dp"
-    android:background="@color/white"
-    >
+    android:background="@color/white">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,7 +40,6 @@
                         android:fontFamily="@font/open_sans_semibold"
                         android:textColor="#3b566e"
                         android:gravity="start|top"
-                        android:inputType="textMultiLine"
                         android:text="This is the title"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -90,7 +90,6 @@
                         android:id="@+id/txt_description"
                         android:layout_marginTop="7dp"
                         android:textSize="15sp"
-                        android:layout_marginBottom="8dp"
                         android:fontFamily="@font/open_sans"/>
 
 
@@ -106,7 +105,20 @@
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/right" />
             </LinearLayout>
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#0160FF"
+                android:lines="1"
+                tools:autoSizeTextType="uniform"
+                android:gravity="right"
+                android:text="+ Add an answer"
+                android:id="@+id/answer_the_question"
+                android:visibility="gone"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/open_sans"/>
         </LinearLayout>
 
 </androidx.cardview.widget.CardView>

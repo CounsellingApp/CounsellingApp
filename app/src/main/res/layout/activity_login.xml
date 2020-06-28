@@ -97,19 +97,20 @@
         android:orientation="vertical"
         >
 
-        <com.google.android.gms.common.SignInButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/googlesignin"
-            />
         <ImageButton
             android:id="@+id/loginAsFaculty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/facultylogin"
-            android:visibility="gone"/>
+            app:srcCompat="@drawable/ic_frame_53"
+            android:visibility="visible"/>
+        <com.google.android.gms.common.SignInButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/googlesignin"
+            android:visibility="invisible"
+            />
 
 
     </LinearLayout>

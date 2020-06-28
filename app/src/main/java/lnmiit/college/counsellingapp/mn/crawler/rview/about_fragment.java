@@ -85,7 +85,7 @@ public class about_fragment extends Fragment implements View.OnClickListener {
                 email = "arshitanair@lnmiit.ac.in";
                 break;
             case R.id.ajitpatelmail:
-                email = "ajitpatel@lnmiit.ac.in";
+                email = "apatel@lnmiit.ac.in";
                 break;
             case R.id.amitneogiphone :
                 phone_number="8963807110";

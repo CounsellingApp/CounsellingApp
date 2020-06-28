@@ -29,6 +29,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import lnmiit.college.counsellingapp.R;
 import lnmiit.college.counsellingapp.UnansweredQuestionModel;
@@ -106,13 +107,17 @@ public class mainFragment extends Fragment implements viewholder.onNoteListener 
     }
 
     @Override
-    public void onnoteclick(String question, String description, String author, String tags,List<AnswerModel> mylist) {
+    public void onnoteclick(String question, String description, String author, String tags, List<AnswerModel> mylist, String noa, Map<String,String> answers_map, String id) {
         Intent intent = new Intent(getContext(),activity_answer.class);
         intent.putExtra("question",question);
         intent.putExtra("description",description);
         intent.putExtra("author",author);
         intent.putExtra("tags",tags);
         intent.putExtra("mylist", (Serializable) mylist);
+        intent.putExtra("noa",noa);
+        intent.putExtra("id",id);
+        intent.putExtra("map",(Serializable) answers_map);
         startActivity(intent);
+        getActivity().finish();
     }
 }

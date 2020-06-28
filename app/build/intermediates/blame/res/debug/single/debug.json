@@ -264,6 +264,10 @@
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_remove_circle_outline_black_24dp.xml"
     },
     {
+        "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_frame_53.xml.flat",
+        "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\ic_frame_53.xml"
+    },
+    {
         "merged": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_slide2dots.xml.flat",
         "source": "G:\\CWPHAPP_REPO\\CounsellingApp\\app\\src\\main\\res\\drawable\\slide2dots.xml"
     },

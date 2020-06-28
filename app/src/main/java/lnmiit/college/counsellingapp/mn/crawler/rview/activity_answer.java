@@ -27,6 +27,9 @@ public class activity_answer extends AppCompatActivity {
     private String aca_auhor;
     private String aca_tags;
     private Toolbar toolbar;
+    private String noa;
+    private String question_id;
+    private Map<String,String> answers_map;
     private TextView tootlbartitle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +46,12 @@ public class activity_answer extends AppCompatActivity {
         aca_description = getIntent().getStringExtra("description");
         aca_auhor = getIntent().getStringExtra("author");
         aca_tags = getIntent().getStringExtra("tags");
+        noa = getIntent().getStringExtra("noa");
+        question_id = getIntent().getStringExtra("id");
+        answers_map = (Map<String, String>) getIntent().getSerializableExtra("map");
         answersrecyclerview = findViewById(R.id.specific_answer_recycler_view);
         position = getIntent().getIntExtra("position",-1);
-        Answers_adapter adapter = new Answers_adapter(position, activity_answer.this,aca_question,aca_description,aca_auhor,aca_tags);
+        Answers_adapter adapter = new Answers_adapter(position, activity_answer.this,aca_question,aca_description,aca_auhor,aca_tags,noa,getSupportFragmentManager(),question_id,answers_map);
         adapter.Setmainlist(mylist);
         answersrecyclerview.setAdapter(adapter);
         answersrecyclerview.setLayoutManager(new LinearLayoutManager(activity_answer.this));
@@ -56,6 +62,7 @@ public class activity_answer extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==android.R.id.home)
         {
+            startActivity(new Intent(activity_answer.this,MainActivity.class));
             finish();
         }
         return true;

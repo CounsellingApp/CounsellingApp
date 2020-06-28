@@ -56,6 +56,8 @@ public class rviewadapter extends RecyclerView.Adapter<lnmiit.college.counsellin
             answerslist.add(new AnswerModel(entry.getKey(),entry.getValue(),entry.getKey()+".png"));
         }
         holder.setMylist(answerslist);
+        holder.setQuestion_id(mainlist.get(position).getQuestion_id());
+        holder.setAnswers_map(mainlist.get(position).getFaculty_answers());
 //        adapter.Setmainlist(answerslist);
 //        activity_answer.mylist = answerslist;
 //        holder.getAnswers_rec_view().setAdapter(adapter);
