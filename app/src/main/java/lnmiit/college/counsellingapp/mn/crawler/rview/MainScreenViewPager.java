@@ -35,8 +35,8 @@ public class MainScreenViewPager extends Fragment {
         feed = view.findViewById(R.id.feed);
         respond = view.findViewById(R.id.respond);
         mainScreenViewPagerAdapter = new MainScreenViewPagerAdapter(getChildFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT,tabLayout.getTabCount());
-        mainScreenViewPagerAdapter.addFrag(new mainFragment(),"POSTS");
-        mainScreenViewPagerAdapter.addFrag(new RespondFragment(),"REQUESTS");
+        mainScreenViewPagerAdapter.addFrag(new mainFragment(),"VIEW");
+        mainScreenViewPagerAdapter.addFrag(new RespondFragment(),"RESPOND");
         mainviewpager.setAdapter(mainScreenViewPagerAdapter);
         tabLayout.setupWithViewPager(mainviewpager);
 //        tabLayout.getTabAt(0).setIcon(R.drawable.bottom_home);

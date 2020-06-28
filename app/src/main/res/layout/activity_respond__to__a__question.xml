@@ -83,7 +83,7 @@
                 android:layout_height="0dp"
                 android:id="@+id/txt_reply_answer"
                 android:layout_weight="1"
-                android:hint="Type your respnse here"
+                android:hint="Type your response here"
                 android:textSize="15sp"
                 android:textColorHint="#756f8ba4"
                 android:textColor="#6f8ba4"
@@ -100,7 +100,7 @@
             android:orientation="horizontal"
             android:background="@color/main_app_background"
             android:layout_marginLeft="10dp"
-
+            android:layout_marginRight="10dp"
 
             android:layout_marginTop="5dp"
             android:layout_marginBottom="10dp">
