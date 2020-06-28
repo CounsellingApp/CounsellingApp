@@ -53,6 +53,30 @@ public class Intro_Adapter extends PagerAdapter {
                 }
             });
         }
+        if(position==1)
+        {
+            ImageButton getstarted2 = view.findViewById(R.id.getstarted2);
+            getstarted2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext(), LoginActivity.class);
+                    context.startActivity(intent);
+                    activity.finish();
+                }
+            });
+        }
+        if(position==0)
+        {
+            ImageButton getstarted1 = view.findViewById(R.id.getstarted1);
+            getstarted1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext(), LoginActivity.class);
+                    context.startActivity(intent);
+                    activity.finish();
+                }
+            });
+        }
         container.addView(view);
         return view;
     }

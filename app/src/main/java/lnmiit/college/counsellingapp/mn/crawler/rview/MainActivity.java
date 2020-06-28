@@ -394,5 +394,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(new Intent(MainActivity.this, LoginActivity.class));
         finish();
     }
+
+    @Override
+    public void onBackPressed() {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START))
+        {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else if(!navigationView.getMenu().getItem(0).isChecked())
+        {
+            navigationView.getMenu().getItem(0).setChecked(true);
+            navigationView.getMenu().getItem(1).setChecked(false);
+            navigationView.getMenu().getItem(2).setChecked(false);
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            if(Useremail.isfaculty) {
+                fragmentTransaction.replace(R.id.mainframehandler, new MainScreenViewPager(),"mainscreenviewpager");
+            }
+            else
+            {
+                fragmentTransaction.replace(R.id.mainframehandler, new mainFragment());
+            }
+            fragmentTransaction.commit();
+            toolbartext.setText("FEED");
+        }
+        else {
+            super.onBackPressed();
+        }
+    }
 }
 

@@ -173,7 +173,7 @@ public class Answers_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         if(dsnap.exists())
                         {
                             ((Answers_ViewHolder)holder).getAnswers_facultyname().setText((dsnap.get("username")).toString()+"");
-                            if(Useremail.username.equals(dsnap.get("username").toString()))
+                            if((Useremail.username.equals(dsnap.get("username").toString()))&&(Useremail.isfaculty))
                             {
                                 ((Answers_ViewHolder) holder).getDelete_relaative_layout().setVisibility(View.VISIBLE);
                                 ((Answers_ViewHolder) holder).getDelete_my_response().setOnClickListener(new View.OnClickListener() {

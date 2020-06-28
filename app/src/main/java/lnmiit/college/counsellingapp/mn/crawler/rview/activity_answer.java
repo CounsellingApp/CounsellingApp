@@ -67,4 +67,10 @@ public class activity_answer extends AppCompatActivity {
         }
         return true;
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(activity_answer.this,MainActivity.class));
+        finish();
+    }
 }

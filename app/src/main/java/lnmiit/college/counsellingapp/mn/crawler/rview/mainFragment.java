@@ -55,8 +55,11 @@ public class mainFragment extends Fragment implements viewholder.onNoteListener 
                 if(e==null)
                 {
                     for(DocumentChange documentChange : queryDocumentSnapshots.getDocumentChanges()){
+
                         UnansweredQuestionModel ourWorkModel = documentChange.getDocument().toObject(UnansweredQuestionModel.class);
-                        mainlist.add(ourWorkModel);
+                        if(!ourWorkModel.getFaculty_answers().isEmpty()) {
+                            mainlist.add(ourWorkModel);
+                        }
                     }
                     adapter.Setmainlist(mainlist);
                 }

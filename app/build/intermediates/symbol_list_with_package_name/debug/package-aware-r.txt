@@ -1787,6 +1787,8 @@ id fitToContents
 id fixed
 id forever
 id framecontainer
+id getstarted1
+id getstarted2
 id ghost_view
 id ghost_view_holder
 id gone

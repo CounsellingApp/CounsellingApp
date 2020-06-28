@@ -299,4 +299,10 @@ public class Respond_To_A_Question extends AppCompatActivity implements Dialog_A
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Respond_To_A_Question.this,MainActivity.class));
+        finish();
+    }
 }
