@@ -115,7 +115,7 @@ public class Answers_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ((viewholder)holder).getTxttags().setText(tags);
             ((viewholder)holder).getBtnview().setVisibility(View.INVISIBLE);
             ((viewholder)holder).getTxt_noa().setText(noa);
-            if(!answers_map.containsKey(Useremail.email)) {
+            if((!answers_map.containsKey(Useremail.email))&&(Useremail.isfaculty)) {
                 ((viewholder) holder).getAnswer_the_question().setVisibility(View.VISIBLE);
                 ((viewholder) holder).getAnswer_the_question().setOnClickListener(new View.OnClickListener() {
                     @Override
