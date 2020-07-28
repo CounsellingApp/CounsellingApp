@@ -237,17 +237,7 @@ public class LoginActivity extends AppCompatActivity {
                             final GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
                             String checkablemail = account.getEmail();
                             String[] parts = checkablemail.split("@");
-                            if(parts[1].equals("lnmiit.ac.in")) {
-                                Useremail.email = account.getEmail();
-                                Useremail.isfaculty = false;
-                                Useremail.photouri = account.getPhotoUrl();
-                                Useremail.username = account.getDisplayName();
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                progressDialog.dismiss();
-                                startActivity(intent);
-                                finish();
-                            }
-                            else if(checkablemail.equals("lakshay.bhagtani@gmail.com")||checkablemail.equals("aneogi@lnmiit.ac.in")||account.getEmail().equals("apsingh@lnmiit.ac.in")||account.getEmail().equals("apatel@lnmiit.ac.in")) {
+                            if(checkablemail.equals("lakshay.bhagtani@gmail.com")||checkablemail.equals("aneogi@lnmiit.ac.in")||account.getEmail().equals("apsingh@lnmiit.ac.in")||account.getEmail().equals("apatel@lnmiit.ac.in")) {
                                 final FirebaseFirestore currentff = FirebaseFirestore.getInstance();
                                 Useremail.email = account.getEmail();
                                 Useremail.isfaculty = true;
@@ -288,9 +278,16 @@ public class LoginActivity extends AppCompatActivity {
                                         }
                                     }
                                 });
-
-
-
+                            }
+                            else if(parts[1].equals("lnmiit.ac.in")) {
+                                Useremail.email = account.getEmail();
+                                Useremail.isfaculty = false;
+                                Useremail.photouri = account.getPhotoUrl();
+                                Useremail.username = account.getDisplayName();
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                progressDialog.dismiss();
+                                startActivity(intent);
+                                finish();
                             }
                             else
                             {

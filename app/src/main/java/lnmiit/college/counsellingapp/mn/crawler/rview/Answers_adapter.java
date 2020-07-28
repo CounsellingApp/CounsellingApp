@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -141,21 +142,37 @@ public class Answers_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     ((Answers_ViewHolder)holder).getAnswers_audio_player().setVisibility(View.VISIBLE);
                     ((Answers_ViewHolder)holder).getTxtanswers().setVisibility(View.GONE);
                     context.registerReceiver(downloadcomplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
-                    String filepath = "CWPH_LNMIIT/Answers";
-                    File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), filepath);
-                    if (!file.exists()) {
-                        file.mkdirs();
-                    }
-                    filepath = "CWPH_LNMIIT/Answers/" + answerfromdatabase;
-                    File audiofile = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), filepath);
-                    if (!audiofile.exists()) {
+                    File audiofile = new File(context.getExternalFilesDir(DIRECTORY_DOWNLOADS),answerfromdatabase);
+                    Log.i("lakshay",audiofile.getAbsolutePath());
+                    if(!audiofile.exists()){
                         DownloadManager downloadManager = (DownloadManager) context.getSystemService(context.DOWNLOAD_SERVICE);
                         DownloadManager.Request request = new DownloadManager.Request(uri);
-                        request.setDestinationInExternalPublicDir("CWPH_LNMIIT/Answers", answerfromdatabase);
+                        request.setDestinationInExternalFilesDir(context, DIRECTORY_DOWNLOADS,answerfromdatabase);
                         //request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                         downloadID = downloadManager.enqueue(request);
                     }
-                    ((Answers_ViewHolder)holder).getAnswers_audio_player().setAudio(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + filepath);
+//                    String filepath = "CWPH_LNMIIT/Answers";
+//                    File file;
+//                    if(Build.VERSION.SDK_INT>=29)
+//                    {
+//                        file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), filepath);
+//                    }
+//                    else {
+//                        file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), filepath);
+//                    }
+//                    if (!file.exists()) {
+//                        file.mkdirs();
+//                    }
+//                    filepath = "CWPH_LNMIIT/Answers/" + answerfromdatabase;
+//                    File audiofile = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), filepath);
+//                    if (!audiofile.exists()) {
+//                        DownloadManager downloadManager = (DownloadManager) context.getSystemService(context.DOWNLOAD_SERVICE);
+//                        DownloadManager.Request request = new DownloadManager.Request(uri);
+//                        request.setDestinationInExternalPublicDir("CWPH_LNMIIT/Answers", answerfromdatabase);
+//                        //request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+//                        downloadID = downloadManager.enqueue(request);
+//                    }
+                    ((Answers_ViewHolder)holder).getAnswers_audio_player().setAudio(context.getExternalFilesDir(DIRECTORY_DOWNLOADS)+"/"+answerfromdatabase);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -246,13 +263,14 @@ public class Answers_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         FirebaseFirestore.getInstance().collection("Questions").document(question_id).update("faculty_answers",answers_map).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                final File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"CWPH_LNMIIT/Answers/"+Useremail.email+question_id+".mp4");
-                if(file.exists()) {
+                //final File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"CWPH_LNMIIT/Answers/"+Useremail.email+question_id+".mp4");
+                final File audiofile = new File(context.getExternalFilesDir(DIRECTORY_DOWNLOADS),Useremail.email+question_id+".mp4");
+                if(audiofile.exists()) {
                     FirebaseStorage.getInstance().getReference().child("Audio_Answers").child(Useremail.email + question_id + ".mp4").delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
 
-                            file.delete();
+                            audiofile.delete();
                             Showfancytoasr.show(context, "Response successfully deleted.");
                             context.startActivity(new Intent(context, MainActivity.class));
                             pd.dismiss();

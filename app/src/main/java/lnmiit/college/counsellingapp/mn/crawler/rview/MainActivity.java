@@ -93,19 +93,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mainfm = getSupportFragmentManager();
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
-        ff.collection("users").document(firebaseUser.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull final Task<DocumentSnapshot> task) {
-                task.addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        DocumentSnapshot queryDocumentSnapshot=task.getResult();
-                        type= queryDocumentSnapshot.getDouble("type");
-                    }
-                });
-
-            }
-        });
+//        ff.collection("users").document(firebaseUser.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull final Task<DocumentSnapshot> task) {
+//                task.addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+//                    @Override
+//                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+//                        DocumentSnapshot queryDocumentSnapshot=task.getResult();
+//                        type= queryDocumentSnapshot.getDouble("type");
+//                    }
+//                });
+//
+//            }
+//        });
 
         toolbar = findViewById(R.id.toolbar);
         toolbartext = toolbar.findViewById(R.id.toolbartitle);
